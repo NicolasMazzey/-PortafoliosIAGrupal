@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación 3 - Franco Barlocco</title>
+    <link rel="stylesheet" href="./investigacion3.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../assets/franco.jpeg" alt="Foto de Franco" class="navbar-photo">
+            <span class="navbar-name">Franco Barlocco</span>
+        </div>
+        <div class="navbar-right">
+            <a href="../Home/home.html">Inicio</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+    <div class="detail-container">
+        <h1>Boston Housing</h1>
+        <img src="../assets/m1.png" alt="Investigación 2" class="detail-image">
+        <h2>Introducción</h2>
+        <p>Elegí el dataset de "Boston Housing" ya que es un conjunto de datos muy conocido en el campo del aprendizaje
+            automático y la estadística, utilizado principalmente para problemas de regresión. Este conjunto de datos
+            fue recopilado por el Servicio de Censos de los Estados Unidos y contiene información sobre diversos
+            factores socioeconómicos y características de viviendas en la ciudad de Boston y sus alrededores. El
+            objetivo principal al trabajar con este dataset es predecir el valor medio de las viviendas en función de 13
+            variables predictoras, que incluyen características tanto del entorno como de la vivienda misma.</p>
+        <h3>Herramienta</h3>
+        <p><strong>RapidMiner</strong> es una plataforma integral de análisis de datos y minería de datos que permite a
+            los usuarios realizar todo el proceso de ciencia de datos, desde la limpieza y preparación de los datos,
+            hasta la creación, validación y despliegue de modelos predictivos. Está diseñada para ser intuitiva y fácil
+            de usar, incluso para personas con poca experiencia en programación, gracias a su interfaz gráfica basada en
+            "drag-and-drop" que permite crear flujos de trabajo de análisis.</p>
+        <h2>Atributos del dataset</h2>
+        <ul class="detail-description">
+            <li><strong>CRIM:</strong> Tasa de criminalidad per cápita.</li>
+            <li><strong>ZN:</strong> Proporción de terreno residencial zonificado para lotes grandes.</li>
+            <li><strong>INDUS:</strong> Proporción de acres comerciales no minoristas por ciudad.</li>
+            <li><strong>CHAS:</strong> Variable binaria que indica si la propiedad está cerca del río Charles (1 si está
+                cerca, 0 si no).</li>
+            <li><strong>NOX:</strong> Concentración de óxidos de nitrógeno (contaminación).</li>
+            <li><strong>RM:</strong> Promedio de habitaciones por vivienda.</li>
+            <li><strong>AGE:</strong> Proporción de viviendas ocupadas construidas antes de 1940.</li>
+            <li><strong>DIS:</strong> Distancia ponderada a cinco centros de empleo en Boston.</li>
+            <li><strong>RAD:</strong> Índice de accesibilidad a carreteras radiales.</li>
+            <li><strong>TAX:</strong> Tasa de impuestos a la propiedad.</li>
+            <li><strong>PTRATIO:</strong> Ratio de estudiantes por profesor en cada localidad.</li>
+            <li><strong>B:</strong> Proporción de personas de raza negra en la población.</li>
+            <li><strong>LSTAT:</strong> Porcentaje de la población de bajo estatus socioeconómico.</li>
+            <li><strong>MEDV:</strong> Valor medio de las viviendas (en miles de dólares), que es la variable objetivo.
+            </li>
+        </ul>
+        <p>Verificamos que los tipos de datos de las columnas estén correctamente definidos (por ejemplo, valores
+            numéricos como real y categóricos como nominal)</p>
+        <img src="../assets/img 1.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img2.png" alt="Investigación 2" class="detail-image">
+        <h2>Limpieza de datos</h2>
+        <p>Debemos hacer una buena limpieza de datos para evitar outliers, valores faltantes o errores.</p>
+        <p>Para esto, vamos a utilizar varios operadores en rapidminer.</p>
+        <h3>Replace Missing Values</h3>
+        <p>El operador <strong>Replace Missing Values</strong> en RapidMiner se utiliza para manejar valores faltantes o
+            incompletos en un conjunto de datos, los cuales pueden surgir por diversas razones, como errores en la
+            recolección de datos, falta de respuesta en encuestas, o fallas técnicas. Este operador es clave para
+            asegurar que los modelos predictivos funcionen correctamente, ya que la mayoría de los algoritmos no pueden
+            trabajar con datos incompletos.</p>
+        <p>En RapidMiner, el operador <strong>Replace Missing Values</strong> tiene tres salidas principales que se
+            utilizan para representar diferentes estados del conjunto de datos después de aplicar el operador. Estas
+            salidas son:</p>
+        <ul class="detail-description">
+            <li>
+                <strong>exa (ExampleSet):</strong>
+                <ul>
+                    <li><strong>Descripción:</strong> Esta salida representa el conjunto de datos modificado, donde los
+                        valores faltantes han sido reemplazados según la estrategia especificada. Es el resultado final
+                        que se puede usar para el análisis posterior, como la creación de modelos predictivos o la
+                        visualización de datos.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>ori (Original ExampleSet):</strong>
+                <ul>
+                    <li><strong>Descripción:</strong> Esta salida contiene el conjunto de datos original, sin ninguna
+                        modificación. Es útil para comparar el conjunto de datos original con el conjunto de datos
+                        procesado. Mantener una copia del conjunto original es esencial para evaluar el impacto de los
+                        cambios realizados y para realizar análisis posteriores si es necesario.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>pre (Predictions):</strong>
+                <ul>
+                    <li><strong>Descripción:</strong> Esta salida incluye información sobre cómo se reemplazaron los
+                        valores faltantes. Dependiendo de la estrategia utilizada, puede proporcionar estadísticas sobre
+                        los valores que se usaron para reemplazar los valores faltantes (por ejemplo, la media, mediana,
+                        o moda). También puede incluir información adicional sobre qué ejemplos fueron afectados y qué
+                        valor se asignó a esos ejemplos.</li>
+                </ul>
+            </li>
+        </ul>
+        <img src="../assets/img3.png" alt="Investigación 2" class="detail-image">
+        <p>El operador nos limpiará los datos faltantes y los rellena con la media de cada columna.</p>
+        <br>
+        <h3>Detect Outliers</h3>
+        <p>El operador <strong>Detect Outliers</strong> en RapidMiner es una herramienta utilizada para identificar y tratar datos atípicos o outliers en un conjunto de datos. Los outliers son valores que se desvían significativamente de otras observaciones en el dataset y pueden ser el resultado de variaciones naturales en los datos, errores de medición, o problemas en el proceso de recolección de datos.</p>
+        <h3>Métodos Comunes para Detectar Outliers:</h3>
+        <ul class="detail-description">
+            <li>
+                <strong>Desviación estándar:</strong> Este método utiliza la media y la desviación estándar para identificar valores que se encuentran a una distancia significativa de la media. Por ejemplo, un valor puede ser considerado un outlier si se encuentra a más de 2 o 3 desviaciones estándar de la media.
+            </li>
+            <li>
+                <strong>Rango intercuartílico (IQR):</strong> Este enfoque implica calcular el rango intercuartílico (IQR) y luego determinar límites superior e inferior para los datos. Un valor se considera un outlier si se encuentra por debajo del límite inferior (Q1 - 1.5 * IQR) o por encima del límite superior (Q3 + 1.5 * IQR), donde Q1 y Q3 son los primer y tercer cuartiles, respectivamente.
+            </li>
+            <li>
+                <strong>Análisis de densidad:</strong> Este método se basa en estimar la densidad de los datos en el espacio de características. Los puntos que se encuentran en áreas de baja densidad se consideran outliers.
+            </li>
+        </ul>
+        <img src="../assets/img4.png" alt="Investigación 2" class="detail-image">
+        <p>Utilizamos el operador para detectar los outliers y analizarlos. El resultado se visualiza de la siguiente manera:</p>
+        <img src="../assets/img5.png" alt="Investigación 2" class="detail-image">
+        <br>
+        <h3>Normalize</h3>
+        <p>El operador Normalize en RapidMiner es una herramienta utilizada para escalar o normalizar los valores de las variables en un conjunto de datos. La normalización es un paso crucial en el preprocesamiento de datos, especialmente cuando se trabaja con algoritmos de aprendizaje automático que son sensibles a la escala de los datos.</p>
+        <p>Para este caso, vamos a normalizar todos los valores, menos la media "MEDV"</p>
+        <img src="../assets/img6.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img7.png" alt="Investigación 2" class="detail-image">
+        <br>
+        <h2>Análisis con modelo de Machine Learning: Regresión Lineal</h2>
+        <p>La regresión lineal es una técnica estadística y de aprendizaje automático utilizada para modelar la relación entre una variable dependiente (también conocida como variable objetivo) y una o más variables independientes (predictoras). En su forma más simple, la regresión lineal busca ajustar una línea recta (en el caso de una regresión lineal simple) a un conjunto de puntos en un gráfico.</p>
+        <p>Para más información sobre la <a href="../Investigacion 1/investigacion1.html">regresión lineal</a>, hay una investigación realizada con este tema.</p>
+        <h3>Set role</h3>
+        <p>El operador Set Role en RapidMiner permite modificar el papel (o "rol") de las columnas (atributos) dentro de un conjunto de datos. Los roles de los atributos definen cómo serán utilizados en el análisis o en la construcción de un modelo. Este operador es esencial cuando quieres asignar funciones específicas a tus atributos, como definir cuál es la variable objetivo o eliminar ciertos atributos del análisis. Nosotros lo utilizaremos para definir la variable objetivo</p>
+        <img src="../assets/img8.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img9.png" alt="Investigación 2" class="detail-image">
+        <h3>Shuffle</h3>
+        <p>El operador Shuffle en RapidMiner se utiliza para mezclar aleatoriamente las filas de un conjunto de datos. Este operador es importante cuando se quiere eliminar cualquier tipo de sesgo o patrón que pueda existir en el orden de los datos y asegurar que los ejemplos estén distribuidos de manera aleatoria. Este proceso de "shuffle" es común en la preparación de datos, especialmente antes de dividir los datos en subconjuntos de entrenamiento y prueba, o al aplicar técnicas de validación cruzada (Cross Validation).</p>
+        <img src="../assets/img10.png" alt="Investigación 2" class="detail-image">
+        
+        <h3>Filter Example Range</h3>
+        <p>Este operador permite especificar un rango de filas que deseas conservar o eliminar del conjunto de datos. Las filas que se encuentren dentro del rango especificado se mantendrán (o se eliminarán, dependiendo de cómo configures el operador), y todas las demás filas serán descartadas del conjunto de datos resultante.</p>
+        <p>Lo utilizaremos para poder dividir el dataset en dos y utilizar un dataset de entrenamiento y otro de predicción</p>
+        <p>Primero dividimos los elementos ente la fila número 1 y la fila número 450</p>
+        <img src="../assets/img11.png" alt="Investigación 2" class="detail-image">
+        
+        <h3>Validation</h3>
+        <p>En RapidMiner, el operador Validation (validación) es utilizado para evaluar el rendimiento de un modelo de aprendizaje automático en un conjunto de datos distinto al de entrenamiento. A diferencia del Cross Validation (validación cruzada), el operador Validation divide el conjunto de datos en solo dos partes: una para entrenamiento y otra para prueba, y realiza una única evaluación.</p>
+        <img src="../assets/img12.png" alt="Investigación 2" class="detail-image">
+        
+        <p>Dentro del operador "Validation" podemos gestionar el "split" de nuestro entrenamiento de datos.</p>
+        
+        
+        <h2>Referencias</h2>
+        <p>https://altair.com/altair-rapidminer-es</p>
+        <p>https://www.kaggle.com/datasets/arunjangir245/boston-housing-dataset?resource=download</p>
+        <p>https://docs.rapidminer.com/latest/studio/operators/</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco Barlocco - Portafolio</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../assets/IA1.jpeg" alt="Your Photo" class="navbar-photo">
+            <span class="navbar-name">Franco Barlocco</span>
+        </div>
+        <div class="navbar-right">
+            <a href="#about">Sobre mí</a>
+            <a href="#projects">Investigaciones</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="spinner-container">
+            <div class="spinner">
+                <div class="spinner1"></div>
+            </div>
+            <div class="image-container">
+                <img src="../assets/IA1.jpeg" alt="Your Photo" class="spinner-image">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Portafolio grupal</h1>
+            <p>Portafolio</p>
+        </div>
+    </div>
+
+    <section id="about" class="section about">
+        <div class="card">
+            <h2>Sobre nosotros</h2>
+            <p>Somos alto team.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <h2 class = "inv">Investigaciones</h2>
+        <div id="project-grid" class="project-grid">
+            <!-- Card 1 -->
+            <div class="project-card" onclick="location.href='../Investigacion 1/investigacion1.html'">
+                <img src="../assets/Regresion lineal simple.png" alt="Investigación 1">
+                <h3>Regresión lineal</h3>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="project-card" onclick="location.href='../Investigacion 2/investigacion2.html'">
+                <img src="../assets/ml-portada.png" alt="Investigación 2">
+                <h3>Tratamiento previo de los datos y fundamentos de los algoritmos ML</h3>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="project-card" onclick="location.href='../Investigacion 3/investigacion3.html'">
+                <img src="../assets/m1.png" alt="Investigación 3">
+                <h3>Caso de estudio Boston housing</h3>
+            </div>
+            
+        </div>
+    </section>
+    <section id="projects" class="section projects">
+        <h2 class = "inv">Github</h2>
+        <div id="project-grid" class="project-grid">
+            <!-- Card 3 -->
+            <div class="project-card" onclick="window.open('https://www.github.com/FrancoBarlocco/Inteligencia-Artificial-1', '_blank')">
+                <img src="../assets/git.jpeg" alt="Investigación 3">
+                <h3>Github con tareas de aplicación PD´S/TA´S</h3>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="./home.js"></script>
+</body>
+</html>

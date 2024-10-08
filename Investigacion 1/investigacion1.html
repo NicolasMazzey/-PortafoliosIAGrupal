@@ -1,0 +1,82 @@
+<!-- project-details.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación 1 - Franco Barlocco</title>
+    <link rel="stylesheet" href="./investigacion1.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../assets/franco.jpeg" alt="Foto de Franco" class="navbar-photo">
+            <span class="navbar-name">Franco Barlocco</span>
+        </div>
+        <div class="navbar-right">
+            <a href="../Home/home.html">Inicio</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="detail-container">
+        <h1 id="regresion-lineal">Regresión Lineal</h1>
+        <h2>¿Qué es la regresión lineal?</h2>
+        <p class="detail-description">La regresión lineal es un método de análisis de datos que permite predecir el valor de una variable desconocida utilizando otra variable relacionada y conocida. Este enfoque modela matemáticamente la relación entre la variable dependiente (desconocida) y la variable independiente (conocida) como una ecuación lineal.<br> Por ejemplo, si dispones de datos sobre tus ingresos y gastos del año pasado, la regresión lineal puede analizar esa relación y concluir que tus gastos representan la mitad de tus ingresos. Así, podrías predecir un gasto futuro estimado dividiendo por dos un ingreso futuro conocido.</p>
+        <h2>¿Qué es la regresión lineal en el machine learning?</h2>
+        <p class="detail-description">En el ámbito del machine learning, los algoritmos procesan grandes volúmenes de datos con el objetivo de encontrar una ecuación de regresión lineal que permita predecir valores futuros. <br>Primero, los científicos de datos entrenan estos algoritmos con conjuntos de datos ya conocidos (etiquetados), y luego, el algoritmo se utiliza para hacer predicciones sobre datos no conocidos.<br> Dado que los datos del mundo real suelen ser más complejos, el proceso de regresión lineal a menudo requiere ajustar y transformar los datos para cumplir con ciertos supuestos.</p>
+        <h3>Relación lineal</h3>
+        <p class="detail-description">Es crucial que exista una relación lineal entre las variables dependientes e independientes. Para evaluar esto, los científicos trazan una gráfica de dispersión, donde pueden observar si los puntos siguen un patrón de línea recta. Si no lo hacen, se pueden aplicar transformaciones matemáticas, como el uso de logaritmos o raíces cuadradas, para crear una relación lineal entre las variables.</p>
+        <h3>Independencia residual</h3>
+        <p class="detail-description">El residuo es la diferencia entre el valor observado y el valor predicho por el modelo. Para que el modelo sea eficaz, estos residuos no deben seguir un patrón específico. Herramientas como la prueba de Durbin-Watson ayudan a verificar si los residuos son independientes, y en algunos casos, se pueden introducir variables ficticias para ajustar los datos.</p>
+        <h3>Normalidad</h3>
+        <p class="detail-description">La normalidad de los residuos también es esencial. Gráficas como las Q-Q plot se utilizan para visualizar si los residuos siguen una distribución normal. Si no lo hacen, es posible que existan valores atípicos en los datos que deban eliminarse o realizar transformaciones adicionales para ajustar la distribución.</p>
+        <h3>Outlier</h3>
+        <p class="detail-description">Un valor atípico, conocido también como outlier, es un dato que se aleja significativamente del resto del conjunto, lo que indica que podría representar una anomalía o un comportamiento inesperado en los datos.<br> <br>Estos valores pueden surgir por diversas razones, como errores en la medición, variabilidad en el proceso o por ser datos que revelan eventos excepcionales. Detectar y manejar los valores atípicos es crucial en el análisis de datos, ya que pueden distorsionar las conclusiones y afectar la precisión de los modelos estadísticos o de machine learning.<br> <br>Además, en algunos casos, los outliers pueden contener información valiosa y no deben ser ignorados de manera automática.</p>
+        <h2>Tipos de regresión lineal</h2>
+        <h3>Regresión lineal simple</h3>
+        <p class="detail-description">La regresión lineal simple se define mediante una ecuación de la forma:</p>
+        <p class="detail-description">Y=β0 + β1 * X + ε</p>
+        <p>Donde:</p>
+        <ul class="detail-description">
+            <li>"β0" es la intersección o término constante.</li>
+            <li>"β1" es la pendiente que indica el cambio en la variable dependiente "Y". Por cada unidad de cambio en la variable independiente "X".</li>
+            <li>"ε" es el término de error que representa las desviaciones no explicadas por el modelo.</li>
+        </ul>
+        <h3>Ejemplo</h3>
+        <img src="../assets/Regresion lineal simple.png" alt="Investigación 1" class="detail-image">
+        <br>
+        <h3>Regresión lineal múltiple</h3>
+        <p>En el análisis de regresión lineal múltiple, los datos incluyen una variable dependiente y varias variables independientes, lo que permite modelar relaciones más complejas. La ecuación de regresión se extiende para reflejar la influencia de todas las variables predictoras:</p>
+        <p>Y=β0 + β1x1 + β2x2 +...+ βNxN + ε</p>
+        <p>Donde  β0, β1, . . . , βNβ0, β1,..., βN son coeficientes que representan el impacto de cada variable independiente, y ε es el término de error.</p>
+        <p>Conforme se añaden más variables predictivas, los coeficientes β aumentan, permitiendo que el modelo abarque múltiples factores en su análisis, como por ejemplo:</p>
+        <ul class="detail-description">
+            <li>La influencia combinada de la lluvia, la temperatura y los fertilizantes en el rendimiento de los cultivos.</li>
+            <li>El impacto de la dieta y el ejercicio sobre las enfermedades cardíacas.</li>
+            <li>Cómo el crecimiento salarial y la inflación afectan las tasas de interés en préstamos hipotecarios.</li>
+        </ul>
+        <img src="../assets/Regresion lineal multiple.png" alt="Investigación 1" class="detail-image">
+        <br>
+        <h3>Regresión Logística</h3>
+        <p>La regresión logística es una técnica utilizada por los científicos de datos para estimar la probabilidad de que ocurra un evento determinado. <br><br> En este método, la predicción es un valor entre 0 y 1, donde 0 indica que es muy improbable que ocurra el evento, mientras que 1 refleja una alta probabilidad de que suceda. <br><br> A diferencia de la regresión lineal, la regresión logística utiliza funciones logarítmicas para ajustar la relación entre las variables y generar la línea de regresión.</p>
+        <p>Algunos ejemplos de uso de regresión logística</p>
+        <ul class="detail-description">
+            <li>Determinar la probabilidad de ganar o perder un partido.</li>
+            <li>Predecir la probabilidad de aprobar o reprobar un examen.</li>
+            <li>Clasificar imágenes para determinar si representan una fruta o un animal.</li>
+        </ul>
+        <h3>Ejemplo</h3>
+        <img src="../assets/regresion logistica.png" alt="Investigación 1" class="detail-image">
+
+
+        
+        <h2>Referencias</h2>
+        <p>Amazon Web Services. (n.d.). What is linear regression?. AWS. https://aws.amazon.com/es/what-is/linear-regression/</p>
+        <p>EBAC. (n.d.). Regresión lineal. EBAC. https://ebac.mx/blog/regreson-lineal</p>
+        <p>The Information Lab. (n.d.). Cómo identificar y filtrar outliers (valores atípicos) en Tableau. https://www.theinformationlab.es/blog/como-identificar-y-filtrar-outliers-valores-atipicos-en-tableau</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* project-details.css */
+
+/* Estilo general para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+}
+
+.navbar-right a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor de detalles de investigación */
+.detail-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 60px auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para resaltar el contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo del título de la investigación */
+.detail-container h1 {
+    font-size: 2.5rem; /* Tamaño grande para el título */
+    color: #000000; /* Color oscuro para contraste */
+    text-align: center; /* Centrado del título */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Imagen de la investigación */
+.detail-image {
+    display: block;
+    max-width: 100%; /* Imagen adaptable al ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 20px auto; /* Espacio alrededor de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Descripción de la investigación */
+.detail-description,p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea para mejor lectura */
+    color: #000000; /* Color de texto gris oscuro */
+    text-align: justify; /* Justificado para una presentación más formal */
+}

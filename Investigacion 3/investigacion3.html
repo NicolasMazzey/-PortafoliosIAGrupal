@@ -11,8 +11,8 @@
 <body>
     <nav class="navbar">
         <div class="navbar-left">
-            <img src="../assets/franco.jpeg" alt="Foto de Franco" class="navbar-photo">
-            <span class="navbar-name">Franco Barlocco</span>
+            <img src="../assets/IA1.jpeg" alt="Foto de Franco" class="navbar-photo">
+            <span class="navbar-name">Portafolio grupal</span>
         </div>
         <div class="navbar-right">
             <a href="../index.html">Inicio</a>
@@ -37,7 +37,19 @@
             hasta la creación, validación y despliegue de modelos predictivos. Está diseñada para ser intuitiva y fácil
             de usar, incluso para personas con poca experiencia en programación, gracias a su interfaz gráfica basada en
             "drag-and-drop" que permite crear flujos de trabajo de análisis.</p>
-        <h2>Atributos del dataset</h2>
+
+        <h2>Dataset</h2>
+
+        <h3>Propósito</h3>
+        <p>El proposito de utilizar este dataset es lograr predecir la media de los valores de las casas en diferentes zonas de Boston.</p>
+
+        <h3>Cantidad de datos</h3>
+        <ul class="detail-description">
+            <li><strong>Registros:</strong> 506</li>
+            <li><strong>Atributos:</strong> 13 características + 1 variable objetivo</li>
+        </ul>
+
+        <h3>Atributos del dataset</h3>
         <ul class="detail-description">
             <li><strong>CRIM:</strong> Tasa de criminalidad per cápita.</li>
             <li><strong>ZN:</strong> Proporción de terreno residencial zonificado para lotes grandes.</li>
@@ -56,10 +68,72 @@
             <li><strong>MEDV:</strong> Valor medio de las viviendas (en miles de dólares), que es la variable objetivo.
             </li>
         </ul>
+
+        <h3>Predictor "B"</h3>
+        <p>Es muy interesante  uno de los atributos del dataset, el predictor "B" el cual determina la proporción de personas de raza negra en la población</p>
+        <p>No es éticamente agregar este atributo a este dataset. Además no debería ser adecuado ni relevante para el modelo.</p>
+
+        <p>Por otra parte, incluir "B" en el modelo sugiere que la raza de los habitantes tiene una relación directa con el valor de las viviendas, lo que podría ser interpretado como una justificación de las desigualdades sociales.</p>
+        <p>En los años 70, cuando se recopiló este dataset, era común asociar la composición racial con el valor de las viviendas. Hoy en día, estas prácticas son ampliamente consideradas no éticas en estudios y aplicaciones de Machine Learning.</p>
+        
+        <h3>Tipos de datos en RapidMiner</h3>
         <p>Verificamos que los tipos de datos de las columnas estén correctamente definidos (por ejemplo, valores
             numéricos como real y categóricos como nominal)</p>
         <img src="../assets/img 1.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img2.png" alt="Investigación 2" class="detail-image">
+
+        <h3>Limitaciónes o aspectos a tener en cuenta del dataset</h3>
+        <p>Hay que tener en cuenta que los datos de este dataset provienen del año 1970 aproximadamente, por esto mismo, los valores de las casas están por debajo de los precios actuales.</p>
+        <p>Algunas de las columnas o variables del dataset, han cambiado en la actualidad, por ejemplo el "TAX" o "CRIM" pueden haber cambiado a lo largo de los años.</p>
+        <p>Por otra parte, no se tiene en cuenta alguno de los servicios importantes de la actualidad, como por ejemplo, empresas grandes que ofrezcan sus productos o servicios cerca de los establecimientos.</p>
+
+        <h3>Modelo de machine learning</h3>
+        <p>El modelo de regresión lineal simple es uno de los modelos mas sencillos para estos casos, ya que solo tenemos una variable objetivo <strong>MEDV</strong> la cual es continua.</p>
+        <p>Permite interpretar cómo cada predictor afecta al precio de las casas</p>
+        <p>Por ejemplo, si el coeficiente de RM es 4, significa que agregar una habitación aumenta el valor de la casa en $4,000, en promedio.</p>
+        <p>Es sencillo y rápido de implementar, incluso para datasets grandes como Boston Housing.</p>
+        
+        <h2>¿Porqué no utilizar otros modelos?</h2>
+        <h3>Naive Bayes</h3>
+        
+        <p>Naive Bayes es un modelo probabilístico basado en el Teorema de Bayes que se utiliza principalmente para problemas de clasificación y con datos categoricos o discretos.</p>
+
+
+        <h3>¿Porqué no es ideal para este datset?</h3>
+
+        <p>En este caso, la variable objetivo es continua y Naive Bayes no está diseñado para regresión de manera directa.</p>
+        <p>Para que este problema sea "ideal" para Naive Bayes, la variable objetivo debería ser categórica, por ejemplo, dividir las opciones en "Cara", "Media" y "Barata".</p>
+
+        <p>Por otra parte, Naive Bayes utiliza distribuciones específicas para cada variable (por ejemplo, Gaussianas para datos continuos). Si las distribuciones de los datos no se ajustan bien a estas suposiciones, el modelo puede fallar.</p>
+        
+        <h2>Visualización de relaciones</h2>
+
+        <p>Se pueden visualizar las relaciones de las variables independientes y la variable objetivo, por ejemplo:</p>
+
+        <h3>CRIM/MEDV</h3>
+        <img src="../assets/img19.png" alt="Investigación 2" class="detail-image">
+        <p>En este caso se puede visualizar una tendencia negativa entre la media y el índice de criminalidad en la zona, si bien los valores se encuentran dispersos, mientras más criminalidad hay, menor es el valor de la casa.</p>
+        
+        <h3>RM/MEDV</h3>
+        <img src="../assets/img20.png" alt="Investigación 2" class="detail-image">
+        <p>En este caso se puede ver que la relación positiva entre el promedio de habitaciones por vivienda y la media. Esto significa, que en promedio, si la casa tiene más habitaciones, tiende a ser más cara. </p>
+
+        <h3>LSTAT/MEDV</h3>
+        <img src="../assets/img21.png" alt="Investigación 2" class="detail-image">
+        <p>En este caso podemos ver como hay una relación negativa entre el porcentaje de la población de bajo estatus socioeconómico y el precio de las casas</p>
+        <p>Mientras más alto es el porcentaje de la población de bajo estatus, más bajo es el valor de la casa</p>
+
+        <h2>Correlación entre los atributos</h2>
+        <p>Utilizando el operador "Correlation Matrix" podemos visualizar la correlación entre los atributos.</p>
+        <p>Con este operador podemos visualizar la matrix de correlacón, la cual nos muestra las diferentes relaciones entre los atributos.</p>
+        <img src="../assets/img22.png" alt="Investigación 2" class="detail-image">
+
+        <p>También podemos ver los pesos de cada atributo con la salida del operador "Attributes Weights"</p>
+        <img src="../assets/img23.png" alt="Investigación 2" class="detail-image">
+        <p>Como podes ver, cada atributo tiene diferente peso en nuestra matrix, por ejemplo, "CHAS" es el atributo que tiene una correlación positiva fuerte (ambas variables aumentan juntas, CHAS y MEDV). Por otro lado, "INDUS" es el que tiene peso 0, lo cual siginifca que tienen una relación debil o inexistente entre "INDUS" y "MEDV"</p>
+        <p>En este caso, no tenemos peso negativo, lo cual significa que las variables tienen una correlación negativa fuerte (una variable aumenta mientras la otra disminuye)</p>
+
+
         <h2>Limpieza de datos</h2>
         <p>Debemos hacer una buena limpieza de datos para evitar outliers, valores faltantes o errores.</p>
         <p>Para esto, vamos a utilizar varios operadores en rapidminer.</p>
@@ -104,7 +178,23 @@
         </ul>
         <img src="../assets/img3.png" alt="Investigación 2" class="detail-image">
         <p>El operador nos limpiará los datos faltantes y los rellena con la media de cada columna.</p>
+        <p>En el dataset original, podemos ver que tenemos 5 datos faltantes en la columna "RM"</p>
+        <img src="../assets/img16.png" alt="Investigación 2" class="detail-image">
+        <p>Luego de utilizar el operador de "Replace Missing Values", ya no tendremos valores faltantes en la columna "RM", remplazando los valores con la media adecuada.</p>
+        <img src="../assets/img17.png" alt="Investigación 2" class="detail-image">
+        <h3>¿Porqué remplazar los valores faltantes con la media?</h3>
+        <p>Reemplazar los valores faltantes por la media supone que los datos están distribuidos de forma normal (gaussiana). Por ende, sería una buena representación de los datos utilizar la media como valor central. </p>
+
+        <p>Por otro lado, si los valores de la columna "RM" representan una distribución asimétrica (por ejemplo, cesgo a la izquierda o derecha) la media no sería el valor mas adecuado, en ese caso se debería de utilizar la mediana. </p>
+
+        <h3>Análisis de distribución</h3>
+        <p>En este caso podemos ver la distribución de la columna "RM":</p>
+        <img src="../assets/img18.png" alt="Investigación 2" class="detail-image">
+        <h3>¿Qué debemos buscar en la distribución?</h3>
+        <p>Debemos buscar si el histograma tiene una curva simetrica o asimetrica, para tomar la decisión correspondiente.</p>
+        <p>En este caso, podemos ver que la curva es simétrica. Por ende, la mejor manera de remplazar los valores faltantes para este caso es utilizar la media.</p>
         <br>
+    
         <h3>Detect Outliers</h3>
         <p>El operador <strong>Detect Outliers</strong> en RapidMiner es una herramienta utilizada para identificar y tratar datos atípicos o outliers en un conjunto de datos. Los outliers son valores que se desvían significativamente de otras observaciones en el dataset y pueden ser el resultado de variaciones naturales en los datos, errores de medición, o problemas en el proceso de recolección de datos.</p>
         <h3>Métodos Comunes para Detectar Outliers:</h3>
@@ -129,13 +219,16 @@
         <img src="../assets/img6.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img7.png" alt="Investigación 2" class="detail-image">
         <br>
+        
         <h2>Análisis con modelo de Machine Learning: Regresión Lineal</h2>
         <p>La regresión lineal es una técnica estadística y de aprendizaje automático utilizada para modelar la relación entre una variable dependiente (también conocida como variable objetivo) y una o más variables independientes (predictoras). En su forma más simple, la regresión lineal busca ajustar una línea recta (en el caso de una regresión lineal simple) a un conjunto de puntos en un gráfico.</p>
         <p>Para más información sobre la <a href="../Investigacion 1/investigacion1.html">regresión lineal</a>, hay una investigación realizada con este tema.</p>
+
         <h3>Set role</h3>
         <p>El operador Set Role en RapidMiner permite modificar el papel (o "rol") de las columnas (atributos) dentro de un conjunto de datos. Los roles de los atributos definen cómo serán utilizados en el análisis o en la construcción de un modelo. Este operador es esencial cuando quieres asignar funciones específicas a tus atributos, como definir cuál es la variable objetivo o eliminar ciertos atributos del análisis. Nosotros lo utilizaremos para definir la variable objetivo</p>
         <img src="../assets/img8.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img9.png" alt="Investigación 2" class="detail-image">
+        
         <h3>Shuffle</h3>
         <p>El operador Shuffle en RapidMiner se utiliza para mezclar aleatoriamente las filas de un conjunto de datos. Este operador es importante cuando se quiere eliminar cualquier tipo de sesgo o patrón que pueda existir en el orden de los datos y asegurar que los ejemplos estén distribuidos de manera aleatoria. Este proceso de "shuffle" es común en la preparación de datos, especialmente antes de dividir los datos en subconjuntos de entrenamiento y prueba, o al aplicar técnicas de validación cruzada (Cross Validation).</p>
         <img src="../assets/img10.png" alt="Investigación 2" class="detail-image">
@@ -158,7 +251,16 @@
         <h2>Resultados</h2>
         <img src="../assets/img14.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img15.png" alt="Investigación 2" class="detail-image">
-        
+        <img src="../assets/img24.png" alt="Investigación 2" class="detail-image">
+
+
+        <h2>Conclusiones</h2>
+        <p>El modelo tiene un RMSE de 5.121, lo que representa un error promedio de aproximadamente el 10% del rango total de precios en MEDV. Esto indica que el modelo tiene un desempeño razonable, aunque no es perfecto.</p>
+        <p>Si bien el modelo predice lov valores promedios de cada casa, quizas hay que hacer algunos ajustes en el modelo o en los datos para mejorar el ídice de error cuadrático.</p>
+
+        <h3>Importancia de las variables</h3>
+        <p>Variables como RM (número de habitaciones) y LSTAT (nivel socioeconómico bajo) tienen un impacto significativo en MEDV.</p>
+        <p>Variables con coeficientes pequeños (como INDUS y AGE) podrían no ser tan relevantes y podrían eliminarse para simplificar el modelo.</p>
 
         
         <h2>Referencias</h2>

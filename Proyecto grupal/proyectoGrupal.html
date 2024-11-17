@@ -21,41 +21,96 @@
     </nav>
     <div class="detail-container">
         <h1>PROYECTO GRUPAL</h1>
-        <img src="../assets/ML.jpg" alt="Investigación 2" class="detail-image">
-        <h2>¿Qué es el 'machine learning' y para qué sirve?</h2>
-        <p>El Machine Learning es una rama de la Inteligencia Artificial que permite a las computadoras aprender de los datos mediante el uso de algoritmos. <br><br> En lugar de seguir instrucciones programadas de manera rígida, los sistemas pueden identificar patrones en grandes conjuntos de datos y hacer predicciones o tomar decisiones basadas en esos patrones. Este enfoque permite automatizar tareas complejas y realizar análisis predictivos.</p>
-        <h2>Distintos algoritmos de ML</h2>
-        <h3>Aprendizaje supervisado:</h3>
-        <p>En este tipo de algoritmos, el modelo aprende a partir de datos etiquetados, es decir, ejemplos previos que incluyen la respuesta correcta. A través de este proceso, el sistema puede hacer predicciones o tomar decisiones basadas en patrones ya conocidos.<br><br> Un ejemplo típico es un filtro de correo electrónico que identifica si un mensaje es spam o no, utilizando información como el remitente o las palabras clave.</p>
-        <h3>Aprendizaje no supervisado</h3>
-        <p>A diferencia del supervisado, estos algoritmos trabajan sin etiquetas o respuestas previas. El sistema analiza los datos buscando patrones ocultos que puedan agrupar o categorizar la información. <br><br> En marketing, este enfoque se emplea para analizar grandes volúmenes de datos, como interacciones en redes sociales, con el fin de segmentar audiencias de manera más precisa.</p>
-        <h2>¿Qué es el preprocesamiento de datos? </h2>
-        <p>El preprocesamiento de datos se refiere al proceso de convertir datos en bruto en un formato más útil y comprensible para el análisis y la creación de modelos. Este paso es crucial, ya que contribuye significativamente a la calidad y eficiencia de los modelos de Machine Learning (ML) al solucionar problemas como la ausencia de datos, el ruido, las inconsistencias y los valores atípicos.</p>
-        <p>Este proceso incluye varias técnicas, como la imputación de valores faltantes, la normalización de datos y la detección y eliminación de outliers. Al realizar estas transformaciones, se busca preparar un conjunto de datos que sea más representativo y que facilite el aprendizaje del modelo, mejorando así su rendimiento y precisión.</p>
-        <h2>Ventajas del preprocesamiento de datos para el aprendizaje automático</h2>
-        <h3>Limpieza de datos</h3>
-        <p>La limpieza de datos es un paso crucial en el proceso de preprocesamiento de datos en machine learning. Consiste en detectar y corregir errores o inconsistencias en el conjunto de datos para asegurar que estos sean precisos y apropiados para el análisis o el entrenamiento de modelos.</p>
-        <h3>Gestión de los valores faltantes</h3>
-        <p>Los datos incompletos son un desafío común en los conjuntos de datos del mundo real y pueden perjudicar el desempeño de los modelos de machine learning. Para identificar y tratar los valores que faltan, se puede realizar lo siguiente:</p>
+        <img src="../assets/image dataset grupal.jpg" alt="Investigación 2" class="detail-image">
+        
+        <h2>Introducción al dataset "2019 Airline Delays and Cancellations"</h2>
+        <h3>¿Porqué elegimos este dataset?</h3>
+        <p>Elegimos este dataset ya que nos pareció interesante la cantidad de atributos y datos que tenía el dataset, nos generó curiosidad saber como limpiar y podar el los datos para lograr predecir si un vuelo tiene retraso o se puede cancelar.</p>
+
+        <p>Los retrasos y cancelaciones de vuelos afectan diariamente a millones de pasajeros, aerolíneas y aeropuertos. Este dataset permite analizar estos problemas y buscar soluciones basadas en datos.</p>
+        
+        <p>Es útil para identificar patrones de retrasos y entender los factores que influyen en ellos (por ejemplo, congestión, condiciones climáticas, años de los aviones, etc.)</p>
+
+        <p>Nos permite identificar aeropuertos con mayor frecuencia de retrasos y predecir si un vuelo tendrá un retraso significativo (más de 15 minutos) basado en factores históricos y operativos</p>
+
+        <p>Este dataset contiene más de 30 columnas y 1.900.000 filas de atributos, de los cuales contienen:</p>
+
         <ul class="detail-description">
-            <li>Usar estadísticas descriptivas o gráficos para localizar las columnas o características con datos faltantes. Los valores ausentes suelen representarse como NaN o Nulos.</li>
-            <li>Evaluar el impacto de los valores faltantes en el análisis o modelo, considerando el porcentaje de valores ausentes en cada columna y su importancia dentro del conjunto de datos.</li>
-            <li>También existen técnicas más avanzadas de imputación, como la imputación por regresión, por vecinos más cercanos (k-NN) o empleando modelos de machine learning que predicen los valores ausentes a partir de otras características.</li>
+            <li><strong>Características de los vuelos:</strong> Horarios, distancias, aerolíneas.</li>
+            <li><strong>Factores operativos:</strong> Congestión en aeropuertos, capacidad de asientos.</li>
+            <li><strong>Condiciones climáticas:</strong> Precipitación, viento, nieve, etc.</li>
+            <li><strong>Datos históricos:</strong> Desempeño de aerolíneas y aeropuertos en situaciones similares.</li>
         </ul>
-        <h3>Gestión de los valores atípicos</h3>
-        <p>Los valores atípicos son datos que se desvían considerablemente de otras observaciones y pueden distorsionar los análisis o modelos de machine learning.</p>
+
+        <p>El análisis de este dataset puede ayudar a mejorar la experiencia del pasajero, optimizar la logística de las aerolíneas y reducir costos relacionados con retrasos y cancelaciones.</p>
+
+
+        <h2>Atributos</h2>
+        
         <ul class="detail-description">
-            <li>Para detectarlos, se pueden utilizar gráficos como boxplots, histogramas o diagramas de dispersión, que te permiten visualizar posibles valores atípicos.</li>
-            <li>Calcular medidas como la media, la desviación estándar y el rango intercuartil (IQR).</li>
-            <li>Si los valores atípicos se deben a errores o datos incorrectos, es recomendable eliminarlos usando filtros estadísticos.</li>
-            <li>Aplicar transformaciones como logaritmos, raíces cuadradas o la transformación Box-Cox puede hacer que los datos sean más simétricos y reduzcan el efecto de los valores atípicos.</li>
+            <li><strong>MONTH:</strong> Mes del vuelo (1-12). Captura cómo los retrasos varían según el mes del año (por ejemplo, meses de vacaciones como diciembre pueden ser importantes para analizar).</li>
+            <li><strong>DAY_OF_WEEK:</strong> Día de la semana (1 = Lunes, 7 = Domingo). Captura cómo los retrasos varían según el día de la semana.</li>
+            <li><strong>DEP_DEL15:</strong> Indicador de retraso en la salida mayor o igual a 15 minutos (1 = Sí, 0 = No). <strong>Variable objetivo</strong>, utilizada para predecir si un vuelo tendrá un retraso significativo.</li>
+            <li><strong>DEP_TIME_BLK:</strong> Intervalo de tiempo programado para la salida (ejemplo: "0600-0659"). Permite analizar cómo los retrasos varían según la hora del día.</li>
+            <li><strong>DISTANCE_GROUP:</strong> Grupo de distancia del vuelo (en intervalos, por ejemplo, vuelos cortos o largos). Captura cómo la distancia afecta los retrasos.</li>
+            <li><strong>SEGMENT_NUMBER:</strong> Número de segmento del vuelo en itinerarios con múltiples trayectos. Útil para analizar vuelos conectados.</li>
+            
+            <li><strong>Factores relacionados con las operaciones de vuelo</strong></li>
+            <ul>
+              <li><strong>CONCURRENT_FLIGHTS:</strong> Número de vuelos concurrentes desde el mismo aeropuerto en el mismo intervalo de tiempo. Puede indicar congestión en el aeropuerto.</li>
+              <li><strong>NUMBER_OF_SEATS:</strong> Número de asientos en el avión. Relacionado con el tamaño del avión y la logística para abordaje y desembarque.</li>
+              <li><strong>CARRIER_NAME:</strong> Nombre de la aerolínea que opera el vuelo. Permite analizar el desempeño de diferentes aerolíneas.</li>
+              <li><strong>DEPARTING_AIRPORT:</strong> Código del aeropuerto de salida. Identifica el aeropuerto de origen del vuelo.</li>
+            </ul>
+            
+            <li><strong>Estadísticas mensuales</strong></li>
+            <ul>
+              <li><strong>AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos desde el aeropuerto en el mes. Indica la actividad mensual del aeropuerto.</li>
+              <li><strong>AIRLINE_FLIGHTS_MONTH:</strong> Número de vuelos operados por la aerolínea en el mes. Relacionado con la capacidad operativa de la aerolínea.</li>
+              <li><strong>AIRLINE_AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos de la aerolínea desde el aeropuerto en el mes. Combinación de la aerolínea y el aeropuerto de origen.</li>
+              <li><strong>AVG_MONTHLY_PASS_AIRPORT:</strong> Promedio mensual de pasajeros en el aeropuerto. Indica la actividad general del aeropuerto.</li>
+              <li><strong>AVG_MONTHLY_PASS_AIRLINE:</strong> Promedio mensual de pasajeros transportados por la aerolínea. Indica el desempeño general de la aerolínea.</li>
+            </ul>
+            
+            <li><strong>Recursos humanos y aeronaves</strong></li>
+            <ul>
+              <li><strong>FLT_ATTENDANTS_PER_PASS:</strong> Proporción de asistentes de vuelo por pasajero. Relacionado con la experiencia de los pasajeros y el servicio a bordo.</li>
+              <li><strong>GROUND_SERV_PER_PASS:</strong> Proporción de personal de servicio en tierra por pasajero. Relacionado con la eficiencia del servicio en tierra (abordaje, equipaje, etc.).</li>
+              <li><strong>PLANE_AGE:</strong> Edad del avión. Un avión más viejo podría estar asociado con mayor probabilidad de retrasos técnicos.</li>
+            </ul>
+            
+            <li><strong>Ubicación geográfica</strong></li>
+            <ul>
+              <li><strong>LATITUDE y LONGITUDE:</strong> Coordenadas geográficas del aeropuerto de origen. Ayuda a identificar la ubicación geográfica y sus posibles implicaciones (por ejemplo, clima extremo).</li>
+              <li><strong>PREVIOUS_AIRPORT:</strong> Aeropuerto anterior antes del vuelo actual. Captura posibles impactos del itinerario anterior en el vuelo actual.</li>
+            </ul>
+            
+            <li><strong>Factores climáticos</strong></li>
+            <ul>
+              <li><strong>PRCP:</strong> Precipitación (en pulgadas). Clima lluvioso puede contribuir a retrasos.</li>
+              <li><strong>SNOW:</strong> Cantidad de nieve (en pulgadas). Indicador de condiciones invernales adversas.</li>
+              <li><strong>SNWD:</strong> Profundidad de nieve acumulada (en pulgadas). Similar a SNOW, pero puede representar acumulaciones previas.</li>
+              <li><strong>TMAX:</strong> Temperatura máxima registrada (en Fahrenheit). Puede indicar condiciones de calor extremo.</li>
+              <li><strong>AWND:</strong> Velocidad promedio del viento (en mph). Vientos fuertes pueden afectar los despegues y aterrizajes.</li>
+            </ul>
+            
+            <li><strong>Datos históricos y de bloques</strong></li>
+            <ul>
+              <li><strong>CARRIER_HISTORICAL:</strong> Información histórica sobre el desempeño de la aerolínea en vuelos anteriores. Indica la probabilidad histórica de retrasos para la aerolínea.</li>
+              <li><strong>DEP_AIRPORT_HIST:</strong> Desempeño histórico del aeropuerto de salida. Captura cuántos retrasos suelen ocurrir en el aeropuerto.</li>
+              <li><strong>DAY_HISTORICAL:</strong> Información histórica sobre retrasos para ese día del mes o día de la semana. Útil para capturar patrones estacionales.</li>
+              <li><strong>DEP_BLOCK_HIST:</strong> Desempeño histórico del bloque horario de salida. Ayuda a entender qué bloques horarios suelen ser más problemáticos.</li>
+            </ul>
         </ul>
-        <h3>Gestión de duplicados</h3>
-        <p>Los registros duplicados pueden sesgar los resultados inflando ciertos patrones o introduciendo sesgos en el modelo.</p>
-        <ul class="detail-description">
-            <li>Usar funciones o librerías para identificar filas duplicadas basándose en columnas específicas o en toda la fila.</li>
-            <li>Si los duplicados no aportan nueva información, se pueden eliminar con librerías o métodos similares.</li>
-        </ul>
+
+        <p>En base a estos atributos, podremos predecir y analizar la variable objetivo <strong>DEP_DEL15</strong></p>
+        
+        <h2>Limitaciones o aspectos a tener en cuenta del dataset</h2>
+
+        <p>El dataset está limitado a vuelos en Estados Unidos en 2019, lo que puede no ser representativo de patrones globales.</p>
+        <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers y valores que se consideran inecesarios o pocos importantes para el desarrollo de esta investigación.</p>
+        
+
 
         <h2>Referencias</h2>
         <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>

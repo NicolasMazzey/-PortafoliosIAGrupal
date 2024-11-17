@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación 2 - Franco Barlocco</title>
+    <link rel="stylesheet" href="./proyectoColores.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="../assets/IA1.jpeg" alt="Foto de Franco" class="navbar-photo">
+            <span class="navbar-name">Portafolio grupal</span>
+        </div>
+        <div class="navbar-right">
+            <a href="../index.html">Inicio</a>
+            <a href="#about">Sobre nosotros</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+    <div class="detail-container">
+        <h1>PROYECTO DE COLORES</h1>
+        <img src="../assets/ML.jpg" alt="Investigación 2" class="detail-image">
+        <h2>¿Qué es el 'machine learning' y para qué sirve?</h2>
+        <p>El Machine Learning es una rama de la Inteligencia Artificial que permite a las computadoras aprender de los datos mediante el uso de algoritmos. <br><br> En lugar de seguir instrucciones programadas de manera rígida, los sistemas pueden identificar patrones en grandes conjuntos de datos y hacer predicciones o tomar decisiones basadas en esos patrones. Este enfoque permite automatizar tareas complejas y realizar análisis predictivos.</p>
+        <h2>Distintos algoritmos de ML</h2>
+        <h3>Aprendizaje supervisado:</h3>
+        <p>En este tipo de algoritmos, el modelo aprende a partir de datos etiquetados, es decir, ejemplos previos que incluyen la respuesta correcta. A través de este proceso, el sistema puede hacer predicciones o tomar decisiones basadas en patrones ya conocidos.<br><br> Un ejemplo típico es un filtro de correo electrónico que identifica si un mensaje es spam o no, utilizando información como el remitente o las palabras clave.</p>
+        <h3>Aprendizaje no supervisado</h3>
+        <p>A diferencia del supervisado, estos algoritmos trabajan sin etiquetas o respuestas previas. El sistema analiza los datos buscando patrones ocultos que puedan agrupar o categorizar la información. <br><br> En marketing, este enfoque se emplea para analizar grandes volúmenes de datos, como interacciones en redes sociales, con el fin de segmentar audiencias de manera más precisa.</p>
+        <h2>¿Qué es el preprocesamiento de datos? </h2>
+        <p>El preprocesamiento de datos se refiere al proceso de convertir datos en bruto en un formato más útil y comprensible para el análisis y la creación de modelos. Este paso es crucial, ya que contribuye significativamente a la calidad y eficiencia de los modelos de Machine Learning (ML) al solucionar problemas como la ausencia de datos, el ruido, las inconsistencias y los valores atípicos.</p>
+        <p>Este proceso incluye varias técnicas, como la imputación de valores faltantes, la normalización de datos y la detección y eliminación de outliers. Al realizar estas transformaciones, se busca preparar un conjunto de datos que sea más representativo y que facilite el aprendizaje del modelo, mejorando así su rendimiento y precisión.</p>
+        <h2>Ventajas del preprocesamiento de datos para el aprendizaje automático</h2>
+        <h3>Limpieza de datos</h3>
+        <p>La limpieza de datos es un paso crucial en el proceso de preprocesamiento de datos en machine learning. Consiste en detectar y corregir errores o inconsistencias en el conjunto de datos para asegurar que estos sean precisos y apropiados para el análisis o el entrenamiento de modelos.</p>
+        <h3>Gestión de los valores faltantes</h3>
+        <p>Los datos incompletos son un desafío común en los conjuntos de datos del mundo real y pueden perjudicar el desempeño de los modelos de machine learning. Para identificar y tratar los valores que faltan, se puede realizar lo siguiente:</p>
+        <ul class="detail-description">
+            <li>Usar estadísticas descriptivas o gráficos para localizar las columnas o características con datos faltantes. Los valores ausentes suelen representarse como NaN o Nulos.</li>
+            <li>Evaluar el impacto de los valores faltantes en el análisis o modelo, considerando el porcentaje de valores ausentes en cada columna y su importancia dentro del conjunto de datos.</li>
+            <li>También existen técnicas más avanzadas de imputación, como la imputación por regresión, por vecinos más cercanos (k-NN) o empleando modelos de machine learning que predicen los valores ausentes a partir de otras características.</li>
+        </ul>
+        <h3>Gestión de los valores atípicos</h3>
+        <p>Los valores atípicos son datos que se desvían considerablemente de otras observaciones y pueden distorsionar los análisis o modelos de machine learning.</p>
+        <ul class="detail-description">
+            <li>Para detectarlos, se pueden utilizar gráficos como boxplots, histogramas o diagramas de dispersión, que te permiten visualizar posibles valores atípicos.</li>
+            <li>Calcular medidas como la media, la desviación estándar y el rango intercuartil (IQR).</li>
+            <li>Si los valores atípicos se deben a errores o datos incorrectos, es recomendable eliminarlos usando filtros estadísticos.</li>
+            <li>Aplicar transformaciones como logaritmos, raíces cuadradas o la transformación Box-Cox puede hacer que los datos sean más simétricos y reduzcan el efecto de los valores atípicos.</li>
+        </ul>
+        <h3>Gestión de duplicados</h3>
+        <p>Los registros duplicados pueden sesgar los resultados inflando ciertos patrones o introduciendo sesgos en el modelo.</p>
+        <ul class="detail-description">
+            <li>Usar funciones o librerías para identificar filas duplicadas basándose en columnas específicas o en toda la fila.</li>
+            <li>Si los duplicados no aportan nueva información, se pueden eliminar con librerías o métodos similares.</li>
+        </ul>
+
+        <h2>Referencias</h2>
+        <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>
+        <p>Captia. (n.d.). Machine learning: Qué es, cómo funciona y sus aplicaciones. Captia. Recuperado de https://www.captia.es/blog/machine-learning.html</p>
+        <p>Pure Storage. (n.d.). ¿Qué es el preprocesamiento de datos? Pure Storage. Recuperado de https://www.purestorage.com/es/knowledge/what-is-data-preprocessing.html</p>
+    </div>
+</body>
+</html>

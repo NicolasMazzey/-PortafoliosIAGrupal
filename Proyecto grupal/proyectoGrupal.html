@@ -110,6 +110,20 @@
         <p>El dataset está limitado a vuelos en Estados Unidos en 2019, lo que puede no ser representativo de patrones globales.</p>
         <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers y valores que se consideran inecesarios o pocos importantes para el desarrollo de esta investigación.</p>
         
+        <h2>Limpieza de datos</h2>
+
+        <p>Primero haremos una limpieza manual de algunas columnas de atributos, las cuales consideramos que no son tan significativas o importantes como otros atributos. Eliminaremos las siguientes columnas:</p>
+
+        <ul class="detail-description">
+            <li><strong>LATITUDE y LONGITUDE:</strong> Aunque interesantes, son redundantes con los códigos de aeropuerto (<em>DEPARTING_AIRPORT</em>) y no añaden información adicional significativa.</li>
+            <li><strong>PREVIOUS_AIRPORT:</strong> Puede ser relevante solo en vuelos conectados, pero es difícil usarlo consistentemente en todos los vuelos.</li>
+            <li><strong>SEGMENT_NUMBER:</strong> Solo útil en vuelos de múltiples segmentos, que pueden ser una minoría.</li>
+            <li><strong>AVG_MONTHLY_PASS_AIRPORT y AVG_MONTHLY_PASS_AIRLINE:</strong> Son indirectamente redundantes con <em>AIRPORT_FLIGHTS_MONTH</em> y <em>AIRLINE_FLIGHTS_MONTH</em>.</li>
+            <li><strong>GROUND_SERV_PER_PASS y FLT_ATTENDANTS_PER_PASS:</strong> Aunque pueden ser indicadores indirectos de servicio, probablemente no sean relevantes para retrasos.</li>
+            <li><strong>PLANE_AGE:</strong> Aunque puede haber un impacto, es menos relevante que factores como congestión o clima.</li>
+            <li><strong>DISTANCE_GROUP:</strong> Aunque puede ser útil en vuelos muy largos o cortos, su relación con retrasos no siempre es directa.</li>
+        </ul>
+          
 
 
         <h2>Referencias</h2>

@@ -123,8 +123,59 @@
             <li><strong>PLANE_AGE:</strong> Aunque puede haber un impacto, es menos relevante que factores como congestión o clima.</li>
             <li><strong>DISTANCE_GROUP:</strong> Aunque puede ser útil en vuelos muy largos o cortos, su relación con retrasos no siempre es directa.</li>
         </ul>
-          
+        
+        <p>También, debemos reducir la cantidad de filas del dataset, ya que en rapidminer podemos tener algunos problemas con la cantidad de filas, por ejemplo, al querer visualizar una gráfica, Rapidminer no genera gráficos con más de 1 millón de filas.</p>
+        <img src="../assets/img25.png" alt="Investigación 2" class="detail-image">
+        
+        <h3>Split data</h3>
 
+        <p>Para solucionar el problema mencionado anteriormente en Rapidminer, no es necesario eliminar filas, simplemente utilizamos un split para dividir el dataset.</p>
+        <p>Este operador funciona para dividir nuestro dataset en diferentes particiones. Para esto tenemos distintos parámetros para modificar el "Split data".</p>
+        <img src="../assets/img26.png" alt="Investigación 2" class="detail-image">
+        <p>En el parámetro "partitions" podemos definir las particiones que necesitamos, por ejemplo, si queremos dividir el dataset a la mitad, lo hacemos de la siguiente manera:</p>
+        <img src="../assets/img27.png" alt="Investigación 2" class="detail-image">
+        <p>Simplemente colocamos la proporción del dataset que queremos dividir. En caso de querer dividir el dataset en 70/30, debemos ingresar "0,7" (para la primer partición) y "0,3" (para la segunda partición).</p>
+
+        <p>Luego, tenemos el parámetro "Sampling type", el cual tiene diferentes opciones.</p>
+        <img src="../assets/img28.png" alt="Investigación 2" class="detail-image">
+        <h3>Linear sampling</h3>
+        <p>Esta primera opción realiza la división del dataset de forma secuencial, sin mezclar ni alterar el orden de las filas. Si configuramos la división del dataset como un 70/30, el primer 70% del dataset se dividirá y por otro lado el otro 30%. Esto sirve si necesitamos que los datos esten ordenados en base a como están ingresados en el dataset. Este método puede causar sesgos si el dataset está organizado de una manera no aleatoria.</p>
+        
+        <h3>Shuffled Sampling</h3>
+        <p>Es un método para mezclar las filas del dataset. Esto nos sirve por si queremos evitar sesgos en la distribución de las filas. Ejemplo, si configuramos una división de 70/30, se mezcla el 100% del dataset antes de que se haga la partición.</p>
+        
+        <h3>Stratified Sampling</h3>
+        <p>Divide los datos asegurando que las proporciones de las clases (en problemas de clasificación) se mantengan iguales en los subconjuntos. Si el 70% de las filas pertenece a la Clase A y el 30% a la Clase B, el muestreo garantizará que los conjuntos de entrenamiento y prueba mantengan estas proporciones.</p>
+        
+        <h3>Automatic</h3>
+        <p>RapidMiner selecciona automáticamente el método de muestreo más apropiado en función de los datos. Generalmente, utiliza Shuffled Sampling a menos que detecte la necesidad de preservar un orden. Se recomienda este método en caso de no estar seguro sobre que método utilizar.</p>
+
+        <table border="1">
+            <thead>
+              <tr>
+                <th>Caso</th>
+                <th>Sampling Type recomendado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Datos con orden cronológico</td>
+                <td>Linear Sampling</td>
+              </tr>
+              <tr>
+                <td>Datos balanceados o sin orden</td>
+                <td>Shuffled Sampling</td>
+              </tr>
+              <tr>
+                <td>Problemas de clasificación</td>
+                <td>Stratified Sampling</td>
+              </tr>
+              <tr>
+                <td>No estás seguro</td>
+                <td>Automatic</td>
+              </tr>
+            </tbody>
+          </table>
 
         <h2>Referencias</h2>
         <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>

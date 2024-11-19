@@ -24,8 +24,8 @@
         <img src="../assets/image dataset grupal.jpg" alt="Investigación 2" class="detail-image">
         
         <h2>Introducción al dataset "2019 Airline Delays and Cancellations"</h2>
-        <h3>¿Porqué elegimos este dataset?</h3>
-        <p>Elegimos este dataset ya que nos pareció interesante la cantidad de atributos y datos que tenía el dataset, nos generó curiosidad saber como limpiar y podar el los datos para lograr predecir si un vuelo tiene retraso o se puede cancelar.</p>
+        <h3>¿Por qué elegimos este dataset?</h3>
+        <p>Elegimos este dataset ya que nos pareció interesante la cantidad de atributos y datos que tenía el dataset, nos generó curiosidad saber cómo limpiar y podar los datos para lograr predecir si un vuelo tiene retraso o se puede cancelar.</p>
 
         <p>Los retrasos y cancelaciones de vuelos afectan diariamente a millones de pasajeros, aerolíneas y aeropuertos. Este dataset permite analizar estos problemas y buscar soluciones basadas en datos.</p>
         
@@ -108,7 +108,7 @@
         <h2>Limitaciones o aspectos a tener en cuenta del dataset</h2>
 
         <p>El dataset está limitado a vuelos en Estados Unidos en 2019, lo que puede no ser representativo de patrones globales.</p>
-        <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers y valores que se consideran inecesarios o pocos importantes para el desarrollo de esta investigación.</p>
+        <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers y valores que se consideran innecesarios o pocos importantes para el desarrollo de esta investigación.</p>
         
         <h2>Limpieza de datos</h2>
 
@@ -124,10 +124,38 @@
             <li><strong>DISTANCE_GROUP:</strong> Aunque puede ser útil en vuelos muy largos o cortos, su relación con retrasos no siempre es directa.</li>
         </ul>
         
+        <h2>Select Attributes</h2>
+        <p>Para seleccionar o filtrar estos atributos del dataset, vamos a utilizar el operador "select attributes" el cual nos permite seleccionar las columnas que necesitamos.</p>
+
+        <p>Tenemos distintos parámetros para este operador.</p>
+        <img src="../assets/img31.png" alt="Investigación 2" class="detail-image">
+
+        <h3>Type</h3>
+        <p>Este parámetro sirve para saber si los atributos que seleccionaremos serán incluidos o excluidos de nuestro dataset.</p>
+
+        <p>Tenemos dos opciones, "Include attributes" solo se mantendrán los atributos especificados. Todas las demás columnas serán filtradas. La segunda opción es "Exclude attributes" el cual elimina los atributos especificados y mantiene todas las demás columnas.</p>
+        
+        <p>En nuestro caso, utilizaremos "Exclude attributes", ya que nos permite filtrar las columnas que no necesitamos, utilizamos este método ya que las columnas a eliminar son pocas.</p>
+
+        <h3>Attribute Filter Type</h3>
+        <p>Básicamente define cómo se seleccionarán los atributos que serán incluidos o excluidos, dependiendo de lo configurado en Type</p>
+        <p>Por ejemplo, podemos seleccionar todos los atributos con el método "All", con el método "Single" podemos seleccionar un solo atributo, con el método "Subset" seleccionamos un conjunto de datos, entre otros.</p>
+        <p>En esta ocasión, utilizaremos "Subset" ya que nos permite seleccionar una lista de atributos (en este caso es una lista la cual queremos eliminar dichos atributos).</p>
+
+        <h3>Select subset</h3>
+        <p>En este parámetro, seleccionamos la lista que necesitamos eliminar o filtrar.</p>
+        <img src="../assets/img32.png" alt="Investigación 2" class="detail-image">
+
+        <h3>Also Apply to Special Attributes</h3>
+
+        <p>Este parámetro indica si los filtros también deben aplicarse a los atributos especiales, por ejemplo, ID, variable objetivo, etc.</p>
+        <p>En nuestro caso decidimos no seleccionar este parametro, ya que no debemos filtrar columnas de con atributos especiales.</p>
+
+
+
+        <h2>Split data</h2>
         <p>También, debemos reducir la cantidad de filas del dataset, ya que en rapidminer podemos tener algunos problemas con la cantidad de filas, por ejemplo, al querer visualizar una gráfica, Rapidminer no genera gráficos con más de 1 millón de filas.</p>
         <img src="../assets/img25.png" alt="Investigación 2" class="detail-image">
-        
-        <h3>Split data</h3>
 
         <p>Para solucionar el problema mencionado anteriormente en Rapidminer, no es necesario eliminar filas, simplemente utilizamos un split para dividir el dataset.</p>
         <p>Este operador funciona para dividir nuestro dataset en diferentes particiones. Para esto tenemos distintos parámetros para modificar el "Split data".</p>
@@ -139,13 +167,13 @@
         <p>Luego, tenemos el parámetro "Sampling type", el cual tiene diferentes opciones.</p>
         <img src="../assets/img28.png" alt="Investigación 2" class="detail-image">
         <h3>Linear sampling</h3>
-        <p>Esta primera opción realiza la división del dataset de forma secuencial, sin mezclar ni alterar el orden de las filas. Si configuramos la división del dataset como un 70/30, el primer 70% del dataset se dividirá y por otro lado el otro 30%. Esto sirve si necesitamos que los datos esten ordenados en base a como están ingresados en el dataset. Este método puede causar sesgos si el dataset está organizado de una manera no aleatoria.</p>
+        <p>Esta primera opción realiza la división del dataset de forma secuencial, sin mezclar ni alterar el orden de las filas. Si configuramos la división del dataset como un 70/30, el primer 70% del dataset se dividirá y por otro lado el otro 30%. Esto sirve si necesitamos que los datos estén ordenados en base a como están ingresados en el dataset. Este método puede causar sesgos si el dataset está organizado de una manera no aleatoria.</p>
         
         <h3>Shuffled Sampling</h3>
         <p>Es un método para mezclar las filas del dataset. Esto nos sirve por si queremos evitar sesgos en la distribución de las filas. Ejemplo, si configuramos una división de 70/30, se mezcla el 100% del dataset antes de que se haga la partición.</p>
         
         <h3>Stratified Sampling</h3>
-        <p>Divide los datos asegurando que las proporciones de las clases (en problemas de clasificación) se mantengan iguales en los subconjuntos. Si el 70% de las filas pertenece a la Clase A y el 30% a la Clase B, el muestreo garantizará que los conjuntos de entrenamiento y prueba mantengan estas proporciones.</p>
+        <p>Divide los datos asegurando que las proporciones de las clases (en problemas de clasificación) se mantengan iguales en los subconjuntos. Si el 70% de las filas pertenece a la Clase A y el 30% a la Clase B, el muestreo garantiza que los conjuntos de entrenamiento y prueba mantengan estas proporciones.</p>
         
         <h3>Automatic</h3>
         <p>RapidMiner selecciona automáticamente el método de muestreo más apropiado en función de los datos. Generalmente, utiliza Shuffled Sampling a menos que detecte la necesidad de preservar un orden. Se recomienda este método en caso de no estar seguro sobre que método utilizar.</p>
@@ -175,8 +203,16 @@
                 <td>Automatic</td>
               </tr>
             </tbody>
-          </table>
+        </table>
+        <h3>¿Qué utilizaremos para este caso?</h3>
+        <p>En este caso, nos encontramos con un problema de <strong>clasificación</strong>, ya que en base a los datos obtenidos por las aerolíneas, debemos generar un modelo que pueda predecir si el vuelo tendrá retraso o no. Por ende, debemos seleccionar el método "Stratified Sampling", ya que sirve para problemas de clasificación como este.</p>
 
+        <p>En el parámetro de "Partition" utilizaremos una división de  80/20 por el momento, ya que tenemos muchas filas en nuestro dataset, entonces utilizaremos el 20% del dataset para hacer las pruebas adecuadas. También nos sirve para dividir el dataset en datos de entrenamiento y datos de testing.</p>
+        <img src="../assets/img29.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img30.png" alt="Investigación 2" class="detail-image">
+        <p>Luego de esta partición, el dataset se divide en dos: el 80% (1,557,375 filas) y el 20% (389,344 filas).</p>
+        
+        
         <h2>Referencias</h2>
         <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>
         <p>Captia. (n.d.). Machine learning: Qué es, cómo funciona y sus aplicaciones. Captia. Recuperado de https://www.captia.es/blog/machine-learning.html</p>

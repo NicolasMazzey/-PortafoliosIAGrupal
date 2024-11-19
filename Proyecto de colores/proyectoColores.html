@@ -20,47 +20,80 @@
         </div>
     </nav>
     <div class="detail-container">
-        <h1>PROYECTO DE COLORES</h1>
+        <h1>Clasificador de colores</h1>
         <img src="../assets/ML.jpg" alt="Investigación 2" class="detail-image">
-        <h2>¿Qué es el 'machine learning' y para qué sirve?</h2>
-        <p>El Machine Learning es una rama de la Inteligencia Artificial que permite a las computadoras aprender de los datos mediante el uso de algoritmos. <br><br> En lugar de seguir instrucciones programadas de manera rígida, los sistemas pueden identificar patrones en grandes conjuntos de datos y hacer predicciones o tomar decisiones basadas en esos patrones. Este enfoque permite automatizar tareas complejas y realizar análisis predictivos.</p>
-        <h2>Distintos algoritmos de ML</h2>
-        <h3>Aprendizaje supervisado:</h3>
-        <p>En este tipo de algoritmos, el modelo aprende a partir de datos etiquetados, es decir, ejemplos previos que incluyen la respuesta correcta. A través de este proceso, el sistema puede hacer predicciones o tomar decisiones basadas en patrones ya conocidos.<br><br> Un ejemplo típico es un filtro de correo electrónico que identifica si un mensaje es spam o no, utilizando información como el remitente o las palabras clave.</p>
-        <h3>Aprendizaje no supervisado</h3>
-        <p>A diferencia del supervisado, estos algoritmos trabajan sin etiquetas o respuestas previas. El sistema analiza los datos buscando patrones ocultos que puedan agrupar o categorizar la información. <br><br> En marketing, este enfoque se emplea para analizar grandes volúmenes de datos, como interacciones en redes sociales, con el fin de segmentar audiencias de manera más precisa.</p>
-        <h2>¿Qué es el preprocesamiento de datos? </h2>
-        <p>El preprocesamiento de datos se refiere al proceso de convertir datos en bruto en un formato más útil y comprensible para el análisis y la creación de modelos. Este paso es crucial, ya que contribuye significativamente a la calidad y eficiencia de los modelos de Machine Learning (ML) al solucionar problemas como la ausencia de datos, el ruido, las inconsistencias y los valores atípicos.</p>
-        <p>Este proceso incluye varias técnicas, como la imputación de valores faltantes, la normalización de datos y la detección y eliminación de outliers. Al realizar estas transformaciones, se busca preparar un conjunto de datos que sea más representativo y que facilite el aprendizaje del modelo, mejorando así su rendimiento y precisión.</p>
-        <h2>Ventajas del preprocesamiento de datos para el aprendizaje automático</h2>
-        <h3>Limpieza de datos</h3>
-        <p>La limpieza de datos es un paso crucial en el proceso de preprocesamiento de datos en machine learning. Consiste en detectar y corregir errores o inconsistencias en el conjunto de datos para asegurar que estos sean precisos y apropiados para el análisis o el entrenamiento de modelos.</p>
-        <h3>Gestión de los valores faltantes</h3>
-        <p>Los datos incompletos son un desafío común en los conjuntos de datos del mundo real y pueden perjudicar el desempeño de los modelos de machine learning. Para identificar y tratar los valores que faltan, se puede realizar lo siguiente:</p>
-        <ul class="detail-description">
-            <li>Usar estadísticas descriptivas o gráficos para localizar las columnas o características con datos faltantes. Los valores ausentes suelen representarse como NaN o Nulos.</li>
-            <li>Evaluar el impacto de los valores faltantes en el análisis o modelo, considerando el porcentaje de valores ausentes en cada columna y su importancia dentro del conjunto de datos.</li>
-            <li>También existen técnicas más avanzadas de imputación, como la imputación por regresión, por vecinos más cercanos (k-NN) o empleando modelos de machine learning que predicen los valores ausentes a partir de otras características.</li>
-        </ul>
-        <h3>Gestión de los valores atípicos</h3>
-        <p>Los valores atípicos son datos que se desvían considerablemente de otras observaciones y pueden distorsionar los análisis o modelos de machine learning.</p>
-        <ul class="detail-description">
-            <li>Para detectarlos, se pueden utilizar gráficos como boxplots, histogramas o diagramas de dispersión, que te permiten visualizar posibles valores atípicos.</li>
-            <li>Calcular medidas como la media, la desviación estándar y el rango intercuartil (IQR).</li>
-            <li>Si los valores atípicos se deben a errores o datos incorrectos, es recomendable eliminarlos usando filtros estadísticos.</li>
-            <li>Aplicar transformaciones como logaritmos, raíces cuadradas o la transformación Box-Cox puede hacer que los datos sean más simétricos y reduzcan el efecto de los valores atípicos.</li>
-        </ul>
-        <h3>Gestión de duplicados</h3>
-        <p>Los registros duplicados pueden sesgar los resultados inflando ciertos patrones o introduciendo sesgos en el modelo.</p>
-        <ul class="detail-description">
-            <li>Usar funciones o librerías para identificar filas duplicadas basándose en columnas específicas o en toda la fila.</li>
-            <li>Si los duplicados no aportan nueva información, se pueden eliminar con librerías o métodos similares.</li>
-        </ul>
+        <h4>Objetivo</h4>
+        <p>El objetivo de este proyecto es crear un clasificador de colores a partir de un dataset en el cual se indican los codigos RGB de varios colores y el nombre.</p>
+        <br>
+        <h4>Problema</h4>
+        <p>Este problema pertenece a la categoría de aprendizaje supervisado y específicamente de clasificación, ya que el objetivo es asignar un valor categórico (nombre del color) a partir de tres valores continuos (R, G, B).</p>
+        <p>El usuario debe ingresar el codigo RGB que desee y utilizando un enfoque basado en el algoritmo de clasificacion KNN, la respuesta va a ser el color "mas cercano" al ingresado.</p>
+        <br>
+        <h4>Actividades de preparación</h4>
+        <p>
+            Verificación de valores RGB: Asegurarse de que los valores estén dentro del rango válido (0-255).
+            Balance del dataset: Asegurarse de que haya una representación uniforme de colores básicos y tonos intermedios.
+        </p>
+        <h4>Tareas de selección de atributos</h4>
+        <p>Dado que los valores RGB son directamente relevantes para el problema, no se requiere una selección de atributos compleja. Sin embargo, consideramos:
 
-        <h2>Referencias</h2>
-        <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>
-        <p>Captia. (n.d.). Machine learning: Qué es, cómo funciona y sus aplicaciones. Captia. Recuperado de https://www.captia.es/blog/machine-learning.html</p>
-        <p>Pure Storage. (n.d.). ¿Qué es el preprocesamiento de datos? Pure Storage. Recuperado de https://www.purestorage.com/es/knowledge/what-is-data-preprocessing.html</p>
+            Usar combinaciones de características como intensidad promedio o luminancia, pero estas fueron descartadas para mantener el modelo simple.
+            Se utilizaron directamente los valores r, g, b como atributos para entrenar el modelo.
+        </p>
+        <h4>Identificación de posibles enfoques de algoritmos de ML</h4>
+        <p>
+            Dos posibles enfoques se consideraron para resolver el problema:
+
+            Modelo basado en distancias (heurístico):
+
+            Comparar los valores RGB ingresados con los del dataset y calcular la distancia euclidiana entre ellos. El color con la menor distancia es el predicho.
+            Justificación: Es simple, interpretable y no requiere un entrenamiento explícito.
+            Modelo de clasificación supervisada (k-Nearest Neighbors):
+
+            Entrenar un modelo k-NN con el dataset, usando los valores RGB como entrada y el nombre del color como salida.
+            Justificación: Se adapta bien a problemas basados en proximidad y puede generalizar mejor en caso de colores no presentes en el dataset.
+        </p>
+        <h4>Configuración de parámetros para cada modelo</h4>
+        <p>Enfoque basado en distancias:
+            Se calculó la distancia euclidiana.
+            Este método no requiere parámetros adicionales.
+            Modelo k-NN:
+            Número de vecinos (k): Se probó con valores de 
+            k=1, k=3 y k=5.
+            Distancia: Métrica euclidiana para evaluar similitud.
+        </p>
+        <h2>Dataset</h2>
+        <div>
+            <table id="dataset-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>R</th>
+                        <th>G</th>
+                        <th>B</th>
+                    </tr>
+                </thead>
+                <tbody id="dataset-body">
+                    <!-- Contenido dinámico generado por JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="clasificador-container">
+            <h1>Clasificador de Colores</h1>
+            <p>Ingresa un color en formato RGB para obtener el nombre más cercano.</p>
+            <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+                <label>R: <input id="r" type="number" min="0" max="255" value="255"></label>
+                <label>G: <input id="g" type="number" min="0" max="255" value="0"></label>
+                <label>B: <input id="b" type="number" min="0" max="255" value="0"></label>
+            </div>
+            <div id="color-box" style="background-color: rgb(255, 0, 0); width: 100px; height: 100px; margin: 20px auto; border-radius: 5px;"></div>
+            <button onclick="predictColor()">Predecir Color</button>
+            <h2 id="result">Resultado: </h2>
+        </div>     
+        <canvas id="accuracy-chart" width="400" height="200"></canvas>   
     </div>
+    <script src="./dataset/dataset.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./proyectoColores.js"></script>
 </body>
 </html>

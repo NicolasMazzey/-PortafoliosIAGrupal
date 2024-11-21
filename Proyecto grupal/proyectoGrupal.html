@@ -589,7 +589,7 @@
 
         <h3>Accuracy</h3>
         <p>Proporción de predicciones correctas (tanto positivos como negativos) sobre el total de predicciones. Es útil
-            para problemas donde ambas clases tienen una proporción similar (balanceadas). En este caso, como las clases no se encuentran tan balanceadas (ya que hay menos retrasos), no activaremos esta opción.</p>
+            para problemas donde ambas clases tienen una proporción similar (balanceadas).</p>
         <p><strong>Fórmula:</strong></p>
         <p>Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
 
@@ -601,7 +601,7 @@
 
         <h3>Recall</h3>
         <p>Proporción de verdaderos positivos correctamente identificados entre todos los casos reales positivos. Es
-            útil para problemas donde los falsos negativos (FN) son críticos. Activaremos tanto "Precision" y "Recall" ya que las clases están desbalanceadas (por ejemplo, si los vuelos retrasados son pocos comparados con los no retrasados). Estas métricas nos ayudarán a entender si el modelo está prediciendo correctamente la clase minoritaria.</p>
+            útil para problemas donde los falsos negativos (FN) son críticos.</p>
         <p><strong>Fórmula:</strong></p>
         <p>Recall = TP / (TP + FN)</p>
 
@@ -615,7 +615,6 @@
         <p>Mide la capacidad del modelo para distinguir entre clases. La curva ROC compara la tasa de verdaderos
             positivos (TPR) frente a la tasa de falsos positivos (FPR). Es útil para comparar modelos sin depender de un
             umbral fijo.</p>
-        <p>Activaremos "Auc" para analizar el rendimiento general del modelo en términos de la capacidad para distinguir entre clases (independientemente del umbral). Es una métrica robusta y útil para comparar modelos.</p>
 
         <h3>Logarithmic Loss (Log Loss)</h3>
         <p>Penaliza predicciones con baja confianza en la clase correcta. Valores más bajos indican un mejor modelo. Es
@@ -631,10 +630,126 @@
         </ul>
         <p>Es útil para analizar los errores del modelo. Nos permitirá ver los TP, TN, FP, y FN. Esencial para entender dónde el modelo se equivoca y qué tan bien clasifica cada clase.</p>
 
-        <p>De esta manera configuraremos los parámetros para este caso.</p>
+        <p>En este caso, activaremos "Accuracy" y el resto de parametros los dejaremos por defecto, para entender cual es el resultado de aprendizaje del algorítmo.</p>
         <img src="../assets/img39.png" alt="Investigación 2" class="detail-image">
 
+        <h2>Resultado del modelo</h2>
+        <img src="../assets/img40.png" alt="Investigación 2" class="detail-image">
+        <p>En este caso, conseguimos un 81% de precisón para este algorítmo.</p>
+        
+        <img src="../assets/img41.png" alt="Investigación 2" class="detail-image">
+        <p>También podemos ver los atributos más significativos para este modelo.</p>
 
+        <h2>Análisis de las divisiones del árbol</h2>
+        <h3>Raíz del árbol (TMAX)</h3>
+        <p>La variable TMAX se utiliza como el nodo raíz, lo que indica que esta característica tiene el mayor poder de discriminación para dividir los datos inicialmente.</p>
+
+        <h3>¿Tiene sentido que la temperatura máxima sea un factor clave en los retrasos de vuelos?</h3>
+        <p>En este contexto, si tiene sentido que la temperatura máxima sea clave para saber si un vuelo se puede retrasar o no, ya que las temperaturas pueden determinar el clima o problemas que puede tener la operativa que necesita una aerolínea.</p>
+
+        <h3>Divisiones intermedias (DEP_AIRPORT_HIST y AIRLINE_AIRPORT_FLIGHTS_MONTH)</h3>
+        <p>DEP_AIRPORT_HIST: Indica el desempeño histórico del aeropuerto. Tiene sentido que aeropuertos con historial de retrasos influyan en la predicción.</p>
+        <p>AIRLINE_AIRPORT_FLIGHTS_MONTH: Combina el número de vuelos de la aerolínea y el aeropuerto. Podría estar relacionado con la congestión y su impacto en los retrasos.</p>
+
+        <p>Si bien es un árbol demasiado simple para este caso, el algorítmo "Decision Tree" nos permite ver un árbol base para esta clasificación.</p>
+
+
+        <h2>Random Forest</h2>
+        <p>Utilizaremos este algoritmo para compararlo con Decision Tree y chequear su rendimiento.</p>
+        
+        <h2>Parámetros</h2>
+        <h3>Number of Trees</h3>
+        <p>Número de árboles de decisión que se construirán en el bosque. Cuantos más árboles, más robusto será el modelo, pero el tiempo de cálculo aumenta.</p>
+        <p>Iremos modificando el valor para comparar los diferentes resultados, empezaremos con un valor de 50</p>
+
+        <h3>Criterion</h3>
+        <p>La métrica que se usa para decidir cómo dividir los nodos de cada árbol. Es el mísmo parámetro que en Decision Tree, en este caso también utilizaremos "gain_ratio".</p>
+
+        <h3>Maximal Depth</h3>
+        <p>La profundidad máxima permitida para cada árbol. Limitar la profundidad puede evitar el sobreajuste. Comenzaremos con un valor de 10 y lo iremos modificando.</p>
+       
+        <h3>Apply Pruning</h3>
+        <p>Permite eliminar ramas del árbol que no aportan información relevante. Reduce la complejidad del modelo. Por el momento no lo activaremos ya que no es necesario activarlo para el Random Forest, ya que el modelo en sí es robusto al ruido por la combinación de múltiples árboles.</p>
+        
+        <h3>Apply Prepruning</h3>
+        <p>Controla el crecimiento de los árboles al detener divisiones que no cumplen criterios específicos.</p>
+        <p>No lo activaremos por el momento. Solo si tenemos problemas de memoria o tiempos de entrenamiento excesivos. Random Forest es menos propenso al sobreajuste, por lo que prepruning no es esencial.</p>
+
+        <h3>Random Splits</h3>
+        <p>Si está activado, selecciona divisiones aleatorias en lugar de basarse estrictamente en el criterio seleccionado.</p>
+        <p>No lo activaremos ya que afecta la calidad de divisiones de los árboles.</p>
+
+        <h3>Guess Subset Ratio</h3>
+        <p>Activa la selección automática de un subconjunto de atributos para cada árbol, lo que es esencial en Random Forest para aumentar la diversidad de los árboles.</p>
+
+        <h3>Voting Strategy</h3>
+        <p>Define cómo se combinan las predicciones de todos los árboles para generar el resultado final.</p>
+        <ul class="detail-description">
+            <li><strong>Confidence Vote:</strong> Combina las predicciones considerando la confianza de cada árbol.</li>
+            <li><strong>Majority Vote:</strong> Selecciona la clase más votada.</li>
+        </ul>
+        
+        <p>En este caso elegimos "Majority Vote" para obtener la clase mejor votada.</p>
+
+        <h3>Use Local Random Seed</h3>
+        <p>Como mencionamos anteriormente, nos permite reproducir los mismos resultados al fijar una semilla. Activamos esta opción.</p>
+        
+        <h3>Enable Parallel Execution</h3>
+        <p>Permite entrenar múltiples árboles en paralelo, aprovechando procesadores multinúcleo. También lo dejaremos activado para mejorar los tiempos de entrenamiento.</p>
+        <p>Configuraciones iniciales:</p>
+        <img src="../assets/img42.png" alt="Investigación 2" class="detail-image">
+        <p>Los demás parámetros de los otros operadores los dejaremos configurados de igual manera que se utilizaron para el "Decision Tree".</p>
+
+        <h2>Resultado</h2>
+        <p>Por un lado, tenemos el resultado de los distintos arboles que generó el Random Forest</p>
+        <img src="../assets/img43.png" alt="Investigación 2" class="detail-image">
+        <p>Por otro lado, tenemos el resultado de la presición del algorítmo.</p>
+        <img src="../assets/img44.png" alt="Investigación 2" class="detail-image">
+
+        <p>En este caso, podemos ver como el resultado del Decision Tree y Random Forest, es muy similar.</p>
+
+        <h2>¿Cómo mejoramos la precisión?</h2>
+
+        <p>Debemos cambiar los parametros de los operadores para ir probando y obtener el mejor resultado.</p>
+        <p>De igual manera, decidimos utilizar un operador que optimiza los parámetros para conseguir la mejor opción posible.</p>
+
+        <h2>Optimize Parameters(Grind)</h2>
+        <p>El operador Optimize Parameters (Grid) en RapidMiner permite encontrar la combinación óptima de parámetros para un modelo, probando sistemáticamente todas las combinaciones posibles dentro de los rangos definidos</p>
+
+        <h3>Parámetros</h3>
+        
+        <h3>Error Handling</h3>
+        <p>Indica cómo debe manejarse un error durante la ejecución del proceso de optimización.</p>
+        
+        <ul class="detail-description">
+            <li><strong>Fail on error:</strong> El proceso se detendrá si ocurre un error.</li>
+            <li><strong>Ignore error:</strong> Ignora los errores y continúa con las siguientes combinaciones de parámetros.</li>
+        </ul>
+        <p>En este caso, seleccionamos "Fail on error" para que el proceso nos avise si hay algún error en alguna configuración de los parámetros.</p>
+
+        <h3>Log Performance</h3>
+        <p>Registra el rendimiento (performance) del modelo para cada combinación de parámetros probada. La mantenemos activada para ver que combinación de parámetros fue la mejor.</p>
+
+        <h3>Log All Criteria</h3>
+        <p>Guarda el valor de todas las métricas de rendimiento, no solo de la métrica principal seleccionada.</p>
+
+        <h3>Synchronize</h3>
+        <p>Asegura que la ejecución de cada combinación de parámetros se realice de forma secuencial. Este parámetro lo desactivamos.</p>
+
+        <h3>Enable Parallel Execution</h3>
+        <p>Como mencionamos anteriormente, permite que las combinaciones de parámetros se prueben en paralelo, aprovechando múltiples núcleos del procesador.</p>
+    
+        <h3>Edit Parameter Settings</h3>
+        <p>Permite configurar los parámetros del modelo que serán optimizados.</p>
+        <p>En este parámerto, lo configuramos de la siguiente manera: </p>
+        <img src="../assets/img45.png" alt="Investigación 2" class="detail-image">
+        <p>Simplemente modificamos los valores del algorítmo "Random Forest"</p>
+        <p>También, debimos reducir la cantidad de atributos del dataset, ya que era muy grande y el proceso tardaba mucho tiempo, por ende, probamos con 150 filas de atributos.</p>
+        
+        <h2>Resultado</h2>
+        <img src="../assets/img46.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img47.png" alt="Investigación 2" class="detail-image">
+        <h2>Conclusiones</h2>
 
         <h2>Referencias</h2>
     </div>

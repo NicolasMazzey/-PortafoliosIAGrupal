@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investigación 2 - Franco Barlocco</title>
     <link rel="stylesheet" href="./proyectoGrupal.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-left">
@@ -22,16 +24,21 @@
     <div class="detail-container">
         <h1>PROYECTO GRUPAL</h1>
         <img src="../assets/image dataset grupal.jpg" alt="Investigación 2" class="detail-image">
-        
+
         <h2>Introducción al dataset "2019 Airline Delays and Cancellations"</h2>
         <h3>¿Por qué elegimos este dataset?</h3>
-        <p>Elegimos este dataset ya que nos pareció interesante la cantidad de atributos y datos que tenía el dataset, nos generó curiosidad saber cómo limpiar y podar los datos para lograr predecir si un vuelo tiene retraso o se puede cancelar.</p>
+        <p>Elegimos este dataset ya que nos pareció interesante la cantidad de atributos y datos que tenía el dataset,
+            nos generó curiosidad saber cómo limpiar y podar los datos para lograr predecir si un vuelo tiene retraso o
+            se puede cancelar.</p>
 
-        <p>Los retrasos y cancelaciones de vuelos afectan diariamente a millones de pasajeros, aerolíneas y aeropuertos. Este dataset permite analizar estos problemas y buscar soluciones basadas en datos.</p>
-        
-        <p>Es útil para identificar patrones de retrasos y entender los factores que influyen en ellos (por ejemplo, congestión, condiciones climáticas, años de los aviones, etc.)</p>
+        <p>Los retrasos y cancelaciones de vuelos afectan diariamente a millones de pasajeros, aerolíneas y aeropuertos.
+            Este dataset permite analizar estos problemas y buscar soluciones basadas en datos.</p>
 
-        <p>Nos permite identificar aeropuertos con mayor frecuencia de retrasos y predecir si un vuelo tendrá un retraso significativo (más de 15 minutos) basado en factores históricos y operativos</p>
+        <p>Es útil para identificar patrones de retrasos y entender los factores que influyen en ellos (por ejemplo,
+            congestión, condiciones climáticas, años de los aviones, etc.)</p>
+
+        <p>Nos permite identificar aeropuertos con mayor frecuencia de retrasos y predecir si un vuelo tendrá un retraso
+            significativo (más de 15 minutos) basado en factores históricos y operativos</p>
 
         <p>Este dataset contiene más de 30 columnas y 1.900.000 filas de atributos, de los cuales contienen:</p>
 
@@ -42,105 +49,247 @@
             <li><strong>Datos históricos:</strong> Desempeño de aerolíneas y aeropuertos en situaciones similares.</li>
         </ul>
 
-        <p>El análisis de este dataset puede ayudar a mejorar la experiencia del pasajero, optimizar la logística de las aerolíneas y reducir costos relacionados con retrasos y cancelaciones.</p>
+        <p>El análisis de este dataset puede ayudar a mejorar la experiencia del pasajero, optimizar la logística de las
+            aerolíneas y reducir costos relacionados con retrasos y cancelaciones.</p>
 
 
         <h2>Atributos</h2>
-        
+
         <ul class="detail-description">
-            <li><strong>MONTH:</strong> Mes del vuelo (1-12). Captura cómo los retrasos varían según el mes del año (por ejemplo, meses de vacaciones como diciembre pueden ser importantes para analizar).</li>
-            <li><strong>DAY_OF_WEEK:</strong> Día de la semana (1 = Lunes, 7 = Domingo). Captura cómo los retrasos varían según el día de la semana.</li>
-            <li><strong>DEP_DEL15:</strong> Indicador de retraso en la salida mayor o igual a 15 minutos (1 = Sí, 0 = No). <strong>Variable objetivo</strong>, utilizada para predecir si un vuelo tendrá un retraso significativo.</li>
-            <li><strong>DEP_TIME_BLK:</strong> Intervalo de tiempo programado para la salida (ejemplo: "0600-0659"). Permite analizar cómo los retrasos varían según la hora del día.</li>
-            <li><strong>DISTANCE_GROUP:</strong> Grupo de distancia del vuelo (en intervalos, por ejemplo, vuelos cortos o largos). Captura cómo la distancia afecta los retrasos.</li>
-            <li><strong>SEGMENT_NUMBER:</strong> Número de segmento del vuelo en itinerarios con múltiples trayectos. Útil para analizar vuelos conectados.</li>
-            
+            <li><strong>MONTH:</strong> Mes del vuelo (1-12). Captura cómo los retrasos varían según el mes del año (por
+                ejemplo, meses de vacaciones como diciembre pueden ser importantes para analizar).</li>
+            <li><strong>DAY_OF_WEEK:</strong> Día de la semana (1 = Lunes, 7 = Domingo). Captura cómo los retrasos
+                varían según el día de la semana.</li>
+            <li><strong>DEP_DEL15:</strong> Indicador de retraso en la salida mayor o igual a 15 minutos (1 = Sí, 0 =
+                No). <strong>Variable objetivo</strong>, utilizada para predecir si un vuelo tendrá un retraso
+                significativo.</li>
+            <li><strong>DEP_TIME_BLK:</strong> Intervalo de tiempo programado para la salida (ejemplo: "0600-0659").
+                Permite analizar cómo los retrasos varían según la hora del día.</li>
+            <li><strong>DISTANCE_GROUP:</strong> Grupo de distancia del vuelo (en intervalos, por ejemplo, vuelos cortos
+                o largos). Captura cómo la distancia afecta los retrasos.</li>
+            <li><strong>SEGMENT_NUMBER:</strong> Número de segmento del vuelo en itinerarios con múltiples trayectos.
+                Útil para analizar vuelos conectados.</li>
+
             <li><strong>Factores relacionados con las operaciones de vuelo</strong></li>
             <ul>
-              <li><strong>CONCURRENT_FLIGHTS:</strong> Número de vuelos concurrentes desde el mismo aeropuerto en el mismo intervalo de tiempo. Puede indicar congestión en el aeropuerto.</li>
-              <li><strong>NUMBER_OF_SEATS:</strong> Número de asientos en el avión. Relacionado con el tamaño del avión y la logística para abordaje y desembarque.</li>
-              <li><strong>CARRIER_NAME:</strong> Nombre de la aerolínea que opera el vuelo. Permite analizar el desempeño de diferentes aerolíneas.</li>
-              <li><strong>DEPARTING_AIRPORT:</strong> Código del aeropuerto de salida. Identifica el aeropuerto de origen del vuelo.</li>
+                <li><strong>CONCURRENT_FLIGHTS:</strong> Número de vuelos concurrentes desde el mismo aeropuerto en el
+                    mismo intervalo de tiempo. Puede indicar congestión en el aeropuerto.</li>
+                <li><strong>NUMBER_OF_SEATS:</strong> Número de asientos en el avión. Relacionado con el tamaño del
+                    avión y la logística para abordaje y desembarque.</li>
+                <li><strong>CARRIER_NAME:</strong> Nombre de la aerolínea que opera el vuelo. Permite analizar el
+                    desempeño de diferentes aerolíneas.</li>
+                <li><strong>DEPARTING_AIRPORT:</strong> Código del aeropuerto de salida. Identifica el aeropuerto de
+                    origen del vuelo.</li>
             </ul>
-            
+
             <li><strong>Estadísticas mensuales</strong></li>
             <ul>
-              <li><strong>AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos desde el aeropuerto en el mes. Indica la actividad mensual del aeropuerto.</li>
-              <li><strong>AIRLINE_FLIGHTS_MONTH:</strong> Número de vuelos operados por la aerolínea en el mes. Relacionado con la capacidad operativa de la aerolínea.</li>
-              <li><strong>AIRLINE_AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos de la aerolínea desde el aeropuerto en el mes. Combinación de la aerolínea y el aeropuerto de origen.</li>
-              <li><strong>AVG_MONTHLY_PASS_AIRPORT:</strong> Promedio mensual de pasajeros en el aeropuerto. Indica la actividad general del aeropuerto.</li>
-              <li><strong>AVG_MONTHLY_PASS_AIRLINE:</strong> Promedio mensual de pasajeros transportados por la aerolínea. Indica el desempeño general de la aerolínea.</li>
+                <li><strong>AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos desde el aeropuerto en el mes. Indica la
+                    actividad mensual del aeropuerto.</li>
+                <li><strong>AIRLINE_FLIGHTS_MONTH:</strong> Número de vuelos operados por la aerolínea en el mes.
+                    Relacionado con la capacidad operativa de la aerolínea.</li>
+                <li><strong>AIRLINE_AIRPORT_FLIGHTS_MONTH:</strong> Número de vuelos de la aerolínea desde el aeropuerto
+                    en el mes. Combinación de la aerolínea y el aeropuerto de origen.</li>
+                <li><strong>AVG_MONTHLY_PASS_AIRPORT:</strong> Promedio mensual de pasajeros en el aeropuerto. Indica la
+                    actividad general del aeropuerto.</li>
+                <li><strong>AVG_MONTHLY_PASS_AIRLINE:</strong> Promedio mensual de pasajeros transportados por la
+                    aerolínea. Indica el desempeño general de la aerolínea.</li>
             </ul>
-            
-            <li><strong>Recursos humanos y aeronaves</strong></li>
+
+            <li><strong>Recursos humanos y aviones</strong></li>
             <ul>
-              <li><strong>FLT_ATTENDANTS_PER_PASS:</strong> Proporción de asistentes de vuelo por pasajero. Relacionado con la experiencia de los pasajeros y el servicio a bordo.</li>
-              <li><strong>GROUND_SERV_PER_PASS:</strong> Proporción de personal de servicio en tierra por pasajero. Relacionado con la eficiencia del servicio en tierra (abordaje, equipaje, etc.).</li>
-              <li><strong>PLANE_AGE:</strong> Edad del avión. Un avión más viejo podría estar asociado con mayor probabilidad de retrasos técnicos.</li>
+                <li><strong>FLT_ATTENDANTS_PER_PASS:</strong> Proporción de asistentes de vuelo por pasajero.
+                    Relacionado con la experiencia de los pasajeros y el servicio a bordo.</li>
+                <li><strong>GROUND_SERV_PER_PASS:</strong> Proporción de personal de servicio en tierra por pasajero.
+                    Relacionado con la eficiencia del servicio en tierra (abordaje, equipaje, etc.).</li>
+                <li><strong>PLANE_AGE:</strong> Edad del avión. Un avión más viejo podría estar asociado con mayor
+                    probabilidad de retrasos técnicos.</li>
             </ul>
-            
+
             <li><strong>Ubicación geográfica</strong></li>
             <ul>
-              <li><strong>LATITUDE y LONGITUDE:</strong> Coordenadas geográficas del aeropuerto de origen. Ayuda a identificar la ubicación geográfica y sus posibles implicaciones (por ejemplo, clima extremo).</li>
-              <li><strong>PREVIOUS_AIRPORT:</strong> Aeropuerto anterior antes del vuelo actual. Captura posibles impactos del itinerario anterior en el vuelo actual.</li>
+                <li><strong>LATITUDE y LONGITUDE:</strong> Coordenadas geográficas del aeropuerto de origen. Ayuda a
+                    identificar la ubicación geográfica y sus posibles implicaciones (por ejemplo, clima extremo).</li>
+                <li><strong>PREVIOUS_AIRPORT:</strong> Aeropuerto anterior antes del vuelo actual. Captura posibles
+                    impactos del itinerario anterior en el vuelo actual.</li>
             </ul>
-            
+
             <li><strong>Factores climáticos</strong></li>
             <ul>
-              <li><strong>PRCP:</strong> Precipitación (en pulgadas). Clima lluvioso puede contribuir a retrasos.</li>
-              <li><strong>SNOW:</strong> Cantidad de nieve (en pulgadas). Indicador de condiciones invernales adversas.</li>
-              <li><strong>SNWD:</strong> Profundidad de nieve acumulada (en pulgadas). Similar a SNOW, pero puede representar acumulaciones previas.</li>
-              <li><strong>TMAX:</strong> Temperatura máxima registrada (en Fahrenheit). Puede indicar condiciones de calor extremo.</li>
-              <li><strong>AWND:</strong> Velocidad promedio del viento (en mph). Vientos fuertes pueden afectar los despegues y aterrizajes.</li>
+                <li><strong>PRCP:</strong> Precipitación (en pulgadas). Clima lluvioso puede contribuir a retrasos.</li>
+                <li><strong>SNOW:</strong> Cantidad de nieve (en pulgadas). Indicador de condiciones invernales
+                    adversas.</li>
+                <li><strong>SNWD:</strong> Profundidad de nieve acumulada (en pulgadas). Similar a SNOW, pero puede
+                    representar acumulaciones previas.</li>
+                <li><strong>TMAX:</strong> Temperatura máxima registrada (en Fahrenheit). Puede indicar condiciones de
+                    calor extremo.</li>
+                <li><strong>AWND:</strong> Velocidad promedio del viento (en mph). Vientos fuertes pueden afectar los
+                    despegues y aterrizajes.</li>
             </ul>
-            
+
             <li><strong>Datos históricos y de bloques</strong></li>
             <ul>
-              <li><strong>CARRIER_HISTORICAL:</strong> Información histórica sobre el desempeño de la aerolínea en vuelos anteriores. Indica la probabilidad histórica de retrasos para la aerolínea.</li>
-              <li><strong>DEP_AIRPORT_HIST:</strong> Desempeño histórico del aeropuerto de salida. Captura cuántos retrasos suelen ocurrir en el aeropuerto.</li>
-              <li><strong>DAY_HISTORICAL:</strong> Información histórica sobre retrasos para ese día del mes o día de la semana. Útil para capturar patrones estacionales.</li>
-              <li><strong>DEP_BLOCK_HIST:</strong> Desempeño histórico del bloque horario de salida. Ayuda a entender qué bloques horarios suelen ser más problemáticos.</li>
+                <li><strong>CARRIER_HISTORICAL:</strong> Información histórica sobre el desempeño de la aerolínea en
+                    vuelos anteriores. Indica la probabilidad histórica de retrasos para la aerolínea.</li>
+                <li><strong>DEP_AIRPORT_HIST:</strong> Desempeño histórico del aeropuerto de salida. Captura cuántos
+                    retrasos suelen ocurrir en el aeropuerto.</li>
+                <li><strong>DAY_HISTORICAL:</strong> Información histórica sobre retrasos para ese día del mes o día de
+                    la semana. Útil para capturar patrones estacionales.</li>
+                <li><strong>DEP_BLOCK_HIST:</strong> Desempeño histórico del bloque horario de salida. Ayuda a entender
+                    qué bloques horarios suelen ser más problemáticos.</li>
             </ul>
         </ul>
 
         <p>En base a estos atributos, podremos predecir y analizar la variable objetivo <strong>DEP_DEL15</strong></p>
-        
+
         <h2>Limitaciones o aspectos a tener en cuenta del dataset</h2>
 
-        <p>El dataset está limitado a vuelos en Estados Unidos en 2019, lo que puede no ser representativo de patrones globales.</p>
-        <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers y valores que se consideran innecesarios o pocos importantes para el desarrollo de esta investigación.</p>
-        
-        <h2>Limpieza de datos</h2>
+        <p>El dataset está limitado a vuelos en Estados Unidos en 2019, lo que puede no ser representativo de patrones
+            globales.</p>
+        <p>A pesar de tener muchos atributos en nuestro dataset, hay que tener en cuenta los valores faltantes, outliers
+            y valores que se consideran innecesarios o pocos importantes para el desarrollo de esta investigación.</p>
 
-        <p>Primero haremos una limpieza manual de algunas columnas de atributos, las cuales consideramos que no son tan significativas o importantes como otros atributos. Eliminaremos las siguientes columnas:</p>
+
+        <h2>Modelo de machine learning</h2>
+
+        <p>Este desafío es un problema de clasificación. Queremos clasificar a los diferentes vuelos para saber si
+            tendrá retraso o no.</p>
+        <h3>¿Qué modelo utilizaremos?</h3>
+        <p>Para este caso, utilizaremos el modelo de <strong>Random Forest</strong>.</p>
+        <h2>Random Forest</h2>
+        <p>El Random Forest es un algoritmo de aprendizaje supervisado que combina múltiples árboles de decisión para
+            resolver problemas de clasificación y regresión. Fue introducido por Leo Breiman y se basa en la técnica de
+            "bagging" (bootstrap aggregating), lo que significa que genera múltiples muestras aleatorias del dataset,
+            construye un árbol de decisión en cada muestra y combina los resultados para obtener una predicción final
+            más robusta.</p>
+        <h3>¿Cómo funciona?</h3>
+        <p>Se generan varias muestras aleatorias del dataset, donde cada muestra se utiliza para entrenar un árbol de
+            decisión independiente. En cada nodo del árbol, se selecciona aleatoriamente un subconjunto de atributos
+            (features) para decidir la mejor división, lo que introduce diversidad entre los árboles. Para clasificación
+            el resultado final es la clase más votada entre los árboles (votación por mayoría).</p>
+
+        <h3>Aspectos positivos del Random Forest</h3>
 
         <ul class="detail-description">
-            <li><strong>LATITUDE y LONGITUDE:</strong> Aunque interesantes, son redundantes con los códigos de aeropuerto (<em>DEPARTING_AIRPORT</em>) y no añaden información adicional significativa.</li>
-            <li><strong>PREVIOUS_AIRPORT:</strong> Puede ser relevante solo en vuelos conectados, pero es difícil usarlo consistentemente en todos los vuelos.</li>
-            <li><strong>SEGMENT_NUMBER:</strong> Solo útil en vuelos de múltiples segmentos, que pueden ser una minoría.</li>
-            <li><strong>AVG_MONTHLY_PASS_AIRPORT y AVG_MONTHLY_PASS_AIRLINE:</strong> Son indirectamente redundantes con <em>AIRPORT_FLIGHTS_MONTH</em> y <em>AIRLINE_FLIGHTS_MONTH</em>.</li>
-            <li><strong>GROUND_SERV_PER_PASS y FLT_ATTENDANTS_PER_PASS:</strong> Aunque pueden ser indicadores indirectos de servicio, probablemente no sean relevantes para retrasos.</li>
-            <li><strong>PLANE_AGE:</strong> Aunque puede haber un impacto, es menos relevante que factores como congestión o clima.</li>
-            <li><strong>DISTANCE_GROUP:</strong> Aunque puede ser útil en vuelos muy largos o cortos, su relación con retrasos no siempre es directa.</li>
+            <li><strong>Robustez y precisión:</strong> Al combinar múltiples árboles, el modelo es menos sensible a los
+                datos de entrenamiento y menos propenso a sobreajustarse (overfitting) en comparación con un solo árbol
+                de decisión.</li>
+            <li><strong>Capacidad para manejar datos complejos:</strong> Funciona bien con datasets grandes y con alta
+                dimensionalidad (muchos atributos).</li>
+            <li><strong>Manejo de atributos categóricos y numéricos:</strong> Random Forest puede trabajar con una
+                mezcla de atributos categóricos y numéricos sin necesidad de normalización o estandarización.</li>
+            <li><strong>Importancia de los atributos:</strong> Proporciona medidas de importancia de atributos que
+                indican cuáles contribuyen más a las predicciones.</li>
+            <li><strong>Manejo de datos desbalanceados:</strong> Se puede adaptar para problemas desbalanceados,
+                ajustando los pesos de las clases o usando técnicas de balanceo de datos.</li>
+            <li><strong>Resistencia a outliers y valores faltantes:</strong>
+                <ul>
+                    <li>Los árboles individuales no se ven afectados significativamente por outliers, ya que estos no
+                        tienen un gran impacto en la mayoría de los árboles.</li>
+                    <li>Puede manejar datos con valores faltantes mediante imputación automática.</li>
+                </ul>
+            </li>
         </ul>
-        
+
+        <h3>Aspectos negativos del Random Forest</h3>
+
+        <ul class="detail-description">
+            <li><strong>Entrenamiento costoso:</strong> Entrenar múltiples árboles de decisión puede ser
+                computacionalmente costoso, especialmente con datasets grandes y muchos atributos.</li>
+            <li><strong>Memoria y almacenamiento:</strong> Los modelos de Random Forest pueden ocupar mucha memoria, ya
+                que almacenan múltiples árboles y sus estructuras.</li>
+            <li><strong>Tendencia a sobreajustarse en datasets muy pequeños:</strong> Si el número de árboles es muy
+                grande y los datos son limitados, puede haber cierto sobreajuste.</li>
+            <li><strong>Ineficiente para datos de alta cardinalidad categórica:</strong> Si un atributo categórico tiene
+                demasiados niveles únicos (por ejemplo, nombres de aeropuertos), el modelo puede volverse lento e
+                ineficiente.</li>
+        </ul>
+
+        <h2>¿Por qué utilizar Random Forest y no otro algoritmo?</h2>
+
+        <p>Analizando las características positivas y negativas del algoritmo, creemos que es el que más se adecúa a
+            nuestro desafío (clasificar si un vuelo se retrasará más de 15 minutos o no). </p>
+        <p>Si bien hay otros algoritmos que podríamos utilizar, los mismos no se adecúan a nuestras necesidades, por
+            ejemplo: </p>
+
+        <h3>Árboles de Decisión (Decision Trees)</h3>
+        <p>Los árboles de decisión son fácil de interpretar, muestra las reglas de decisión que llevan a la
+            clasificación. Maneja bien datos categóricos y continuos. </p>
+        <p>Pero su principal desventaja es que puede sobreajustarse fácilmente, especialmente en datasets grandes. Por
+            ende decidimos evitarlo en este caso.</p>
+        <p>Igualmente, primero probaremos el dataset con este algoritmo y así comparar los resultados contra el Random
+            Forest.</p>
+
+        <h3>K-Nearest Neighbors (KNN)</h3>
+        <p>Es simple y efectivo si las clases están bien separadas en el espacio de características y no hace
+            suposiciones sobre la distribución de los datos.</p>
+
+        <p>Pero sus principales desventajas es que no escala bien con datasets grandes (como 1.9 millones de filas) y
+            son sensible a valores atípicos y la selección de atributos irrelevantes.</p>
+        <p>No es recomendable utilizar este algoritmo por el tamaño del dataset y la probabilidad de relaciones
+            complejas.</p>
+
+        <h3>Regresión Logística</h3>
+        <p>Es simple, eficiente y fácil de interpretar para problemas de clasificación binaria. Funciona bien si las
+            relaciones entre las variables predictoras y la variable objetivo son lineales. Es ideal para establecer una
+            línea base antes de probar modelos más complejos.</p>
+        <p>Sus principales desventajas es que no maneja bien relaciones no lineales o interacciones complejas entre
+            atributos</p>
+
+        <p>Si bien puede servir para tener un acercamiento de clasificación, no es el mas adecuado o preciso para este
+            caso.</p>
+
+
+
+        <h2>Limpieza y preparación de datos</h2>
+
+        <p>Primero haremos una limpieza manual de algunas columnas de atributos, las cuales consideramos que no son tan
+            significativas o importantes como otros atributos. Eliminaremos las siguientes columnas:</p>
+
+        <ul class="detail-description">
+            <li><strong>LATITUDE y LONGITUDE:</strong> Aunque interesantes, son redundantes con los códigos de
+                aeropuerto (<em>DEPARTING_AIRPORT</em>) y no añaden información adicional significativa.</li>
+            <li><strong>PREVIOUS_AIRPORT:</strong> Puede ser relevante solo en vuelos conectados, pero es difícil usarlo
+                consistentemente en todos los vuelos.</li>
+            <li><strong>SEGMENT_NUMBER:</strong> Solo útil en vuelos de múltiples segmentos, que pueden ser una minoría.
+            </li>
+            <li><strong>AVG_MONTHLY_PASS_AIRPORT y AVG_MONTHLY_PASS_AIRLINE:</strong> Son indirectamente redundantes con
+                <em>AIRPORT_FLIGHTS_MONTH</em> y <em>AIRLINE_FLIGHTS_MONTH</em>.
+            </li>
+            <li><strong>GROUND_SERV_PER_PASS y FLT_ATTENDANTS_PER_PASS:</strong> Aunque pueden ser indicadores
+                indirectos de servicio, probablemente no sean relevantes para retrasos.</li>
+            <li><strong>PLANE_AGE:</strong> Aunque puede haber un impacto, es menos relevante que factores como
+                congestión o clima.</li>
+            <li><strong>DISTANCE_GROUP:</strong> Aunque puede ser útil en vuelos muy largos o cortos, su relación con
+                retrasos no siempre es directa.</li>
+
+        </ul>
+
         <h2>Select Attributes</h2>
-        <p>Para seleccionar o filtrar estos atributos del dataset, vamos a utilizar el operador "select attributes" el cual nos permite seleccionar las columnas que necesitamos.</p>
+        <p>Para seleccionar o filtrar estos atributos del dataset, vamos a utilizar el operador "select attributes" el
+            cual nos permite seleccionar las columnas que necesitamos.</p>
 
         <p>Tenemos distintos parámetros para este operador.</p>
         <img src="../assets/img31.png" alt="Investigación 2" class="detail-image">
 
         <h3>Type</h3>
-        <p>Este parámetro sirve para saber si los atributos que seleccionaremos serán incluidos o excluidos de nuestro dataset.</p>
+        <p>Este parámetro sirve para saber si los atributos que seleccionaremos serán incluidos o excluidos de nuestro
+            dataset.</p>
 
-        <p>Tenemos dos opciones, "Include attributes" solo se mantendrán los atributos especificados. Todas las demás columnas serán filtradas. La segunda opción es "Exclude attributes" el cual elimina los atributos especificados y mantiene todas las demás columnas.</p>
-        
-        <p>En nuestro caso, utilizaremos "Exclude attributes", ya que nos permite filtrar las columnas que no necesitamos, utilizamos este método ya que las columnas a eliminar son pocas.</p>
+        <p>Tenemos dos opciones, "Include attributes" solo se mantendrán los atributos especificados. Todas las demás
+            columnas serán filtradas. La segunda opción es "Exclude attributes" el cual elimina los atributos
+            especificados y mantiene todas las demás columnas.</p>
+
+        <p>En nuestro caso, utilizaremos "Exclude attributes", ya que nos permite filtrar las columnas que no
+            necesitamos, utilizamos este método ya que las columnas a eliminar son pocas.</p>
 
         <h3>Attribute Filter Type</h3>
-        <p>Básicamente define cómo se seleccionarán los atributos que serán incluidos o excluidos, dependiendo de lo configurado en Type</p>
-        <p>Por ejemplo, podemos seleccionar todos los atributos con el método "All", con el método "Single" podemos seleccionar un solo atributo, con el método "Subset" seleccionamos un conjunto de datos, entre otros.</p>
-        <p>En esta ocasión, utilizaremos "Subset" ya que nos permite seleccionar una lista de atributos (en este caso es una lista la cual queremos eliminar dichos atributos).</p>
+        <p>Básicamente define cómo se seleccionarán los atributos que serán incluidos o excluidos, dependiendo de lo
+            configurado en Type</p>
+        <p>Por ejemplo, podemos seleccionar todos los atributos con el método "All", con el método "Single" podemos
+            seleccionar un solo atributo, con el método "Subset" seleccionamos un conjunto de datos, entre otros.</p>
+        <p>En esta ocasión, utilizaremos "Subset" ya que nos permite seleccionar una lista de atributos (en este caso es
+            una lista la cual queremos eliminar dichos atributos).</p>
 
         <h3>Select subset</h3>
         <p>En este parámetro, seleccionamos la lista que necesitamos eliminar o filtrar.</p>
@@ -148,75 +297,347 @@
 
         <h3>Also Apply to Special Attributes</h3>
 
-        <p>Este parámetro indica si los filtros también deben aplicarse a los atributos especiales, por ejemplo, ID, variable objetivo, etc.</p>
-        <p>En nuestro caso decidimos no seleccionar este parametro, ya que no debemos filtrar columnas de con atributos especiales.</p>
+        <p>Este parámetro indica si los filtros también deben aplicarse a los atributos especiales, por ejemplo, ID,
+            variable objetivo, etc.</p>
+        <p>En nuestro caso decidimos no seleccionar este parametro, ya que no debemos filtrar columnas de con atributos
+            especiales.</p>
 
+        <p>Luego de seleccionar los métodos correspondientes, nuestro dataset queda con 20 columnas de atributos.</p>
 
 
         <h2>Split data</h2>
-        <p>También, debemos reducir la cantidad de filas del dataset, ya que en rapidminer podemos tener algunos problemas con la cantidad de filas, por ejemplo, al querer visualizar una gráfica, Rapidminer no genera gráficos con más de 1 millón de filas.</p>
+        <p>También, debemos reducir la cantidad de filas del dataset, ya que en rapidminer podemos tener algunos
+            problemas con la cantidad de filas, por ejemplo, al querer visualizar una gráfica, Rapidminer no genera
+            gráficos con más de 1 millón de filas.</p>
         <img src="../assets/img25.png" alt="Investigación 2" class="detail-image">
 
-        <p>Para solucionar el problema mencionado anteriormente en Rapidminer, no es necesario eliminar filas, simplemente utilizamos un split para dividir el dataset.</p>
-        <p>Este operador funciona para dividir nuestro dataset en diferentes particiones. Para esto tenemos distintos parámetros para modificar el "Split data".</p>
+        <p>Para solucionar el problema mencionado anteriormente en Rapidminer, no es necesario eliminar filas,
+            simplemente utilizamos un split para dividir el dataset.</p>
+        <p>Este operador funciona para dividir nuestro dataset en diferentes particiones. Para esto tenemos distintos
+            parámetros para modificar el "Split data".</p>
         <img src="../assets/img26.png" alt="Investigación 2" class="detail-image">
-        <p>En el parámetro "partitions" podemos definir las particiones que necesitamos, por ejemplo, si queremos dividir el dataset a la mitad, lo hacemos de la siguiente manera:</p>
+        <p>En el parámetro "partitions" podemos definir las particiones que necesitamos, por ejemplo, si queremos
+            dividir el dataset a la mitad, lo hacemos de la siguiente manera:</p>
         <img src="../assets/img27.png" alt="Investigación 2" class="detail-image">
-        <p>Simplemente colocamos la proporción del dataset que queremos dividir. En caso de querer dividir el dataset en 70/30, debemos ingresar "0,7" (para la primer partición) y "0,3" (para la segunda partición).</p>
+        <p>Simplemente colocamos la proporción del dataset que queremos dividir. En caso de querer dividir el dataset en
+            70/30, debemos ingresar "0,7" (para la primer partición) y "0,3" (para la segunda partición).</p>
 
         <p>Luego, tenemos el parámetro "Sampling type", el cual tiene diferentes opciones.</p>
         <img src="../assets/img28.png" alt="Investigación 2" class="detail-image">
         <h3>Linear sampling</h3>
-        <p>Esta primera opción realiza la división del dataset de forma secuencial, sin mezclar ni alterar el orden de las filas. Si configuramos la división del dataset como un 70/30, el primer 70% del dataset se dividirá y por otro lado el otro 30%. Esto sirve si necesitamos que los datos estén ordenados en base a como están ingresados en el dataset. Este método puede causar sesgos si el dataset está organizado de una manera no aleatoria.</p>
-        
+        <p>Esta primera opción realiza la división del dataset de forma secuencial, sin mezclar ni alterar el orden de
+            las filas. Si configuramos la división del dataset como un 70/30, el primer 70% del dataset se dividirá y
+            por otro lado el otro 30%. Esto sirve si necesitamos que los datos estén ordenados en base a como están
+            ingresados en el dataset. Este método puede causar sesgos si el dataset está organizado de una manera no
+            aleatoria.</p>
+
         <h3>Shuffled Sampling</h3>
-        <p>Es un método para mezclar las filas del dataset. Esto nos sirve por si queremos evitar sesgos en la distribución de las filas. Ejemplo, si configuramos una división de 70/30, se mezcla el 100% del dataset antes de que se haga la partición.</p>
-        
+        <p>Es un método para mezclar las filas del dataset. Esto nos sirve por si queremos evitar sesgos en la
+            distribución de las filas. Ejemplo, si configuramos una división de 70/30, se mezcla el 100% del dataset
+            antes de que se haga la partición.</p>
+
         <h3>Stratified Sampling</h3>
-        <p>Divide los datos asegurando que las proporciones de las clases (en problemas de clasificación) se mantengan iguales en los subconjuntos. Si el 70% de las filas pertenece a la Clase A y el 30% a la Clase B, el muestreo garantiza que los conjuntos de entrenamiento y prueba mantengan estas proporciones.</p>
-        
+        <p>Divide los datos asegurando que las proporciones de las clases (en problemas de clasificación) se mantengan
+            iguales en los subconjuntos. Si el 70% de las filas pertenece a la Clase A y el 30% a la Clase B, el
+            muestreo garantiza que los conjuntos de entrenamiento y prueba mantengan estas proporciones.</p>
+
         <h3>Automatic</h3>
-        <p>RapidMiner selecciona automáticamente el método de muestreo más apropiado en función de los datos. Generalmente, utiliza Shuffled Sampling a menos que detecte la necesidad de preservar un orden. Se recomienda este método en caso de no estar seguro sobre que método utilizar.</p>
+        <p>RapidMiner selecciona automáticamente el método de muestreo más apropiado en función de los datos.
+            Generalmente, utiliza Shuffled Sampling a menos que detecte la necesidad de preservar un orden. Se
+            recomienda este método en caso de no estar seguro sobre que método utilizar.</p>
 
         <table border="1">
             <thead>
-              <tr>
-                <th>Caso</th>
-                <th>Sampling Type recomendado</th>
-              </tr>
+                <tr>
+                    <th>Caso</th>
+                    <th>Sampling Type recomendado</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Datos con orden cronológico</td>
-                <td>Linear Sampling</td>
-              </tr>
-              <tr>
-                <td>Datos balanceados o sin orden</td>
-                <td>Shuffled Sampling</td>
-              </tr>
-              <tr>
-                <td>Problemas de clasificación</td>
-                <td>Stratified Sampling</td>
-              </tr>
-              <tr>
-                <td>No estás seguro</td>
-                <td>Automatic</td>
-              </tr>
+                <tr>
+                    <td>Datos con orden cronológico</td>
+                    <td>Linear Sampling</td>
+                </tr>
+                <tr>
+                    <td>Datos balanceados o sin orden</td>
+                    <td>Shuffled Sampling</td>
+                </tr>
+                <tr>
+                    <td>Problemas de clasificación</td>
+                    <td>Stratified Sampling</td>
+                </tr>
+                <tr>
+                    <td>No estás seguro</td>
+                    <td>Automatic</td>
+                </tr>
             </tbody>
         </table>
         <h3>¿Qué utilizaremos para este caso?</h3>
-        <p>En este caso, nos encontramos con un problema de <strong>clasificación</strong>, ya que en base a los datos obtenidos por las aerolíneas, debemos generar un modelo que pueda predecir si el vuelo tendrá retraso o no. Por ende, debemos seleccionar el método "Stratified Sampling", ya que sirve para problemas de clasificación como este.</p>
+        <p>En este caso, nos encontramos con un problema de <strong>clasificación</strong>, ya que en base a los datos
+            obtenidos por las aerolíneas, debemos generar un modelo que pueda predecir si el vuelo tendrá retraso o no.
+            Por ende, debemos seleccionar el método "Stratified Sampling", ya que sirve para problemas de clasificación
+            como este.</p>
 
-        <p>En el parámetro de "Partition" utilizaremos una división de  80/20 por el momento, ya que tenemos muchas filas en nuestro dataset, entonces utilizaremos el 20% del dataset para hacer las pruebas adecuadas. También nos sirve para dividir el dataset en datos de entrenamiento y datos de testing.</p>
+        <p>En el parámetro de "Partition" utilizaremos una división de 99/1 por el momento, ya que tenemos muchas filas
+            en nuestro dataset, entonces utilizaremos el 1% del dataset para hacer las pruebas adecuadas. También nos
+            sirve para dividir el dataset en datos de entrenamiento y datos de testing.</p>
         <img src="../assets/img29.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img30.png" alt="Investigación 2" class="detail-image">
-        <p>Luego de esta partición, el dataset se divide en dos: el 80% (1,557,375 filas) y el 20% (389,344 filas).</p>
-        
-        
+        <p>Luego de esta partición, el dataset se divide en dos: el 99% (1,927,252 filas) y el 1% (19,467 filas).</p>
+
+        <h2>Numerical to Binomial</h2>
+
+        <p>Utilizaremos este operador para transformar la variable objetivo a binomial, de esta manera nos servirá para
+            ralizar pruebas más adelante.</p>
+        <img src="../assets/img33.png" alt="Investigación 2" class="detail-image">
+
+        <p>En el parámetro "Attribute filter type" debemos seleccionar "single" ya que por el momento vamos a
+            seleccionar la variable objetivo.</p>
+        <p>En el parámetro "Attribute" seleccionamos <strong>DEP_DEL15</strong>/(Variable Objetivo)</p>
+        <p>Los demás parámetros los dejamos por defecto ya que no son relevantes para este caso.</p>
+
+        <h3>Set Role</h3>
+        <p>Utilizamos este operador para asignar un "rol" específico a la variable objetivo como "Label". Esta es la
+            variable que el modelo intentará predecir basándose en los valores de las demás columnas.</p>
+
+        <img src="../assets/img34.png" alt="Investigación 2" class="detail-image">
+
+        <h3>¿Por qué es importante hacer esto?</h3>
+
+        <p>En algoritmos como Random Forest o Regresión Logística, necesitas especificar qué atributo es la variable
+            objetivo. Sin esto, RapidMiner no sabe qué columna predecir. Si no configuras el rol como Label, el modelo
+            tratará todas las columnas como atributos predictivos y fallará al no encontrar una variable objetivo.</p>
+
+        <h2>Normalización de datos</h2>
+        <p>En este caso, no es necesario normalizar los datos, tanto los árboles de decisión como Random Forest dividen
+            los datos en función de valores absolutos de los atributos, no en base a distancias o relaciones entre
+            magnitudes.</p>
+
+        <p>A diferencia de algoritmos como K-Nearest Neighbors (KNN), los árboles no calculan distancias entre puntos,
+            por lo que las escalas de los atributos no afectan las decisiones.</p>
+
+        <p>Los árboles de decisión y Random Forest pueden manejar mezclas de datos categóricos y numéricos sin necesidad
+            de transformar los atributos numéricos a una escala uniforme.</p>
+
+
+        <h2>Algorítmo Decision Tree</h2>
+        <p>En primera instancia, probaremos el algoritmo de árboles de decisión para testear su rendimiento para este
+            caso y más adelante, compararlo con el rendimiento de Random Forest.</p>
+
+        <p>Hasta el momento, el RapidMiner se visualiza de la siguiente manera:</p>
+        <img src="../assets/img35.png" alt="Investigación 2" class="detail-image">
+        <p>La primera salida del operador "Split data" es el 99% de los datos que decidimos dividir, el otro 1% es lo
+            que vamos a utilizar.</p>
+
+        <h2>Cross Validation</h2>
+        <p>Utilizaremos este operador ya que es una técnica de evaluación que divide el dataset en múltiples
+            subconjuntos (llamados "pliegues" o "folds") para garantizar que el modelo sea evaluado de manera más
+            confiable y representativa. Es ampliamente utilizado para evitar overfitting y obtener métricas de
+            rendimiento más robustas.</p>
+
+        <p>El dataset se divide en K pliegues (subconjuntos) de igual tamaño. Cada pliegue actúa como un conjunto de
+            prueba una vez, mientras que los otros K-1 pliegues se usan como conjunto de entrenamiento.</p>
+        <p>El modelo se entrena en los K-1 pliegues y se evalúa en el pliegue restante. Este proceso se repite K veces,
+            alternando el pliegue de prueba. Al final, las métricas (como precisión, recall, F1-score, etc.) se
+            promedian para obtener una evaluación general del modelo.</p>
+
+        <h3>Parámetros del Cross Validation</h3>
+
+        <p>En esta sección explicaremos los parámetros que contiene el operador Cross Validation y cuales son los
+            métodos o ajustes que debemos hacer.</p>
+
+        <h3>Split on Batch Attribute</h3>
+        <p>Permite dividir los datos en función de un atributo específico. Esto es útil si los datos tienen un atributo
+            que agrupa las filas en subconjuntos significativos.</p>
+        <p>Por el momento, lo dejaremos en "desactivado" ya que no lo necesitamos en este caso.</p>
+
+        <h3>Leave One Out</h3>
+        <p>Activa la validación cruzada de tipo Leave-One-Out (LOO), donde cada fila del dataset se utiliza como
+            conjunto de prueba una vez, mientras que las demás se usan para entrenamiento.</p>
+        <p>Para este caso, este parámetro lo dejaremos como "desactivado" ya que es una actividad muy costosa por el
+            tamaño de nuestro dataset.</p>
+
+        <p><strong>Número de pliegues (Folds) </strong></p>
+        <p>Determina cuántas particiones se crean en el dataset. Por ejemplo, 5-fold divide el dataset en 5 partes.</p>
+        <p>Para datasets pequeños se utiliza más pliegues (10 o más) para maximizar los datos de entrenamiento. Pero en
+            este caso, como tenemos un dataset grande, utilizaremos solo 5 pliegues.</p>
+
+        <p><strong>Sampling Type (Tipo de muestreo):</strong> </p>
+        <p>Define cómo se seleccionan las particiones.</p>
+
+        <ul class="detail-description">
+            <li><strong>Linear Sampling:</strong> Divide los datos secuencialmente. No mezcla las filas.</li>
+            <li><strong>Shuffled Sampling:</strong> Mezcla las filas antes de dividirlas en pliegues. Evita sesgos si
+                los datos tienen algún orden específico.</li>
+            <li><strong>Stratified Sampling:</strong> Mantiene la proporción de clases en cada pliegue, ideal para
+                clasificación con clases desbalanceadas.</li>
+        </ul>
+
+        <p>En este caso utilizaremos "Stratfiel Sampling" ya que nos servirá para este problema de clasificación y que
+            cada pliegue se mantenga balanceado.</p>
+
+        <h3>Use Local Random Seed</h3>
+        <p>Define si se utiliza una semilla fija para los generadores de números aleatorios. Esto asegura que la
+            división de los pliegues sea reproducible entre ejecuciones.</p>
+        <p>En este caso, activaremos esta opción ya que nos permite ejecutar el agoritmo varias veces y asegurarnos que
+            el resultado sea el mismo, hay varios operadores que tienen este parámetro y también debemos tenerlo en
+            cuenta.</p>
+
+        <h3>Enable Parallel Execution</h3>
+        <p>Permite entrenar y evaluar los pliegues en paralelo para acelerar el proceso de validación cruzada.</p>
+        <p>Lo dejaremos activado para que la ejecución sea más rápida.</p>
+        <img src="../assets/img36.png" alt="Investigación 2" class="detail-image">
+
+        <p>Dentro del operador, tenemos dos divisiones, una de entrenamiento y otra de prueba, en la cual debemos
+            utilizar la parte de entrenamiento para colocar el algorítmo a utilizar (Decision Tree) y en la parte de
+            prueba debemos aplicar nuestro modelo de entrenamiento con nuestro modelo de prueba.</p>
+        <img src="../assets/img37.png" alt="Investigación 2" class="detail-image">
+
+        <h2>Parámetros del algorítmo Decision Tree</h2>
+
+        <h3>Criterion (Criterio de división)</h3>
+        <p>Especifica la métrica que se usa para evaluar qué atributo se debe usar para dividir los nodos en el árbol.
+            Las diferentes opciones son:</p>
+
+        <ul class="detail-description">
+            <li><strong>Gain Ratio:</strong> Basado en la ganancia de información relativa, penaliza atributos con
+                muchos valores únicos. Es ideal para evitar divisiones sesgadas.</li>
+            <li><strong>Information Gain:</strong> Maximiza la reducción de entropía, común en problemas de
+                clasificación.</li>
+            <li><strong>Gini Index:</strong> Mide la pureza de las clases, usado frecuentemente en Random Forest y
+                Decision Trees.</li>
+            <li><strong>Accuracy:</strong> Selecciona divisiones basadas en el porcentaje de instancias correctamente
+                clasificadas. Menos común, pero puede ser útil en problemas específicos.</li>
+            <li><strong>Least Square:</strong> Minimiza el error cuadrático, usado principalmente en problemas de
+                regresión en árboles de decisión.</li>
+        </ul>
+
+        <p>Por el momento, utilizaremos el método "Gain Ratio" ya que hay atributos con alta cardinalidad, como por
+            ejemplo, nombre de los aeropuertos, nombres de aerolíneas, etc.</p>
+
+        <h3>Maximal Depth (Profundidad máxima)</h3>
+        <p>Limita la profundidad máxima que puede alcanzar el árbol. Un valor menor hace que el árbol sea más simple y
+            menos propenso a sobreajustarse.</p>
+
+        <p>10 es un valor razonable, en caso de que notemos sobreajuste, debemos reducir el valor.</p>
+
+        <h3>Apply Pruning (Aplicar poda)</h3>
+        <p>Determina si se aplica poda posterior (post-pruning), que elimina ramas que aportan poca mejora en el
+            rendimiento para reducir el sobreajuste.</p>
+
+        <p>Para este caso, mantenemos esta opción activada para evitar que el árbol se ajuste demasiado a los datos de
+            entrenamiento.</p>
+
+        <h3>Confidence (Nivel de confianza)</h3>
+        <p>Es el nivel de confianza utilizado durante la poda. Controla cuántos nodos se podan. Valores más bajos podan
+            más agresivamente, lo que simplifica el árbol pero puede perder detalles importantes.</p>
+
+        <p>En este caso, 0,1 es un valor estandar, si queremos "reducir" el valor para que sea más agresivo con la poda,
+            podemos colocar un valor de 0,05. En caso de que necesitemos más detalle, debemos incremetar el valor a 0,2.
+        </p>
+
+        <h3>Apply Prepruning (Aplicar pre-poda)</h3>
+        <p>Determina si se aplica poda previa (pre-pruning), que detiene la expansión del árbol si ciertas condiciones
+            no se cumplen.</p>
+        <p>Mantenemos esta opción activada ya que evita que el árbol crezca innecesariamente grande desde el inicio</p>
+
+        <h3>Minimal Gain</h3>
+        <p>Define la ganancia mínima requerida para dividir un nodo. Si una división no mejora la ganancia más allá de
+            este valor, no se realiza.</p>
+        <p>0,01 es un buen punto de partida, en caso de tener muchos valores irrelevantes, debemos aumentar este valor
+            para evitar divisiones innecesarias.</p>
+
+        <h3>Minimal Leaf Size (Tamaño mínimo de hojas)</h3>
+        <p>Establece el número mínimo de ejemplos que deben estar presentes en un nodo hoja. Esto evita que el árbol
+            cree hojas para casos aislados (overfitting).</p>
+
+        <p>La configuración básica es 2, pero decidimos aumentarlo a 4 por el momento, ya que tenemos un dataset grande.
+        </p>
+
+        <h3>Minimal Size for Split (Tamaño mínimo para dividir)</h3>
+        <p>Establece el número mínimo de ejemplos requeridos para que un nodo sea considerado para división. Si el
+            número de ejemplos en un nodo es menor que este valor, no se divide.</p>
+        <p>Mantendremos los valores bajos para asegurar que el árbol capture suficiente información sin crear divisiones
+            innecesarias (entre 2 y 10). Empezaremos con 4.</p>
+
+        <h3>Number of Prepruning Alternatives (Número de alternativas de pre-poda)</h3>
+        <p>Especifica cuántas alternativas se evalúan antes de aplicar una división. Es decir, evalúa distintas opciones
+            de atributos y divisiones antes de decidir cuál usar.</p>
+
+        <p>3 es suficiente en la mayoría de los casos. Pero en este caso, lo autmentaremos a 5, ya que incrementar este
+            valor puede aumentar el tiempo de entrenamiento, pero mejora la precisión de las divisiones.</p>
+
+        <p>La configuración de los parámetros, nos quedaría de la siguiente manera: </p>
+        <img src="../assets/img38.png" alt="Investigación 2" class="detail-image">
+
+        <p>Estos son los valores iniciales en los cuales probaremos los resultados del agoritmo de Decision Tree</p>
+
+        <h2>Apply Model</h2>
+        <p>El operador Apply Model en RapidMiner tiene un propósito específico: aplicar un modelo previamente entrenado
+            a un nuevo conjunto de datos. Es una etapa fundamental en los procesos de predicción, ya que permite evaluar
+            cómo un modelo entrenado realiza predicciones en datos desconocidos (por ejemplo, datos de prueba).</p>
+
+        <p>Este operador no tiene parametros relevantes para poder ajustarlo.</p>
+
+        <h2>Performance (Binomial Classification)</h2>
+
+        <p>El operador calcula métricas específicas para medir qué tan bien predice un modelo las dos clases de una
+            clasificación binaria. Estas métricas son esenciales para evaluar el rendimiento del modelo y para comparar
+            diferentes algoritmos.</p>
+
+        <h3>Parámetros más importantes</h3>
+
+        <h3>Accuracy</h3>
+        <p>Proporción de predicciones correctas (tanto positivos como negativos) sobre el total de predicciones. Es útil
+            para problemas donde ambas clases tienen una proporción similar (balanceadas). En este caso, como las clases no se encuentran tan balanceadas (ya que hay menos retrasos), no activaremos esta opción.</p>
+        <p><strong>Fórmula:</strong></p>
+        <p>Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
+
+        <h3>Precision</h3>
+        <p>Proporción de verdaderos positivos entre todas las instancias clasificadas como positivas. Es útil cuando los
+            falsos positivos (FP) son costosos, como en detección de fraudes.</p>
+        <p><strong>Fórmula:</strong></p>
+        <p>Precision = TP / (TP + FP)</p>
+
+        <h3>Recall</h3>
+        <p>Proporción de verdaderos positivos correctamente identificados entre todos los casos reales positivos. Es
+            útil para problemas donde los falsos negativos (FN) son críticos. Activaremos tanto "Precision" y "Recall" ya que las clases están desbalanceadas (por ejemplo, si los vuelos retrasados son pocos comparados con los no retrasados). Estas métricas nos ayudarán a entender si el modelo está prediciendo correctamente la clase minoritaria.</p>
+        <p><strong>Fórmula:</strong></p>
+        <p>Recall = TP / (TP + FN)</p>
+
+        <h3>F1-Score</h3>
+        <p>Promedio armónico entre precisión y sensibilidad. Es útil cuando hay un balance entre la importancia de FP y
+            FN.</p>
+        <p><strong>Fórmula:</strong></p>
+        <p>F1 = 2 * (Precision * Recall) / (Precision + Recall)</p>
+
+        <h3>AUC</h3>
+        <p>Mide la capacidad del modelo para distinguir entre clases. La curva ROC compara la tasa de verdaderos
+            positivos (TPR) frente a la tasa de falsos positivos (FPR). Es útil para comparar modelos sin depender de un
+            umbral fijo.</p>
+        <p>Activaremos "Auc" para analizar el rendimiento general del modelo en términos de la capacidad para distinguir entre clases (independientemente del umbral). Es una métrica robusta y útil para comparar modelos.</p>
+
+        <h3>Logarithmic Loss (Log Loss)</h3>
+        <p>Penaliza predicciones con baja confianza en la clase correcta. Valores más bajos indican un mejor modelo. Es
+            útil para modelos probabilísticos donde las predicciones incluyen probabilidades.</p>
+
+        <h3>Confusion Matrix (Matriz de Confusión)</h3>
+        <p>Una tabla que muestra:</p>
+        <ul class="detail-description">
+            <li><strong>TP (True Positives):</strong> Predicciones correctas de la clase positiva.</li>
+            <li><strong>TN (True Negatives):</strong> Predicciones correctas de la clase negativa.</li>
+            <li><strong>FP (False Positives):</strong> Predicciones incorrectas de la clase positiva.</li>
+            <li><strong>FN (False Negatives):</strong> Predicciones incorrectas de la clase negativa.</li>
+        </ul>
+        <p>Es útil para analizar los errores del modelo. Nos permitirá ver los TP, TN, FP, y FN. Esencial para entender dónde el modelo se equivoca y qué tan bien clasifica cada clase.</p>
+
+        <p>De esta manera configuraremos los parámetros para este caso.</p>
+        <img src="../assets/img39.png" alt="Investigación 2" class="detail-image">
+
+
+
         <h2>Referencias</h2>
-        <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>
-        <p>Captia. (n.d.). Machine learning: Qué es, cómo funciona y sus aplicaciones. Captia. Recuperado de https://www.captia.es/blog/machine-learning.html</p>
-        <p>Pure Storage. (n.d.). ¿Qué es el preprocesamiento de datos? Pure Storage. Recuperado de https://www.purestorage.com/es/knowledge/what-is-data-preprocessing.html</p>
     </div>
 </body>
+
 </html>

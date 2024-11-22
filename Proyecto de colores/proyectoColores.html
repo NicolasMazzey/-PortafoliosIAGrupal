@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investigación 2 - Franco Barlocco</title>
     <link rel="stylesheet" href="./proyectoColores.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -30,10 +31,10 @@
         <p>El usuario debe ingresar el codigo RGB que desee y utilizando un enfoque basado en el algoritmo de clasificacion KNN, la respuesta va a ser el color "mas cercano" al ingresado.</p>
         <br>
         <h4>Actividades de preparación</h4>
-        <p>
-            Verificación de valores RGB: Asegurarse de que los valores estén dentro del rango válido (0-255).
-            Balance del dataset: Asegurarse de que haya una representación uniforme de colores básicos y tonos intermedios.
-        </p>
+        <p>Verificación de valores RGB: Asegurarse de que los valores estén dentro del rango válido (0-255) y que no haya valores duplicados.</p>
+        <p>Balance del dataset: Asegurarse de que haya una representación uniforme de colores básicos y tonos intermedios.</p>
+        <p>Normalización : Aunque los valores RGB están dentro de un rango fijo [0, 255] se pueden normalizar [0, 1] para asegurar que las distancias euclidianas estén en la misma escala.</p>
+        <img src="https://www.unitopledstrip.com/wp-content/uploads/2023/09/what-is-RGB-Lighting.webp" alt="rgb">
         <h4>Tareas de selección de atributos</h4>
         <p>Dado que los valores RGB son directamente relevantes para el problema, no se requiere una selección de atributos compleja. Sin embargo, consideramos:
 
@@ -42,26 +43,26 @@
         </p>
         <h4>Identificación de posibles enfoques de algoritmos de ML</h4>
         <p>
-            Dos posibles enfoques se consideraron para resolver el problema:
-
-            Modelo basado en distancias (heurístico):
-
-            Comparar los valores RGB ingresados con los del dataset y calcular la distancia euclidiana entre ellos. El color con la menor distancia es el predicho.
-            Justificación: Es simple, interpretable y no requiere un entrenamiento explícito.
             Modelo de clasificación supervisada (k-Nearest Neighbors):
 
             Entrenar un modelo k-NN con el dataset, usando los valores RGB como entrada y el nombre del color como salida.
-            Justificación: Se adapta bien a problemas basados en proximidad y puede generalizar mejor en caso de colores no presentes en el dataset.
+            Justificación: No necesita un entrenamiento complejo, es intuitivo y fácil de implementar, se ajusta bien a datasets pequeños o medianos 
+            y se adapta bien a problemas basados en proximidad y puede generalizar mejor en caso de colores no presentes en el dataset.
         </p>
-        <h4>Configuración de parámetros para cada modelo</h4>
-        <p>Enfoque basado en distancias:
-            Se calculó la distancia euclidiana.
-            Este método no requiere parámetros adicionales.
+
+        <h4>Configuración de parámetros del modelo</h4>
+        <p>
             Modelo k-NN:
-            Número de vecinos (k): Se probó con valores de 
-            k=1, k=3 y k=5.
-            Distancia: Métrica euclidiana para evaluar similitud.
+            Número de vecinos (k): Se evaluó la precisión con valores de 
+            k del 1 al 10. Para los valores de k entre 1 y 6 la precisión dió la misma (96,875%) y luego fue bajando progresivamente para los k mas grandes.
+            Finalmente se comprobo que para k enrte 3 y 6 se adaptan mejor ya que para los valores mas bajos, el modelo puede ajustarse demasiado a los datos del entrenamiento,
+            lo que resulta en una alta precisión en este caso pero en un dataset más grande o más complejo, este comportamiento podría no generalizar bien y ser mas propensos
+            al sobreajuste.
+            Y en caso de los valores mas altos, el modelo puede generalizar demasiado introduciendo ruido y reduciendo la precisión.
+            Distancia: Métrica euclidiana para evaluar similitud. La distancia euclidiana mide bien la proximidad en un espacio tridimensional como el RGB.
         </p>
+        <h4>Evaluar k</h4>
+        <canvas id="accuracy-chart" width="400" height="200"></canvas>   
         <h2>Dataset</h2>
         <div>
             <table id="dataset-table">
@@ -89,8 +90,7 @@
             <div id="color-box" style="background-color: rgb(255, 0, 0); width: 100px; height: 100px; margin: 20px auto; border-radius: 5px;"></div>
             <button onclick="predictColor()">Predecir Color</button>
             <h2 id="result">Resultado: </h2>
-        </div>     
-        <canvas id="accuracy-chart" width="400" height="200"></canvas>   
+        </div>
     </div>
     <script src="./dataset/dataset.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -21,7 +21,7 @@
             <a href="#contact">Contacto</a>
         </div>
     </nav>
-    <div class="detail-container">
+    <div id="project1" class="detail-container">
         <h1>PROYECTO GRUPAL</h1>
         <img src="../assets/image dataset grupal.jpg" alt="Investigación 2" class="detail-image">
 
@@ -605,12 +605,6 @@
         <p><strong>Fórmula:</strong></p>
         <p>Recall = TP / (TP + FN)</p>
 
-        <h3>F1-Score</h3>
-        <p>Promedio armónico entre precisión y sensibilidad. Es útil cuando hay un balance entre la importancia de FP y
-            FN.</p>
-        <p><strong>Fórmula:</strong></p>
-        <p>F1 = 2 * (Precision * Recall) / (Precision + Recall)</p>
-
         <h3>AUC</h3>
         <p>Mide la capacidad del modelo para distinguir entre clases. La curva ROC compara la tasa de verdaderos
             positivos (TPR) frente a la tasa de falsos positivos (FPR). Es útil para comparar modelos sin depender de un
@@ -751,7 +745,44 @@
         <img src="../assets/img47.png" alt="Investigación 2" class="detail-image">
         <h2>Conclusiones</h2>
 
+        <h3>¿Porqué no obtuvimos un mejor porcentaje de precisión?</h3>
+
+        <p>El balance de las clases es el principal motivo de obtener un resultado de precisión entre 80% y 82%. Si las clases están desbalanceadas (por ejemplo, 90% de los vuelos no tienen retrasos y solo 10% tienen retrasos), una alta precisión puede ser engañosa porque el modelo podría estar simplemente prediciendo siempre la clase mayoritaria.</p>
+
+        <p>Nosotros buscamos un porcentaje de precisión entre 80% y 85%</p>
+
+        <h3>Importancia del dataset</h3>
+        <p>Este dataset aportó una gran cantidad de datos para el análisis de este problema. Igualmente, necesitamos reducir en gran medida la mayoría de datos proporcionados, ya que el procesamiento de nuestras máquinas no es suficiente para manejar gran cantidad de datos. </p>
+
+        <h3>Decision Tree</h3>
+        <p>La precisión obtenida con el Árbol de Decisión fue 81%. Este resultado indica que el modelo es capaz de realizar predicciones razonablemente buenas en base a los atributos seleccionados.</p>
+        <p>El modelo es interpretable y fácil de explicar, como se observó en la visualización del árbol generado.</p>
+
+        <h3>Random Forest</h3>
+        <p>La precisión obtenida fue 82%, ligeramente mejor que el Árbol de Decisión. Al combinar múltiples árboles, es más robusto frente al sobreajuste y captura patrones más complejos al considerar diferentes subconjuntos de datos y atributos.</p>
+        <p>La debilidad del Random Forest es que es más costoso y menos interpretable por la cantidad de árboles generados a comparación del Decision Tree</p>
+
+        <h3>Comparación de precisiones</h3>
+        <p>La diferencia en precisión entre ambos modelos no fue significativa (1%), lo que indica que el dataset probablemente contiene patrones claros que incluso un Árbol de Decisión sencillo puede capturar. Sin embargo, Random Forest tiene una ventaja en problemas con mayor ruido o relaciones complejas.</p>
+
+        <h3>Herramienta</h3>
+        <p>RapidMiner permitió realizar una exploración de los datos, preprocesamiento, y evaluación de modelos de manera eficiente, facilitando el análisis tanto de Árboles de Decisión como de Random Forest.</p>
+       
+        <h3>Reflexión final entre Random Forest y Decision Tree</h3>
+        <p><strong>Random Forest:</strong>  Es una buena opción para este problema porque maneja bien atributos numéricos y categóricos, es robusto frente a datos faltantes y desbalanceados, y captura patrones complejos.</p>
+        <p><strong>Decision Tree:</strong> Aunque es menos preciso, es útil para explicar de manera clara las relaciones entre los atributos y la variable objetivo, ofreciendo interpretaciones valiosas para el análisis.</p>
+
+        <h3>Pasos a futuro</h3>
+        <p>Nos gustaría probar con el mísmo dataset diferentes predicciones, por ejemplo, utilizar más filas del dataset para saber cómo se comporta el modelo de Random Forest y Decision Tree en esos casos.</p>
+        <p>Por otra parte, nos gustaría utilizar otras herramientas que nos permita analizar el dataset en profundidad, por ejemplo, Python u otra herramienta como Rapidminer.</p>
+
         <h2>Referencias</h2>
+
+        <p>Kaggle. (n.d.). Flight Dataset Preparation. Recuperado de https://www.kaggle.com /code/deepthyv/flight-dataset-preparation</p>
+        <p>Kaggle. (n.d.). Random Forest Classifier Tutorial. Recuperado de https://www.kaggle.com /code/prashant111/random-forest-classifier-tutorial</p>
+        <p>RapidMiner Documentation. (2024). Parallel Decision Tree. Recuperado de https://docs.rapidminer.com/2024.0/studio/operators/modeling/predictive/trees/parallel_decision _tree.html</p>
+        <p>RapidMiner Documentation. (2024). Parallel Random Forest. Recuperado de https://docs.rapidminer.com/2024.1/studio/operators/modeling/predictive/trees/parallel_random _forest.html</p>
+        <p>Kaggle. (n.d.). 2019 Airline Delays and Cancellations. Recuperado de https://www.kaggle.com /datasets/threnjen/2019-airline-delays-and -cancellations/data</p>
     </div>
 </body>
 

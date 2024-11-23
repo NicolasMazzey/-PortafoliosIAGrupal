@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio grupal</title>
     <link rel="stylesheet" href="./Home/home.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-left">
@@ -34,26 +36,40 @@
         </div>
     </div>
 
+    <div class="tags-list-container">
+        <h2>Etiquetas</h2>
+        <nav class="tags-list">
+            <ul>
+                <li><a onclick="location.href='./Proyecto grupal/proyectoGrupal.html'">Proyecto grupal</a></li>
+                <li><a onclick="location.href='./Proyecto de colores/proyectoColores.html'">Proyecto de colores</a></li>
+                <li><a onclick="location.href='./Parcial grupal/parcial.html'">Parcial</a></li>
+                <li><a onclick="location.href='./Investigacion 1/investigacion1.html'">Regresión Lineal</a></li>
+                <li><a onclick="location.href='./Investigacion 2/investigacion2.html'">Tratamiento de datos</a></li>
+                <li><a onclick="location.href='./Investigacion 3/investigacion3.html'">Caso Boston Housing</a></li>           
+            </ul>
+        </nav>
+    </div>
+
     <section id="about" class="section about">
         <div class="card">
             <h2>Sobre nosotros</h2>
             <p>Somos alto team.</p>
-            
+
         </div>
     </section>
 
     <section id="projects" class="section projects">
-        <h2 class = "inv">Proyectos principales</h2>
+        <h2 class="inv">Proyectos principales</h2>
         <div id="project-grid" class="project-grid">
             <!-- Card 1 -->
             <div class="project-card" onclick="location.href='./Proyecto grupal/proyectoGrupal.html'">
                 <img src="./assets/image dataset grupal.jpg" alt="investigacion1">
-                <h3>Proyecto grupal</h3>
+                <h3>Proyecto grupal - 2019 Airline Delays and Cancellations</h3>
             </div>
 
             <!-- Card 2 -->
             <div class="project-card" onclick="location.href='./Proyecto de Colores/proyectoColores.html'">
-                <img src="./assets/ml-portada.png" alt="investigacion2">
+                <img src="./assets/img48.webp" alt="investigacion2">
                 <h3>Proyecto de colores</h3>
             </div>
 
@@ -62,12 +78,12 @@
                 <img src="./assets/m1.png" alt="investigacion3">
                 <h3>Parcial</h3>
             </div>
-            
+
         </div>
     </section>
 
     <section id="projects" class="section projects">
-        <h2 class = "inv">Investigaciones</h2>
+        <h2 class="inv">Investigaciones</h2>
         <div id="project-grid" class="project-grid">
             <!-- Card 1 -->
             <div class="project-card" onclick="location.href='./Investigacion 1/investigacion1.html'">
@@ -86,19 +102,21 @@
                 <img src="./assets/m1.png" alt="investigacion3">
                 <h3>Caso de estudio Boston housing</h3>
             </div>
-            
+
         </div>
     </section>
     <section id="projects" class="section projects">
-        <h2 class = "inv">Github</h2>
+        <h2 class="inv">Github</h2>
         <div id="project-grid" class="project-grid">
             <!-- Card 3 -->
-            <div class="project-card" onclick="window.open('https://www.github.com/FrancoBarlocco/Inteligencia-Artificial-1', '_blank')">
+            <div class="project-card"
+                onclick="window.open('https://www.github.com/FrancoBarlocco/Inteligencia-Artificial-1', '_blank')">
                 <img src="./assets/git.jpeg" alt="investigacion4">
                 <h3>Github con tareas de aplicación PD´S/TA´S</h3>
             </div>
-            
+
         </div>
     </section>
 </body>
+
 </html>

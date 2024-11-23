@@ -4,7 +4,6 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-/* Estructura general */
 .hero {
     display: flex;
     flex-direction: column;
@@ -88,7 +87,6 @@ section {
     gap: 50px;
 }
 
-/* Estilos de la sección "Sobre mí" */
 .about {
     display: flex;
     flex-direction: column;
@@ -111,7 +109,6 @@ section {
     margin-top: 0;
 }
 
-/* Sección de proyectos */
 .projects {
     display: flex;
     flex-direction: column;
@@ -124,10 +121,10 @@ section {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas fijas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
-    max-width: 1200px; /* Limitar el ancho máximo */
+    max-width: 1200px;
 }
 
 .project-card {
@@ -136,8 +133,8 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%; /* Hacer que las cards ocupen todo el ancho disponible */
-    box-sizing: border-box; /* Incluir padding en el ancho total */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -164,36 +161,35 @@ footer {
     color: #333;
 }
 
-/* Card de investigación */
 .card {
-    width: 100%; /* Mantener el ancho completo de la card */
+    width: 100%;
     background: #000000;
     position: relative;
     display: flex;
-    flex-direction: column; /* Apilar elementos verticalmente */
-    align-items: center; /* Centrar elementos horizontalmente */
-    justify-content: center; /* Centrar elementos verticalmente */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     border-radius: 20px;
     box-sizing: border-box;
-    padding: 40px 20px; /* Añadir padding para dar espacio al contenido */
-    text-align: center; /* Centrar el texto */
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .card h2 {
     z-index: 1;
     color: white;
-    font-size: 2.5rem; /* Ajustar tamaño del título */
-    margin-bottom: 20px; /* Espacio debajo del título */
-    margin-top: 0; /* Asegura que no haya margen superior */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .card p {
     z-index: 1;
     color: white;
-    font-size: 1.2rem; /* Ajustar tamaño del texto */
-    margin-top: 0; /* Eliminar margen superior */
-    max-width: 800px; /* Limitar el ancho del párrafo */
+    font-size: 1.2rem;
+    margin-top: 0;
+    max-width: 800px;
 }
 
 .card::before {
@@ -204,7 +200,7 @@ footer {
     background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
     animation: rotBGimg 3s linear infinite;
     transition: all 0.2s linear;
-    z-index: 0; /* Asegurar que el fondo esté detrás del contenido */
+    z-index: 0;
 }
 
 @keyframes rotBGimg {
@@ -222,10 +218,9 @@ footer {
     background: #020202;
     inset: 5px;
     border-radius: 15px;
-    z-index: 0; /* Asegurar que esté detrás del contenido */
+    z-index: 0;
 }
 
-/* Estilo para detalles de proyecto */
 #project-details {
     position: fixed;
     top: 50%;
@@ -257,7 +252,6 @@ footer {
     font-size: 1.5em;
 }
 
-/* Estilo para la navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -297,4 +291,47 @@ footer {
 
 .inv{
     color: black;
+}
+
+
+.tags-list-container {
+    background-color: #000 !important; /* Fondo negro garantizado */
+    color: #fff; /* Texto blanco */
+    padding: 20px 0; /* Espaciado alrededor de la lista */
+    width: 100%; /* Asegura que el fondo cubra todo el ancho */
+    min-height: 50px; /* Altura mínima para evitar colapsos */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    position: relative; /* Evita conflictos con elementos externos */
+    z-index: 1; /* Asegura que esté encima de otros elementos */
+}
+
+
+
+/* Estilos específicos de la lista */
+.tags-list ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    display: flex;
+    gap: 1rem; /* Espacio entre los elementos */
+    justify-content: center; /* Centra la lista horizontalmente */
+    margin: 0;
+}
+
+.tags-list li {
+    display: inline;
+}
+
+.tags-list a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tags-list a:hover {
+    background-color: #fff; /* Fondo blanco al pasar el cursor */
+    color: #000; /* Texto negro al pasar el cursor */
 }

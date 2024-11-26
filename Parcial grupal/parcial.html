@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcial grupal</title>
     <link rel="stylesheet" href="./parcial.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="navbar-left">
@@ -20,47 +22,675 @@
         </div>
     </nav>
     <div class="detail-container">
-        <h1>PARCIAL</h1>
-        <img src="../assets/ML.jpg" alt="Investigación 2" class="detail-image">
-        <h2>¿Qué es el 'machine learning' y para qué sirve?</h2>
-        <p>El Machine Learning es una rama de la Inteligencia Artificial que permite a las computadoras aprender de los datos mediante el uso de algoritmos. <br><br> En lugar de seguir instrucciones programadas de manera rígida, los sistemas pueden identificar patrones en grandes conjuntos de datos y hacer predicciones o tomar decisiones basadas en esos patrones. Este enfoque permite automatizar tareas complejas y realizar análisis predictivos.</p>
-        <h2>Distintos algoritmos de ML</h2>
-        <h3>Aprendizaje supervisado:</h3>
-        <p>En este tipo de algoritmos, el modelo aprende a partir de datos etiquetados, es decir, ejemplos previos que incluyen la respuesta correcta. A través de este proceso, el sistema puede hacer predicciones o tomar decisiones basadas en patrones ya conocidos.<br><br> Un ejemplo típico es un filtro de correo electrónico que identifica si un mensaje es spam o no, utilizando información como el remitente o las palabras clave.</p>
-        <h3>Aprendizaje no supervisado</h3>
-        <p>A diferencia del supervisado, estos algoritmos trabajan sin etiquetas o respuestas previas. El sistema analiza los datos buscando patrones ocultos que puedan agrupar o categorizar la información. <br><br> En marketing, este enfoque se emplea para analizar grandes volúmenes de datos, como interacciones en redes sociales, con el fin de segmentar audiencias de manera más precisa.</p>
-        <h2>¿Qué es el preprocesamiento de datos? </h2>
-        <p>El preprocesamiento de datos se refiere al proceso de convertir datos en bruto en un formato más útil y comprensible para el análisis y la creación de modelos. Este paso es crucial, ya que contribuye significativamente a la calidad y eficiencia de los modelos de Machine Learning (ML) al solucionar problemas como la ausencia de datos, el ruido, las inconsistencias y los valores atípicos.</p>
-        <p>Este proceso incluye varias técnicas, como la imputación de valores faltantes, la normalización de datos y la detección y eliminación de outliers. Al realizar estas transformaciones, se busca preparar un conjunto de datos que sea más representativo y que facilite el aprendizaje del modelo, mejorando así su rendimiento y precisión.</p>
-        <h2>Ventajas del preprocesamiento de datos para el aprendizaje automático</h2>
-        <h3>Limpieza de datos</h3>
-        <p>La limpieza de datos es un paso crucial en el proceso de preprocesamiento de datos en machine learning. Consiste en detectar y corregir errores o inconsistencias en el conjunto de datos para asegurar que estos sean precisos y apropiados para el análisis o el entrenamiento de modelos.</p>
-        <h3>Gestión de los valores faltantes</h3>
-        <p>Los datos incompletos son un desafío común en los conjuntos de datos del mundo real y pueden perjudicar el desempeño de los modelos de machine learning. Para identificar y tratar los valores que faltan, se puede realizar lo siguiente:</p>
+        <h1>Parcial</h1>
+        <h2>Introducción a los Métodos de Aprendizaje Automático</h2>
+        <p>Franco Barlocco, Nicolás Mazzey, Juan Tabárez</p>
+        <p>Docente: Ernesto Ocampo</p>
+        <p>Fecha de entrega: 26/11/2024</p>
+
+        <h2>Diagnóstico Precoz de Enfermedad Crónica de Riñón</h2>
+
+        <h3>Parte 1: Análisis del problema, contexto y documentación correspondiente</h3>
+        <p>La enfermedad crónica de riñón se da cuando los riñones están dañados por al menos 3 meses. En Uruguay hay
+            unos 3.000 pacientes a los que se realiza hemodiálisis o diálisis peritoneal, así como 1.500 trasplantados,
+            con una prevalencia del 10% de la población adulta.</p>
+        <p>Datos de la organización internacional sin ánimo de lucro World Kidney Day informan que el 10% de la
+            población mundial padece enfermedad renal crónica, que, si no se trata, puede ser mortal.</p>
+
+
+        <p>En España la carga económica de la ERC diagnosticada se prevé que aumente un 13,8%, hasta los 4.890 millones
+            de euros en 2027, lo que representará el 5,56% del gasto sanitario público español total en 2027 (frente a
+            4,88% en 2022), de los cuales el 42,5% se destinará a TRS (Tratamiento Renal Sustitutivo) (2,4% del gasto
+            sanitario público).</p>
+
+        <h3>Síntomas</h3>
         <ul class="detail-description">
-            <li>Usar estadísticas descriptivas o gráficos para localizar las columnas o características con datos faltantes. Los valores ausentes suelen representarse como NaN o Nulos.</li>
-            <li>Evaluar el impacto de los valores faltantes en el análisis o modelo, considerando el porcentaje de valores ausentes en cada columna y su importancia dentro del conjunto de datos.</li>
-            <li>También existen técnicas más avanzadas de imputación, como la imputación por regresión, por vecinos más cercanos (k-NN) o empleando modelos de machine learning que predicen los valores ausentes a partir de otras características.</li>
-        </ul>
-        <h3>Gestión de los valores atípicos</h3>
-        <p>Los valores atípicos son datos que se desvían considerablemente de otras observaciones y pueden distorsionar los análisis o modelos de machine learning.</p>
-        <ul class="detail-description">
-            <li>Para detectarlos, se pueden utilizar gráficos como boxplots, histogramas o diagramas de dispersión, que te permiten visualizar posibles valores atípicos.</li>
-            <li>Calcular medidas como la media, la desviación estándar y el rango intercuartil (IQR).</li>
-            <li>Si los valores atípicos se deben a errores o datos incorrectos, es recomendable eliminarlos usando filtros estadísticos.</li>
-            <li>Aplicar transformaciones como logaritmos, raíces cuadradas o la transformación Box-Cox puede hacer que los datos sean más simétricos y reduzcan el efecto de los valores atípicos.</li>
-        </ul>
-        <h3>Gestión de duplicados</h3>
-        <p>Los registros duplicados pueden sesgar los resultados inflando ciertos patrones o introduciendo sesgos en el modelo.</p>
-        <ul class="detail-description">
-            <li>Usar funciones o librerías para identificar filas duplicadas basándose en columnas específicas o en toda la fila.</li>
-            <li>Si los duplicados no aportan nueva información, se pueden eliminar con librerías o métodos similares.</li>
+            <li>Náuseas</li>
+            <li>Vómito</li>
+            <li>Pérdida de apetito</li>
+            <li>Fatiga y debilidad</li>
+            <li>Problemas para dormir</li>
+            <li>Orinar más o menos</li>
+            <li>Disminución de la agudeza mental</li>
+            <li>Calambres musculares</li>
+            <li>Hinchazón de pies y tobillos</li>
+            <li>Piel seca y con picazón</li>
+            <li>Presión arterial alta (hipertensión) difícil de controlar</li>
+            <li>Dificultad para respirar, si se acumula líquido en los pulmones</li>
+            <li>Dolor en el pecho, si se acumula líquido alrededor del corazón</li>
         </ul>
 
-        <h2>Referencias</h2>
-        <p>Iberdrola. (n.d.). Machine learning: ¿Qué es y cómo funciona? Iberdrola. Recuperado de https://www.iberdrola.com/innovacion/machine-learning-aprendizaje-automatico</p>
-        <p>Captia. (n.d.). Machine learning: Qué es, cómo funciona y sus aplicaciones. Captia. Recuperado de https://www.captia.es/blog/machine-learning.html</p>
-        <p>Pure Storage. (n.d.). ¿Qué es el preprocesamiento de datos? Pure Storage. Recuperado de https://www.purestorage.com/es/knowledge/what-is-data-preprocessing.html</p>
+        <h3>Posibles causas</h3>
+        <ul class="detail-description">
+            <li>Presión arterial alta</li>
+            <li>Diabetes de tipo 1 o 2</li>
+            <li>Obesidad</li>
+            <li>Edad superior a 60</li>
+            <li>Fumar tabaco</li>
+            <li>Obstrucción del tracto urinario</li>
+            <li>Infección renal recurrente</li>
+            <li>Glomerulonefritis (inflamación de los filtros renales)</li>
+        </ul>
+
+        <h3>Efectos</h3>
+        <ul class="detail-description">
+            <li>Anemia (déficit de células rojas)</li>
+            <li>Hipercaliemia (potasio alto)</li>
+            <li>Enfermedades cardiovasculares</li>
+            <li>Acidosis metabólica (exceso de ácido en el cuerpo)</li>
+            <li>Trastorno mineral y óseo</li>
+        </ul>
+
+        <h2>Diagnóstico</h2>
+        <p>Test de sangre: Mide la cantidad de creatinina en la sangre, sustancia que tiene que ser filtrada por los
+            riñones debido a que es un desecho de los músculos. Una alta tasa de creatinina en la sangre indican que los
+            riñones no son capaces de filtrar la creatinina de la sangre por lo cual están dañados.</p>
+        <p>Test de orina: Mide la cantidad de albúmina en la orina en comparación con la creatinina para saber si los
+            riñones están separando la creatinina de la albúmina presentes en la sangre. Si los riñones no son capaz de
+            filtrar la albúmina entonces el test va a mostrar una cantidad elevada de albúmina en relación con la
+            creatinina en la orina lo cual es signo de que los riñones están dañados</p>
+
+        <h3>¿Cómo se trata la insuficiencia renal?</h3>
+        <p>Hay dos tratamientos para la insuficiencia renal: diálisis y trasplante de riñón.</p>
+
+        <ul class="detail-description">
+            <li>La diálisis es un tratamiento que elimina los desechos y el agua adicional de la sangre. Se encuentran
+                disponibles dos tipos de diálisis: hemodiálisis y diálisis peritoneal.</li>
+            <li>Un trasplante de riñón es una operación que coloca un nuevo riñón dentro del cuerpo. El nuevo riñón
+                servirá para reemplazar el trabajo de los riñones dañados. El nuevo riñón puede provenir de un donante
+                vivo (por lo general un familiar o amigo) o de alguien que murió y deseaba ser un donante de órganos.
+            </li>
+        </ul>
+
+        <h2>Parte 2:</h2>
+        <p>Elegimos el dataset de base debido a que ya iniciamos las tareas de preparación y limpieza de datos, no
+            obstante buscamos otros datasets para comparar con el que fue propuesto de base:</p>
+
+        <p>En nuestra búsqueda solo encontramos otro dataset muy similar al que teníamos pero con algunas diferencias:
+        </p>
+
+        <p><a href="https://www.kaggle.com/datasets/joebeachcapital/risk-factor-prediction-of-chronic-kidney-disease/data"
+                target="_blank">https://www.kaggle.com/datasets/joebeachcapital/risk-factor-prediction-of-chronic-kidney-disease/data</a>
+        </p>
+
+        <p>Tiene 202 entradas y 29 columnas de las cuales se distinguen un par de atributos distintos al dataset base:
+        </p>
+
+        <ul class="detail-description">
+            <li>El atributo “bp” dividido en 2 atributos “bp Diastolic” con valores 0, 1 y discrete y “bp limit” con
+                valores 0, 1 y 2. A diferencia del dataset de base donde bp tiene una unidad de medida numérica en mmHg.
+            </li>
+            <li>Atributo “grf” que indica la glomerular filtration rate que muestra qué tan bien están filtrando
+                nuestros riñones y se mide en milliliters per minute (mL/min).</li>
+            <li>Atributo “stage” medida en rangos de “s1” a “s5” siendo “s1”. No hay explicaciones acerca de si
+                simboliza el avance de la enfermedad o algo relacionado con la persona.</li>
+            <li>Atributo “affected” medida en rangos 0 y 1. Suponemos que está relacionado con los pacientes con ckd que
+                están siendo afectados por tener esta enfermedad pero hay pacientes con ckd en el dataset que no están
+                afectados.</li>
+        </ul>
+
+
+        <h2>Análisis previo:</h2>
+        <p>El dataset cuenta con 25 columnas en total de las cuales 11 son numéricas y 14 nominales incluyendo la
+            variable a predecir (class).</p>
+        <p>El dataset contiene varias columnas con valores faltantes representados por el símbolo “?”. La variable
+            objetivo es class, indica si una observación pertenece o no a la categoría "ckd" (enfermedad renal crónica).
+        </p>
+
+        <h2>Atributos</h2>
+        <ul class="detail-description">
+            <li><strong>age (numerical):</strong> indica la edad en años de la persona.</li>
+            <li><strong>bp (numerical):</strong> indica la presión sanguínea de la persona medida en mm/Hg.</li>
+            <li><strong>sg (nominal):</strong> indica la densidad de todas las partículas en la orina y puede tomar los
+                valores (1.005, 1.010, 1.015, 1.020, 1.025).</li>
+            <li><strong>al (nominal):</strong> indica albúmina, se mide en función de un valor nominal.</li>
+            <li><strong>su (nominal):</strong> azúcar, se mide en función de un valor nominal.</li>
+            <li><strong>rbc (binomial):</strong> glóbulos rojos, se clasifica en normal o anormal.</li>
+            <li><strong>pc (binomial):</strong> células de pus, se clasifican en normal o anormal.</li>
+            <li><strong>pcc (binomial):</strong> aglomeraciones de células de pus, se clasifican en present o
+                notpresent.</li>
+            <li><strong>ba (binomial):</strong> bacteria, se clasifica en present o notpresent.</li>
+            <li><strong>bgr (numerical):</strong> glucosa en sangre aleatoria, se mide en mgs/dl.</li>
+            <li><strong>bu (numerical):</strong> urea en sangre, se mide en mgs/dl.</li>
+            <li><strong>sc (numerical):</strong> creatinina sérica, se mide en mgs/dl.</li>
+            <li><strong>sod (numerical):</strong> sodio, se mide en mEq/L.</li>
+            <li><strong>pot (numerical):</strong> potasio, se mide en mEq/L.</li>
+            <li><strong>hemo (numerical):</strong> hemoglobina, se mide en gms.</li>
+            <li><strong>pcv (numerical):</strong> volumen de células empaquetadas.</li>
+            <li><strong>wc (numerical):</strong> recuento de glóbulos blancos, se mide en cells/cumm.</li>
+            <li><strong>rc (numerical):</strong> recuento de glóbulos rojos, se mide en millions/cmm.</li>
+            <li><strong>htn (binomial):</strong> hipertensión, toma los valores yes o no.</li>
+            <li><strong>dm (binomial):</strong> diabetes mellitus, toma los valores yes o no.</li>
+            <li><strong>cad (binomial):</strong> arteriopatía coronaria, toma los valores yes o no.</li>
+            <li><strong>appet (binomial):</strong> apetito, toma los valores good o poor.</li>
+            <li><strong>pe (binomial):</strong> pedal edema, toma los valores yes o no.</li>
+            <li><strong>ane (binomial):</strong> anemia, toma los valores yes o no.</li>
+            <li><strong>class (binomial):</strong> toma los valores ckd o notckd.</li>
+        </ul>
+
+
+        <h2>Análisis de cada atributo</h2>
+
+        <h3>1. Atributos Numéricos</h3>
+        <p>Los atributos numéricos como <strong>age</strong>, <strong>bp</strong> (presión sanguínea),
+            <strong>bgr</strong> (glucosa en sangre), <strong>bu</strong> (urea), <strong>sc</strong> (creatinina
+            sérica), entre otros, presentan variaciones significativas en sus valores:
+        </p>
+
+        <ul class="detail-description">
+            <li><strong>Edad (age):</strong>
+                <ul>
+                    <li>Rango: De 2 a 90 años.</li>
+                    <li>Valores faltantes: 9 casos.</li>
+                    <li>Outliers: 0 casos.</li>
+                    <li>Distribución: La mayoría de las observaciones están alrededor de los 60 años.</li>
+                    <li>Correlación negativa leve con CKD (-0.227).</li>
+                </ul>
+            </li>
+            <li><strong>Presión sanguínea (bp):</strong>
+                <ul>
+                    <li>Rango: De 50 a 180 mmHg.</li>
+                    <li>Valores faltantes: 12 casos.</li>
+                    <li>Outliers: 3 casos con bp mayor a 110 mmHg.</li>
+                    <li>Correlación negativa leve con CKD (-0.294).</li>
+                </ul>
+            </li>
+            <li><strong>Glucosa en sangre (bgr):</strong>
+                <ul>
+                    <li>Rango: De 22 a 490 mgs/dl.</li>
+                    <li>Valores faltantes: 44 casos.</li>
+                    <li>Outliers: 1 caso con 22 mgs/dl.</li>
+                    <li>Valores elevados en pacientes con CKD.</li>
+                    <li>Correlación negativa moderada con CKD (-0.42).</li>
+                </ul>
+            </li>
+            <li><strong>Creatinina sérica (sc):</strong>
+                <ul>
+                    <li>Rango: De 0.4 a 76 mg/dl.</li>
+                    <li>Valores faltantes: 17 casos.</li>
+                    <li>Outliers: 3 casos con sc mayor a 24 mg/dl.</li>
+                    <li>Correlación negativa leve con CKD (-0.3).</li>
+                </ul>
+            </li>
+            <li><strong>Hemoglobina (hemo):</strong>
+                <ul>
+                    <li>Rango: De 3.1 a 17.8 gms.</li>
+                    <li>Valores faltantes: 52 casos.</li>
+                    <li>Outliers: 1 caso con hemo 3.1 gms.</li>
+                    <li>Valores bajos están asociados con CKD, correlación positiva muy fuerte (0.769).</li>
+                </ul>
+            </li>
+            <li><strong>Urea en la sangre (bu):</strong>
+                <ul>
+                    <li>Rango: De 1.5 a 391 mgs/dl.</li>
+                    <li>Valores faltantes: 19 casos.</li>
+                    <li>Outliers: 1 caso con bu 1.5 mgs/dl y 4 casos con bu mayor a 235 mgs/dl.</li>
+                    <li>Valores altos (más de 50 mgs/dl) están asociados con CKD, correlación negativa moderada
+                        (-0.381).</li>
+                </ul>
+            </li>
+            <li><strong>Sodio (sod):</strong>
+                <ul>
+                    <li>Rango: De 4.5 a 163 mEq/L.</li>
+                    <li>Valores faltantes: 87 casos.</li>
+                    <li>Outliers: 1 caso con 4.5 mEq/L y 1 con 163 mEq/L.</li>
+                    <li>Valores bajos (menos de 130 mEq/L) están asociados con CKD, correlación positiva moderada
+                        (0.376).</li>
+                </ul>
+            </li>
+            <li><strong>Potasio (pot):</strong>
+                <ul>
+                    <li>Rango: De 2.5 a 47 mEq/L.</li>
+                    <li>Valores faltantes: 88 casos.</li>
+                    <li>Outliers: 2 casos con más de 39 mEq/L.</li>
+                    <li>Valores elevados (más de 5 mEq/L) están asociados con CKD, correlación negativa leve (-0.085).
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Recuento de glóbulos rojos (rbcc):</strong>
+                <ul>
+                    <li>Rango: De 2.1 a 8 millones/cmm.</li>
+                    <li>Valores faltantes: 131 casos.</li>
+                    <li>Outliers: 1 caso con más de 8 millones/cmm.</li>
+                    <li>Valores bajos (menos de 4.4 mEq/L) están asociados con CKD, correlación positiva fuerte (0.699).
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Recuento de glóbulos blancos (wbcc):</strong>
+                <ul>
+                    <li>Rango: De 2200 a 26400 cells/cmm.</li>
+                    <li>Valores faltantes: 106 casos.</li>
+                    <li>Outliers: 2 casos con más de 21600 cells/cmm.</li>
+                    <li>Valores bajos (menos de 4300 cells/cmm) y valores elevados (más de 11000 cells/cmm) están
+                        asociados con CKD, correlación negativa leve (-0.232).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>2. Atributos Categóricos o Nominales</h2>
+        <p>Los atributos categóricos incluyen valores como <strong>sg</strong> (gravedad específica),
+            <strong>al</strong> (albúmina en orina), y otros que presentan patrones claros:
+        </p>
+
+        <ul class="detail-description">
+            <li><strong>Gravedad específica (sg):</strong>
+                <ul>
+                    <li>Rango: De 1.005 a 1.025.</li>
+                    <li>Valores faltantes: 47 casos.</li>
+                    <li>Outliers: 0 casos.</li>
+                    <li>Los valores más comunes son 1.010 y 1.015.</li>
+                    <li>Baja gravedad específica está relacionada con CKD.</li>
+                    <li>Correlación positiva fuerte con CKD (0.732).</li>
+                </ul>
+            </li>
+            <li><strong>Albúmina (al):</strong>
+                <ul>
+                    <li>Rango: De 0 a 5.</li>
+                    <li>Valores faltantes: 46 casos.</li>
+                    <li>Outliers: 1 caso con al de 5.</li>
+                    <li>Los valores elevados están fuertemente asociados con CKD.</li>
+                    <li>Correlación negativa fuerte con CKD (0.627).</li>
+                </ul>
+            </li>
+            <li><strong>Azúcar (su):</strong>
+                <ul>
+                    <li>Rango: De 0 a 5.</li>
+                    <li>Valores faltantes: 49 casos.</li>
+                    <li>Outliers: 0 casos.</li>
+                    <li>Elevados niveles de azúcar son menos frecuentes, pero suelen estar presentes en casos de CKD.
+                    </li>
+                    <li>Correlación negativa moderada con CKD (-0.344).</li>
+                </ul>
+            </li>
+            <li><strong>Volumen de células empaquetadas (pcv):</strong>
+                <ul>
+                    <li>Rango: De 9 a 54.</li>
+                    <li>Valores faltantes: 71 casos.</li>
+                    <li>Outliers: 1 caso con pcv de 9.</li>
+                    <li>Valores bajos (menos de 40) están presentes sólo en pacientes con CKD.</li>
+                    <li>Correlación positiva fuerte con CKD (0.741).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>3. Atributos Binarios</h2>
+        <p>Los atributos binarios como <strong>htn</strong> (hipertensión), <strong>dm</strong> (diabetes mellitus),
+            <strong>cad</strong> (arteriopatía coronaria), <strong>pe</strong> (edema en piernas), y
+            <strong>ane</strong> (anemia) muestran asociaciones notables:
+        </p>
+
+        <ul class="detail-description">
+            <li><strong>Hipertensión (htn):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 2 casos.</li>
+                    <li>Más prevalente en pacientes con CKD.</li>
+                    <li>Asociación positiva con la variable objetivo.</li>
+                    <li>Correlación positiva moderada con CKD (0.589).</li>
+                </ul>
+            </li>
+            <li><strong>Diabetes Mellitus (dm):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 2 casos.</li>
+                    <li>Ligera asociación positiva con CKD.</li>
+                    <li>Correlación positiva moderada con CKD (0.557).</li>
+                </ul>
+            </li>
+            <li><strong>Anemia (ane):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 1 caso.</li>
+                    <li>Alta prevalencia en pacientes con CKD, lo que la convierte en un fuerte indicador.</li>
+                    <li>Correlación negativa leve con CKD (-0.325).</li>
+                </ul>
+            </li>
+            <li><strong>Arterias coronarias (cad):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 2 casos.</li>
+                    <li>Presente únicamente con baja prevalencia en pacientes con CKD.</li>
+                    <li>Correlación positiva leve con CKD (-0.235).</li>
+                </ul>
+            </li>
+            <li><strong>Edema de pedal (pe):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 1 caso.</li>
+                    <li>Presente únicamente con moderada prevalencia en pacientes con CKD.</li>
+                    <li>Correlación negativa leve con CKD (-0.374).</li>
+                </ul>
+            </li>
+            <li><strong>Apetito (appet):</strong>
+                <ul>
+                    <li>Rango: Yes o No.</li>
+                    <li>Valores faltantes: 1 caso.</li>
+                    <li>Presente únicamente con moderada prevalencia en pacientes con CKD.</li>
+                    <li>Correlación negativa leve con CKD (-0.393).</li>
+                </ul>
+            </li>
+            <li><strong>Glóbulos blancos (pc):</strong>
+                <ul>
+                    <li>Rango: Normal o Abnormal.</li>
+                    <li>Valores faltantes: 65 casos.</li>
+                    <li>Outliers: 0 casos.</li>
+                    <li>Valores anormales de glóbulos blancos son únicamente moderadamente frecuentes en pacientes con
+                        CKD.</li>
+                    <li>Correlación negativa moderada con CKD (-0.462).</li>
+                </ul>
+            </li>
+            <li><strong>Grupos de glóbulos blancos (pcc):</strong>
+                <ul>
+                    <li>Rango: Present o Notpresent.</li>
+                    <li>Valores faltantes: 4 casos.</li>
+                    <li>Grupos presentes de glóbulos blancos se dan en su mayoría en pacientes con niveles anormales de
+                        glóbulos blancos y solo están levemente frecuentes en pacientes con CKD.</li>
+                    <li>Correlación negativa leve con CKD (-0.263).</li>
+                </ul>
+            </li>
+            <li><strong>Bacteria (ba):</strong>
+                <ul>
+                    <li>Rango: Present o Notpresent.</li>
+                    <li>Valores faltantes: 4 casos.</li>
+                    <li>Bacterias están levemente presentes solo en pacientes con CKD y en la mayoría de los casos hay
+                        glóbulos blancos anormales.</li>
+                    <li>Correlación negativa leve con CKD (-0.185).</li>
+                </ul>
+            </li>
+            <li><strong>Glóbulos rojos (rbc):</strong>
+                <ul>
+                    <li>Rango: Normal o Abnormal.</li>
+                    <li>Valores faltantes: 152 casos.</li>
+                    <li>Valores anormales frecuentes solo en pacientes con CKD.</li>
+                    <li>Correlación negativa moderada con CKD (-0.555).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>4. Relación con la Variable Objetivo (class)</h2>
+        <p>Atributos como <strong>sg</strong> (0.732), <strong>sc</strong>, <strong>hemo</strong> (0.769),
+            <strong>pcv</strong> (0.741), <strong>rbcc</strong> (0.699), <strong>al</strong> (-0.627),
+            <strong>htn</strong> (0.589) y <strong>dm</strong> (0.557) muestran mayor correlación con la variable
+            objetivo.
+        </p>
+        <p>Variables como <strong>age</strong> (-0.227) o <strong>pot</strong> (-0.085), aunque descriptivas, tienen
+            baja correlación directa con CKD.</p>
+        <p>Visualización de las correlaciones en RapidMiner</p>
+
+        <img src="../assets/img49.png" alt="Investigación 2" class="detail-image">
+
+        <h2>5. Outliers</h2>
+        <p>Varias columnas tienen outliers leves, como <strong>bp</strong>, <strong>sc</strong>, <strong>pot</strong>,
+            <strong>wbcc</strong>, pero no superan más de 10 outliers.
+        </p>
+        <p>Deberíamos removerlos directamente para mejorar la performance del modelo.</p>
+
+        <h2>6. Datos Faltantes</h2>
+        <p>Varias columnas tienen datos faltantes significativos, como <strong>rbc</strong>, <strong>rbcc</strong> y
+            <strong>wbcc</strong>.
+        </p>
+        <p>Los datos faltantes deberán ser eliminados o modificados para garantizar la calidad del modelo. Para la
+            modificación podemos usar el valor promedio del atributo.</p>
+        <p><strong>Visualización en Excel:</strong> Primero abrimos el dataset en Excel para detectar valores faltantes
+            o casos interesantes en nuestro dataset.</p>
+
+        <img src="../assets/img50.png" alt="Investigación 2" class="detail-image">
+
+        <p>Como podemos ver, tenemos varias columnas con muchos valores faltantes, por ejemplo, “rbc”, “pc”,
+            “sod”,”pot”,etc.</p>
+
+        <h2>7. ¿Cuáles son los procedimientos y dificultades para obtener datos correctos de estos atributos?</h2>
+        <p>Atributos como <strong>sg</strong> y asumimos que <strong>al</strong> y <strong>su</strong> también se
+            obtienen del análisis de muestras de orina.</p>
+        <p>Atributos como <strong>sc</strong>, <strong>rbc</strong>, <strong>pcc</strong>, <strong>bgr</strong>,
+            <strong>bu</strong>, <strong>sod</strong>, <strong>pot</strong>, <strong>wbcc</strong>,
+            <strong>rbcc</strong>, <strong>hemo</strong>, <strong>pcv</strong> se obtienen mediante el análisis de
+            muestras de sangre.
+        </p>
+        <p>Atributos como <strong>htn</strong>, <strong>db</strong>, <strong>ane</strong>, <strong>cad</strong>,
+            <strong>pe</strong> se obtienen mediante test específicos para cada enfermedad.
+        </p>
+        <p>El atributo <strong>bp</strong> se obtiene tomándole la presión al paciente.</p>
+
+        <h2>8. ¿Cómo cambia la probabilidad de desarrollar CKD en relación con otras enfermedades relacionadas (ej.,
+            diabetes, hipertensión), sexo o edad?</h2>
+        <p>A nivel del dataset, los pacientes que no tienen CKD no presentan enfermedades relacionadas como diabetes,
+            hipertensión, anemia o enfermedades cardiovasculares.</p>
+        <p>Sin embargo, en los pacientes con CKD, más del 50% están asociados a enfermedades como diabetes o
+            hipertensión, y alrededor de un 20% están relacionados con anemia o enfermedades cardiovasculares.</p>
+        <p>A nivel del dataset, se observa que la edad influye en la probabilidad de desarrollar CKD, ya que la media de
+            edad de los pacientes con CKD es de 54 años, mientras que la media de los pacientes sin CKD es de 46 años.
+        </p>
+        <p>No obstante, hay 132 pacientes con CKD menores de 60 años y 118 pacientes con CKD de 60 años o más, lo cual
+            es inusual considerando que una de las principales causas de CKD es tener más de 60 años.</p>
+
+
+        <h2>Parte 3:</h2>
+
+        <h2>A) Clasificación del problema</h2>
+        <p>El problema es un problema de clasificación supervisada debido a que tenemos que predecir si un paciente
+            tiene una de las dos posibles categorías: “ckd” o “notckd”, en base a datos de entrenamiento que incluyen
+            ejemplos de pacientes con “ckd” y “notckd” acompañados de atributos multivariados. Estos atributos permiten
+            ajustar el modelo para predecir esta enfermedad. La variable objetivo es el atributo <strong>class</strong>,
+            con valores “ckd” y “notckd”.</p>
+
+        <h2>B) Algoritmos para resolver el problema:</h2>
+        <p>En este caso utilizaremos tres algoritmos para resolver el problema:</p>
+
+        <ul class="detail-description">
+            <li>
+                <strong>KNN:</strong> Es flexible ya que no asume ninguna distribución específica de los datos y
+                funciona en la mayoría de problemas de clasificación supervisada. Es crucial normalizar los datos, ya
+                que KNN se basa en distancias para calcular relaciones, y los atributos numéricos grandes pueden afectar
+                el rendimiento del algoritmo.
+            </li>
+            <li>
+                <strong>Regresión Logística:</strong> Está diseñada para problemas de clasificación binaria y calcula la
+                probabilidad de que un evento ocurra o no. En este caso, predice si un paciente tiene ckd o no. Es
+                rápido, interpretable y permite ver cómo influye el conjunto de atributos predictores en las
+                predicciones.
+            </li>
+            <li>
+                <strong>Random Forest:</strong> Combina múltiples árboles de decisión para mejorar la precisión y evitar
+                el sobreajuste. Este algoritmo también nos proporciona métricas para evaluar qué atributos son más
+                relevantes y tiene una gran capacidad de ajuste mediante parámetros como la cantidad de árboles, la
+                profundidad y el pruning, lo que permite optimizar su rendimiento.
+            </li>
+        </ul>
+
+        <h2>C) Validación del modelo</h2>
+        <p>Para realizar la prueba del modelo, y considerando que no tenemos un dataset de prueba, es crucial separar
+            una parte de los datos para realizar las pruebas. Dividimos el dataset en dos particiones: 70% para
+            entrenamiento y 30% para testeo.</p>
+        <p>Para reducir el sesgo en la partición, utilizamos la técnica de <strong>Cross Validation</strong>. En esta
+            técnica, el dataset se divide en “k” subconjuntos llamados folds. El modelo se entrena con k-1 subconjuntos
+            y se testea con el “k” subconjunto restante. Este proceso se repite “k” veces probando con todos los
+            subconjuntos como test. Al finalizar, se promedian las métricas obtenidas de las “k” iteraciones.</p>
+
+        <h3>Métricas de evaluación</h3>
+        <p>Al tratarse de un problema de clasificación binaria, debemos considerar casos positivos y negativos:</p>
+        <ul class="detail-description">
+            <li>Casos positivos: Pacientes con la enfermedad “ckd”.</li>
+            <li>Casos negativos: Pacientes sin la enfermedad “ckd” (es decir, “notckd”).</li>
+        </ul>
+        <p>Es crucial interpretar correctamente qué se considera un caso positivo y qué un caso negativo, ya que las
+            métricas se basan en esta distinción. Además, se clasifican los casos en:</p>
+        <ul class="detail-description">
+            <li>Verdaderos positivos: Casos correctamente identificados como “ckd”.</li>
+            <li>Verdaderos negativos: Casos correctamente identificados como “notckd”.</li>
+            <li>Falsos positivos: Casos identificados como “ckd” cuando no lo son.</li>
+            <li>Falsos negativos: Casos identificados como “notckd” cuando en realidad son “ckd”.</li>
+        </ul>
+        <p>Estas métricas son esenciales para evaluar el rendimiento del modelo y garantizar predicciones precisas.</p>
+
+        <p>Los verdaderos positivos son aquellas personas que tienen <strong>ckd</strong> y el modelo predijo que tienen
+            <strong>ckd</strong> correctamente. Para los casos verdaderos negativos, son las personas que no tienen
+            <strong>ckd</strong> (“notckd”) y el modelo predijo “notckd” correctamente.
+        </p>
+        <p>Los falsos positivos son las personas con “notckd” de las cuales el modelo predijo que tenían “ckd”
+            incorrectamente. Por otro lado, los falsos negativos son personas con <strong>ckd</strong> de las cuales el
+            modelo predice incorrectamente “notckd”.</p>
+        <p>Es fundamental tener claro estos casos para poder aplicarlos a las siguientes métricas de evaluación:</p>
+
+        <h3>Precision (Accuracy):</h3>
+        <p>Proporciona el porcentaje de predicciones correctas sobre el total de predicciones. Se calcula sumando ambas
+            cantidades de casos verdaderos positivos y negativos y dividiendo el resultado sobre el total de casos.</p>
+
+        <p>(TP + TN)/(TP + FP + TN +FN)</p>
+
+        <h3>Sensibilidad (Recall):</h3>
+        <p>Proporciona el porcentaje de predicciones verdaderas positivas correctas sobre el total de predicciones
+            verdaderas positivas y falsas negativas totales. Se calcula dividiendo el total de verdaderos positivos
+            entre la suma de verdaderos positivos más los falsos negativos.</p>
+        <p>Una alta sensibilidad indica que el modelo está bien ajustado para predecir cuando un paciente tiene
+            <strong>ckd</strong> sin dejar de lado ningún paciente enfermo.
+        </p>
+
+        <p>TP/(TP + FN)</p>
+        <h3>Especificidad (Specificity):</h3>
+        <p>Proporciona el porcentaje de predicciones negativas correctas sobre el total de predicciones verdaderas
+            negativas y falsas positivas totales. Se calcula dividiendo el total de verdaderos negativos entre la suma
+            de verdaderos negativos más los falsos positivos.</p>
+        <strong>ckd</strong> sin clasificar erróneamente a pacientes como enfermos cuando no lo están.</p>
+        <p>TN/(TN + FP)</p>
+        <p>Una alta especificidad indica que el modelo está bien ajustado para predecir cuando un paciente no tiene
+
+        <h3>Precisión de clase (Precision):</h3>
+        <p>Proporciona el porcentaje de predicciones positivas verdaderas sobre el total de predicciones positivas
+            totales. Se calcula dividiendo el total de verdaderos positivos entre la suma de verdaderos positivos más
+            los falsos positivos.</p>
+
+        <p>TP/(TP + FP)</p>
+        <p>Una alta precisión de clase indica que el modelo está bien ajustado para diferenciar los casos
+            <strong>ckd</strong> que realmente son verdaderos y no da falsas alarmas en cuanto a posibles enfermos.
+        </p>
+
+        <h3>Matriz de confusión:</h3>
+        <p>Para facilitar el análisis de estas métricas en una sola tabla, existe la matriz de confusión. En ella se
+            agrupan todos los casos posibles de valores positivos y negativos con los verdaderos y falsos, formando una
+            matriz que refleja cuántos casos hubo de cada tipo. También se calculan los porcentajes asociados a cada
+            métrica donde corresponda en la tabla.</p>
+        <p>Esto permite visualizar más fácilmente las métricas, ofreciendo una representación visual del rendimiento del
+            modelo. Además, evita tener que calcular manualmente cada métrica, ya que proporciona la cantidad de casos
+            que hubo de cada tipo.</p>
+
+        <h3>Curvas ROC y AUC:</h3>
+        <p>En una curva ROC se grafica la fracción de verdaderos positivos (<strong>sensitivity</strong> o
+            <strong>recall</strong>) que van apareciendo en los datos (eje vertical) frente a la fracción de falsos
+            positivos (eje horizontal). Una curva que se acerca más al rincón superior izquierdo indica un mejor
+            desempeño del modelo.
+        </p>
+        <p>Además, el área bajo esta curva (<strong>AUC</strong>) mide qué tan bueno es el modelo en general para
+            distinguir entre las dos clases. Si el valor del área bajo la curva es 1, el modelo es ideal; mientras más
+            cerca de 0 esté, peor será su rendimiento para realizar esta distinción.</p>
+
+        <p>d) El modelo solución del problema en RapidMiner es el siguiente:</p>
+
+        <img src="../assets/img51.png" alt="Investigación 2" class="detail-image">
+
+        <h3>Lectura y configuración del dataset:</h3>
+        <p>Empezamos con el operador <strong>Read CSV</strong>, que se encarga de cargar el dataset para su uso en el
+            modelo, evitando realizar importaciones manuales. Luego, configuramos los roles de las columnas: asignamos
+            el rol de <strong>label</strong> a la columna <strong>class</strong> (variable objetivo, con valores "ckd" y
+            "notckd") y configuramos el rol de <strong>id</strong> a la columna <strong>id</strong> para evitar que sea
+            utilizada como atributo predictor.</p>
+
+        <h3>Gestión de valores faltantes:</h3>
+        <p>Utilizamos el operador <strong>Declare Missing Values</strong> para marcar las instancias de "?" en el CSV
+            como valores faltantes. Esto es necesario porque, de lo contrario, RapidMiner trataría estos valores como
+            datos válidos, lo cual sería incorrecto.</p>
+
+        <h3>Filtrado de atributos y outliers:</h3>
+        <p>Aplicamos el operador <strong>Filter Examples</strong> para filtrar outliers manualmente, como se explicó en
+            la sección 2.5. Dado que no hay demasiados outliers, este enfoque nos brinda mayor control sobre el proceso.
+            Por ejemplo, para eliminar el registro con id 50, configuramos el filtro para excluir este valor invirtiendo
+            la selección, y marcamos la opción "Match Any" para asegurar que se apliquen correctamente las condiciones.
+            De lo contrario, ningún dato tiene como id = 50 e id = 62, por lo cual con “Match All” no se filtraría
+            ningún dato.</p>
+
+        <h3>Selección de atributos con datos faltantes:</h3>
+        <p>Usamos el operador <strong>Select Attributes</strong> para eliminar atributos con un exceso de valores
+            faltantes. En este caso, descartamos las columnas <strong>rbc</strong>, <strong>rbcc</strong> y
+            <strong>wbcc</strong>, ya que cada una tenía más del 25% de sus valores como faltantes (más de 100 cada
+            uno).</p>
+
+        <h3>Transformación de datos:</h3>
+        <ul class="detail-description">
+            <li>Cambiamos la variable objetivo de nominal a binomial mediante el operador <strong>Nominal to
+                    Binomial</strong>, ya que solo tiene dos valores posibles (ckd y notckd).</li>
+            <li>Usamos el operador <strong>Guess Types</strong> para corregir los tipos de datos. Al convertir el
+                archivo CSV desde formato ARFF, todos los atributos se marcaron como nominales, incluidos los numéricos.
+                Este operador reasigna los tipos de manera automática, con una significativa mejora del rendimiento.
+            </li>
+        </ul>
+
+        <h3>Multiplicación y análisis de datos:</h3>
+        <p>Insertamos el operador <strong>Multiply</strong> para realizar tres análisis simultáneos y también ver el
+            dataset antes de ejecutar cada algoritmo. En paralelo, utilizamos el operador <strong>Correlation
+                Matrix</strong> para calcular la matriz de correlación entre atributos y analizar las relaciones entre
+            ellos, incluida la variable objetivo.</p>
+
+        <h3>Validación cruzada:</h3>
+        <p>Las tres soluciones se encapsularon en un operador <strong>Cross Validation</strong> con 10 folds, muestreo
+            aleatorio usando semilla local fija. Este enfoque minimiza el sesgo asociado con la partición del dataset.
+            En las tres soluciones configuramos un operador <strong>Apply Model</strong> dentro de la validación
+            cruzada, conectado a un operador <strong>Performance Binomial Classification</strong> para generar métricas
+            como curvas ROC, sensibilidad, especificidad y precisión, estableciendo "ckd" como la clase positiva
+            esenciales para el análisis posterior a la ejecución de las soluciones.</p>
+
+        <h3>Implementación de algoritmos:</h3>
+
+        <ul class="detail-description">
+            <li><strong>KNN:</strong>
+                <ul>
+                    <li>Primero normalizamos todos los atributos que pudieran ser normalizables con la transformación de
+                        rango entre 0 y 1, ya que KNN considera las distancias y queremos que todas estén
+                        estandarizadas.</li>
+                    <li>Dentro de <strong>Cross Validation</strong> está el operador KNN. Configuramos el tipo de medida
+                        como mixto, utilizando la medida euclidiana mixta por defecto.</li>
+                    <li>El parámetro “k” fue ajustado con el operador <strong>Optimizer</strong> para encontrar el mejor
+                        valor posible, que fue 23.</li>
+                </ul>
+            </li>
+            <li><strong>Regresión Logística:</strong>
+                <ul>
+                    <li>Insertamos el operador dentro del <strong>Cross Validation</strong>.</li>
+                    <li>Cambiamos el solver a <strong>IRLSM</strong>, ya que el dataset no tiene tantas columnas
+                        predictoras.</li>
+                    <li>El resto de los parámetros se dejaron por defecto. Sin embargo, el manejo de valores faltantes
+                        fue relevante y consideramos que reemplazarlos por el valor promedio era la opción correcta.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Random Forest:</strong>
+                <ul>
+                    <li>Usamos el operador <strong>Replace Missing Values</strong> debido a que los valores faltantes afectaban el comportamiento del algoritmo. Con este operador, reemplazamos los valores faltantes por el promedio.</li>
+                    <li>Insertamos el operador dentro del <strong>Cross Validation</strong> y cambiamos un par de parámetros, como el uso de semilla local para mantener consistencia, y el criterio para que sea <strong>accuracy</strong>, ya que queremos maximizar la precisión del árbol completo para obtener mejores predicciones.</li>
+                    <li>El número de árboles fue ajustado manualmente en 253, ya que observamos mejorías entre 100 y 1000 árboles. Sin embargo, el <strong>Optimizer</strong> demoraba mucho, y aunque consideramos la profundidad, no hubo cambios significativos en el rendimiento, por lo que no fue ajustada.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>e) Para cada proceso tenemos las siguientes métricas de evaluación:</p>
+
+        <h2>KNN</h2>
+        <img src="../assets/img52.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img53.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img54.png" alt="Investigación 2" class="detail-image">
+
+        <h2>Regresión Logística</h2>
+        <img src="../assets/img55.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img56.png" alt="Investigación 2" class="detail-image">
+
+        <h2>Random Forest</h2>
+        <img src="../assets/img57.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img58.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img59.png" alt="Investigación 2" class="detail-image">
+        <img src="../assets/img60.png" alt="Investigación 2" class="detail-image">
+
+
+
     </div>
 </body>
+
 </html>

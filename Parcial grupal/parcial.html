@@ -612,7 +612,8 @@
         <p>Usamos el operador <strong>Select Attributes</strong> para eliminar atributos con un exceso de valores
             faltantes. En este caso, descartamos las columnas <strong>rbc</strong>, <strong>rbcc</strong> y
             <strong>wbcc</strong>, ya que cada una tenía más del 25% de sus valores como faltantes (más de 100 cada
-            uno).</p>
+            uno).
+        </p>
 
         <h3>Transformación de datos:</h3>
         <ul class="detail-description">
@@ -664,9 +665,18 @@
             </li>
             <li><strong>Random Forest:</strong>
                 <ul>
-                    <li>Usamos el operador <strong>Replace Missing Values</strong> debido a que los valores faltantes afectaban el comportamiento del algoritmo. Con este operador, reemplazamos los valores faltantes por el promedio.</li>
-                    <li>Insertamos el operador dentro del <strong>Cross Validation</strong> y cambiamos un par de parámetros, como el uso de semilla local para mantener consistencia, y el criterio para que sea <strong>accuracy</strong>, ya que queremos maximizar la precisión del árbol completo para obtener mejores predicciones.</li>
-                    <li>El número de árboles fue ajustado manualmente en 253, ya que observamos mejorías entre 100 y 1000 árboles. Sin embargo, el <strong>Optimizer</strong> demoraba mucho, y aunque consideramos la profundidad, no hubo cambios significativos en el rendimiento, por lo que no fue ajustada.</li>
+                    <li>Usamos el operador <strong>Replace Missing Values</strong> debido a que los valores faltantes
+                        afectaban el comportamiento del algoritmo. Con este operador, reemplazamos los valores faltantes
+                        por el promedio.</li>
+                    <li>Insertamos el operador dentro del <strong>Cross Validation</strong> y cambiamos un par de
+                        parámetros, como el uso de semilla local para mantener consistencia, y el criterio para que sea
+                        <strong>accuracy</strong>, ya que queremos maximizar la precisión del árbol completo para
+                        obtener mejores predicciones.
+                    </li>
+                    <li>El número de árboles fue ajustado manualmente en 253, ya que observamos mejorías entre 100 y
+                        1000 árboles. Sin embargo, el <strong>Optimizer</strong> demoraba mucho, y aunque consideramos
+                        la profundidad, no hubo cambios significativos en el rendimiento, por lo que no fue ajustada.
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -687,6 +697,112 @@
         <img src="../assets/img58.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img59.png" alt="Investigación 2" class="detail-image">
         <img src="../assets/img60.png" alt="Investigación 2" class="detail-image">
+
+        <p>f) En base a los resultados que obtuvimos podemos ver que en los 3 casos los niveles de accuracy superan el
+            95% en los 3 casos, lo cual es muy bueno ya que nos dan un diagnóstico preciso de los pacientes testeados.
+            De estas 3 soluciones el random forest es superior con accuracy de 99.22% y la peor es knn con accuracy de
+            95.07%.</p>
+
+        <p>En estos tipos de modelo donde se predicen enfermedades lo más importante no es la precisión sino los falsos
+            positivos y falsos negativos. Si fuera cáncer, sería horrible que el modelo tuviera gran parte de los casos
+            como falsos positivos porque diagnosticaríamos a pacientes con cáncer cuando no lo tienen.</p>
+
+        <p>En este caso, como hablamos de CKD, la enfermedad tiene un impacto negativo en la persona y tiene un
+            tratamiento que se tiene que cumplir, por lo cual soluciones como regresión logística con 4 falsos positivos
+            y random forest con 3 falsos positivos de 150 personas sin CKD son consecuencias a considerar aunque el
+            margen es bajo.</p>
+
+        <p>Por otro lado, si bien KNN no tiene falsos positivos, lo cual es bueno, tiene 19 falsos negativos, lo cual es
+            un gran número de falsos negativos e indica que el algoritmo es el menos sensible de las tres soluciones, ya
+            que regresión logística tiene 6 falsos negativos y random forest tiene 0. Este gran número de falsos
+            negativos es gravísimo porque un falso positivo se puede investigar a través de otros test para validarlo,
+            pero un falso negativo no se suele investigar a fondo a no ser que la persona empeore.</p>
+
+        <h2>Recapitulando un poco entre las 3 soluciones:</h2>
+
+        <p>KNN tiene la peor precisión 95.07%, un gran número de falsos negativos pero tiene 0 falsos positivos. A raíz
+            de estas estadísticas, esta sería la peor solución de las 3 planteadas.</p>
+
+        <p>Regresión Logística muestra ser una solución intermedia, segunda mejor precisión 97.42%, 6 falsos negativos y
+            tiene la mayor cantidad de falsos positivos por un margen muy leve. Los errores de predicción son leves y el
+            algoritmo no es malo para nada, pero hay una solución mejor por muy poco.</p>
+
+        <p>Random Forest parece ser la mejor solución teniendo la mejor precisión 99.22%, 0 falsos negativos y 1 falso
+            positivo más que regresión logística. Estas estadísticas son muy buenas, pero hay que considerar que es el
+            algoritmo más costoso de ejecutar con la generación de 253 árboles por cada iteración del cross validation.
+        </p>
+
+        <p>g) Mirando las curvas ROC de cada solución podemos ver que las 3 son muy similares, pero se destaca la curva
+            de KNN por tener la curva ROC perfecta con un AUC de 1, la recta roja bien arriba y a la izquierda, lo cual
+            indica un excelente desempeño para clasificar casos positivos. Al no tener falsos positivos es normal que la
+            curva ROC sea perfecta en este caso.</p>
+
+        <p>Viendo las otras 2 curvas podemos destacar que ambas curvas son muy similares, pero la curva de RL tiene
+            mucho ruido representado por el área azulada alrededor de la curva azul y a su vez la curva ROC está un poco
+            más baja al principio. A RL le toma 0.25 de eje X para llegar a 1 mientras que a RF le toma 0.10.</p>
+
+        <p>h) Enlace al Google Collab con la solución en python:</p>
+
+        <p><a href="https://colab.research.google.com/drive/1C39qcjQwy6DJhSBA1nL00HYc7zjFvMt2?usp=sharing"
+                target="_blank">https://colab.research.google.com/drive/1C39qcjQwy6DJhSBA1nL00HYc7zjFvMt2?usp=sharing</a>
+        </p>
+        <p>Analizando los resultados obtenidos de python podemos ver a nivel de la matriz de confusión de knn que tiene
+            7 falsos negativos menos que en rapidminer lo cual es mucho mejor, RL tiene 5 falsos negativos y 4 falsos
+            positivos menos y RF tiene 1 falso negativo y 1 falso positivo más porque no en python no existe el criterio
+            accuracy para RF utilizado.</p>
+        <img src="../assets/img61.png" alt="Investigación 2" class="detail-image">
+
+        <h3>Referencias y Bibliografía consultada:</h3>
+        <ul class="detail-description">
+            <li>
+                Kidney.org. (n.d.). <em>About chronic kidney disease</em>.
+                Recuperado de <a href="https://www.kidney.org/atoz/content/about-chronic-kidney-disease"
+                    target="_blank">https://www.kidney.org/atoz/content/about-chronic-kidney-disease</a>
+            </li>
+            <li>
+                Mayo Clinic. (n.d.). <em>Enfermedad renal crónica: Síntomas y causas</em>.
+                Recuperado de <a
+                    href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521"
+                    target="_blank">https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521</a>
+            </li>
+            <li>
+                MedlinePlus. (n.d.). <em>Prueba de creatinina</em>.
+                Recuperado de <a href="https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-creatinina/"
+                    target="_blank">https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-creatinina/</a>
+            </li>
+            <li>
+                Fundación BBVA. (n.d.). <em>Sérico</em>.
+                Recuperado de <a href="https://www.fbbva.es/diccionario/s%C3%A9rico/"
+                    target="_blank">https://www.fbbva.es/diccionario/s%C3%A9rico/</a>
+            </li>
+            <li>
+                Ministerio de Salud Pública. (2022). <em>Salud pública promueve controles para diagnóstico oportuno y
+                    tratamiento</em>.
+                Recuperado de <a
+                    href="https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/salud-publica-promueve-controles-para-diagnostico-oportuno-tratamiento"
+                    target="_blank">https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/salud-publica-promueve-controles-para-diagnostico-oportuno-tratamiento</a>
+            </li>
+            <li>
+                Organización Panamericana de la Salud. (2022). <em>Día Mundial del Riñón 2022: Hearts of Americas: Salud
+                    renal para todos</em>.
+                Recuperado de <a
+                    href="https://www.paho.org/es/noticias/9-3-2022-dia-mundial-rinon-2022-hearts-americas-salud-renal-para-todos#:~:text=Datos%20de%20la%20organizaci%C3%B3n%20internacional,la%20enfermedad%20aumenta%20cada%20a%C3%B1o."
+                    target="_blank">https://www.paho.org/es/noticias/9-3-2022-dia-mundial-rinon-2022-hearts-americas-salud-renal-para-todos</a>
+            </li>
+            <li>
+                Revista Nefrología. (2024). <em>Proyección de la carga clínica y económica de la enfermedad renal
+                    crónica</em>.
+                Recuperado de <a
+                    href="https://www.revistanefrologia.com/es-proyeccion-carga-clinica-economica-enfermedad-articulo-S0211699524000237#:~:text=La%20carga%20econ%C3%B3mica%20de%20la%20ERC%20diagnosticada%20se%20prev%C3%A9%20que,%25%20del%20gasto%20sanitario%20p%C3%BAblico"
+                    target="_blank">https://www.revistanefrologia.com/es-proyeccion-carga-clinica-economica-enfermedad-articulo-S0211699524000237</a>
+            </li>
+            <li>
+                Mayo Clinic. (n.d.). <em>Enfermedad renal crónica: Tratamiento</em>.
+                Recuperado de <a href="https://www.kidney.org/es/kidney-topics/tratamiento"
+                    target="_blank">https://www.kidney.org/es/kidney-topics/tratamiento</a>
+            </li>
+        </ul>
+
 
 
 
